@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#TextInput-102{
+    color: white;
+}
+
+#login-areas{
+    display: flex;
+}
+#login-form-area{
+    background-color: #5ce489;
+    padding: 5%;
+    margin: 5% 0% 0% 1%;
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+#cad-area{
+    padding: 5%;
+    margin: 5% 0% 0% 1%;
+    width: 46%;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0.2em 0.2em 0.6em black;
+}
+#title-cadastrar{
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    background-color: #5ce489;
+    color: white;
+    padding: 0.4em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+#txt-cadastrar{
+    line-height: 1.5;
+    text-indent: 1.5em;
+    padding-top: 1em;
+    color: #5ce489;
+}
+.btn-cad{
+    font-weight: bold;
+    margin: 0.5em;
+    color: #5ce489;
+    background-color: white;
+    box-shadow: 0.2em 0.2em 0.6em white;
+    border: 0.2em solid #5ce489;
+    border-radius: 2em;
+}
+
+.btn-cad:hover{
+    font-weight: bold;
+    margin: 0.5em;
+    color: white;
+    background-color: #5ce489;
+    box-shadow: 0.2em 0.2em 0.6em white;
+    border: 0.2em solid #5ce489;
+    border-radius: 2em;
+}

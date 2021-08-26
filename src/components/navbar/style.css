@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.navbar{
+    background-color: rgb(36, 36, 36);
+    font-family: 'Oswald', sans-serif;
+}
+.brand-logo{
+    width: 1.5em;
+}
+
+@media (min-width: 993px)
+{
+    .brand-logo{
+        width: 1.9em;
+        margin-left: 1em;
+    }
+}
+
+.nav-item{
+    padding-top: 0.5em;
+    font-size: xx-large;
+}
+
+.btn-nav{
+    font-family: Oswald;   
+    font-size: x-large;
+    background-color: #52C478;
+}
+
+#mobile-nav{
+    font-family: 'Oswald', sans-serif;
+    font-size: 300p;
+}
