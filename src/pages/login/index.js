@@ -1,6 +1,7 @@
-import NavBar from '../../components/navbar/';
 import { Fragment } from 'react';
+import NavBar from '../../components/navbar/';
 import FormLogin from '../../components/form-login/'
+import Rodape from '../../components/rodape/'
 
 function Login (){
     return(
@@ -11,6 +12,9 @@ function Login (){
         <main>
             <FormLogin />
         </main>
+        <footer>
+            <Rodape />
+        </footer>
     </Fragment>
     );
 }

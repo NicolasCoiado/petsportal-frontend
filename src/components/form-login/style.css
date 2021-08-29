@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-#TextInput-102{
-    color: white;
+#title-login{
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0.4em;
 }
-
 #login-areas{
     display: flex;
 }
@@ -14,13 +16,24 @@
     width: 50%;
     font-family: 'Roboto', sans-serif;
     color: white;
+    text-align: center;
 }
+#btn-login{
+    margin-top: 2em;
+    background-color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #5ce489;
+    box-shadow: none;
+}
+/*===========================================*/
 #cad-area{
     padding: 5%;
     margin: 5% 0% 0% 1%;
     width: 46%;
     font-family: 'Roboto', sans-serif;
     box-shadow: 0.2em 0.2em 0.6em black;
+    text-align: center;
 }
 #title-cadastrar{
     text-align: center;
@@ -33,24 +46,27 @@
     margin-right: 3em;
 }
 #txt-cadastrar{
+    font-size: 1.2em;
     line-height: 1.5;
     text-indent: 1.5em;
     padding-top: 1em;
     color: #5ce489;
 }
+#buttons-area-cad{
+    margin-top: 1.5em;
+}
 .btn-cad{
     font-weight: bold;
-    margin: 0.5em;
     color: #5ce489;
     background-color: white;
     box-shadow: 0.2em 0.2em 0.6em white;
     border: 0.2em solid #5ce489;
     border-radius: 2em;
+    margin-top: 0.5em;
 }
 
 .btn-cad:hover{
     font-weight: bold;
-    margin: 0.5em;
     color: white;
     background-color: #5ce489;
     box-shadow: 0.2em 0.2em 0.6em white;
