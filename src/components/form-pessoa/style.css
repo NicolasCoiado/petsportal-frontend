@@ -1,0 +1,17 @@
+#login-areas{
+    padding: 10%;
+}
+#pessoa-form-area{
+    margin: 3% 10% 10% 10%;
+    padding: 5% 10% 10% 10%;
+    box-shadow: 0.2em 0.2em 0.6em black;
+}
+.title-cadastrar-pessoa{
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+    padding: 5% 0% 3% 0%;
+}
+.btn-area-cadPessoa{
+    text-align: center;
+}

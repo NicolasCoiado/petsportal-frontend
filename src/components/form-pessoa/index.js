@@ -7,6 +7,7 @@ import './style.css';
 function FormPessoa (){
     return(
     <div id="pessoa-areas">
+        <h3 className="title-cadastrar-pessoa">CADASTRAR USUÁRIO</h3>
         <form id="pessoa-form-area">
             <TextInput
                 id="TextInput-44"
@@ -48,16 +49,18 @@ function FormPessoa (){
                 id="TextInput-53"
                 label="Telefone 2"
             />
-            <Button
-                node="button"
-                type="submit"
-                waves="light"
-            >
-                Enviar
-                <Icon left>
-                    send
-                </Icon>
-            </Button>
+            <div className="btn-area-cadPessoa">
+                <Button
+                    node="button"
+                    type="submit"
+                    waves="light"
+                >
+                    Enviar
+                    <Icon left>
+                        send
+                    </Icon>
+                </Button>
+            </div>
         </form>
     </div>
     );
