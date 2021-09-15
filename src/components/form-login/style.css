@@ -12,7 +12,7 @@
 #login-form-area{
     background-color: #5ce489;
     padding: 5%;
-    margin: 5% 0% 0% 1%;
+   
     width: 50%;
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -26,10 +26,17 @@
     color: #5ce489;
     box-shadow: none;
 }
+#btn-login:hover{
+    margin-top: 2em;
+    background-color: #5ce489;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: white;
+}
 /*===========================================*/
 #cad-area{
     padding: 5%;
-    margin: 5% 0% 0% 1%;
+    margin-top: -0%;
     width: 46%;
     font-family: 'Roboto', sans-serif;
     box-shadow: 0.2em 0.2em 0.6em black;
@@ -73,3 +80,7 @@
     border: 0.2em solid #5ce489;
     border-radius: 2em;
 }
+
+.txt-email label{
+    color: white;
+  }

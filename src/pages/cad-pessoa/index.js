@@ -1,5 +1,6 @@
 import NavBar from '../../components/navbar/';
 import FormPessoa from '../../components/form-pessoa';
+import Rodape from '../../components/rodape';
 import { Fragment } from 'react';
 
 function CadastroPessoa (){
@@ -11,6 +12,9 @@ function CadastroPessoa (){
         <main>
             <FormPessoa />
         </main>
+        <footer>
+            <Rodape />
+        </footer>
     </Fragment>
     );
 }

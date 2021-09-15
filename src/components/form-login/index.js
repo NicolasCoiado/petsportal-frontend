@@ -1,6 +1,7 @@
 import 'materialize-css';
 import { TextInput, Button, Icon } from 'react-materialize';
 import { Link } from 'react-router-dom';
+import { RiLockPasswordFill } from 'react-icons/ri';
 import './style.css';
 
 function FormLogin (){
@@ -9,13 +10,15 @@ function FormLogin (){
         <div id="login-form-area">
             <h1 id="title-login">LOGIN</h1>
             <TextInput
+                className="txt-email"
                 icon="email"
                 id="TextInput-102"
                 label="Email"
+                type="email"
             />
 
             <TextInput
-                icon="vpn_key"
+                icon={<RiLockPasswordFill/>}
                 id="TextInput-31"
                 label="Password"
                 password
@@ -48,6 +51,7 @@ function FormLogin (){
                     Me cadastrar
                 </Button>
                 </Link>
+                <Link to='/cadastrar-ong'>
                 <Button
                     className="btn-cad"
                     node="button"
@@ -58,6 +62,7 @@ function FormLogin (){
                 >
                     Cadastrar ONG
                 </Button>
+                </Link>
             </div>
         </div>
     </div>

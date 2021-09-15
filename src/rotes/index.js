@@ -2,6 +2,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from '../pages/home/';
 import Login from '../pages/login/';
 import CadastroPessoa from '../pages/cad-pessoa/';
+import CadastroOng from '../pages/cad-ong/';
 
 const Rotas = () => (
     <BrowserRouter>
@@ -9,6 +10,7 @@ const Rotas = () => (
             <Route exact path='/' component={ Home } />
             <Route path='/login' component={ Login } />
             <Route path='/cadastrar' component={ CadastroPessoa } />
+            <Route path='/cadastrar-ong' component={ CadastroOng } />
         </Switch>
     </BrowserRouter>
 );

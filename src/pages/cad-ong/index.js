@@ -1,16 +1,16 @@
 import NavBar from '../../components/navbar/';
-import Carrossel from '../../components/carousel/';
-import Rodape from '../../components/rodape'
+import FormOng from '../../components/form-ong';
+import Rodape from '../../components/rodape';
 import { Fragment } from 'react';
 
-function Home (){
+function CadastroOng (){
     return(
     <Fragment>
         <header>
             <NavBar />
         </header>
         <main>
-            <Carrossel />
+            <FormOng />
         </main>
         <footer>
             <Rodape />
@@ -19,4 +19,4 @@ function Home (){
     );
 }
 
-export default Home;
+export default CadastroOng;

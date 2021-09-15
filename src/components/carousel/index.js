@@ -1,6 +1,5 @@
 import 'materialize-css';
 import { Carousel } from 'react-materialize';
-import Logo from '../../images/Logo.svg';
 import './style.css';
 
 function Carrossel (){
