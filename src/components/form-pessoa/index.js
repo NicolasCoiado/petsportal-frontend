@@ -1,6 +1,5 @@
 import 'materialize-css';
 import { TextInput, Textarea, Button, Icon } from 'react-materialize';
-import { MdEmail, MdSettingsInputComponent } from 'react-icons/md';
 import { useHistory } from 'react-router-dom';
 import React, {useState} from "react";
 import './style.css';
@@ -51,62 +50,63 @@ function FormPessoa (){
     return(
     <div id="pessoa-areas">
         <h3 className="title-cadastrar-pessoa">CADASTRAR USUÁRIO</h3>
-        <form id="pessoa-form-area" onSubmit={e => handleSubmit(e) }>
-            <TextInput
-                id="input-nome"
+        <form id="form-area" onSubmit={e => handleSubmit(e) }>
+            <TextInput            
                 label="Nome *"
                 onChange={e => setNome (e.target.value)}
+                className="campo-form-pessoa"
             />
             <TextInput
-                email
-                id="input-email"
+                email         
+                type="email"
                 label="Email *"
                 validate
                 onChange={e => setEmail (e.target.value)}
+                className="campo-form-pessoa"
             />
             <TextInput
-                id="input-cpf"
                 label="CPF *"
                 onChange={e => setCpf(e.target.value)}
+                className="campo-form-pessoa"
             />
-            <TextInput
-                id="input-nasc"
+            <TextInput               
                 label="Data de Nascimento *"
                 onChange={e => setNasc (e.target.value)}
+                className="campo-form-pessoa"
                 type="date"
             />
-            <TextInput
-                id="input-senha"
+            <TextInput             
                 label="Senha *"
                 password
                 onChange={e => setSenha (e.target.value)}
+                className="campo-form-pessoa"
             />
             <TextInput
-                id="input-senha2"
                 label="Confirme sua senha *"
                 password
                 onChange={e => setSenha2 (e.target.value)}
+                className="campo-form-pessoa"
             />
             <TextInput
-                id="input-endereco"
                 label="Endereço *"
                 onChange={e => setEndereco (e.target.value)}
+                className="campo-form-pessoa"
             />
             <TextInput
-                id="input-tell1"
                 label="Telefone 1 *"
                 onChange={e => setTel1 (e.target.value)}
+                className="campo-form-pessoa"
             />
             <TextInput
-                id="input-tell2"
                 label="Telefone 2"
                 onChange={e => setTel2 (e.target.value)}
+                className="campo-form-pessoa"
             />
             <Textarea
                 data-length={120}
-                id="input-desc"
                 label="Descrição"
                 onChange={e => setDesc (e.target.value)}
+                className="campo-form-pessoa"
             />
             <div className="btn-area-cadPessoa">
                 <Button

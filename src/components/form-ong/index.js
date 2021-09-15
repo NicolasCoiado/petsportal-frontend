@@ -1,6 +1,5 @@
 import 'materialize-css';
 import { TextInput, Textarea, Button, Icon } from 'react-materialize';
-import { MdEmail, MdSettingsInputComponent } from 'react-icons/md';
 import { useHistory } from 'react-router-dom';
 import React, {useState} from "react";
 import './style.css';
@@ -66,55 +65,46 @@ function FormOng(){
     return(
     <div id="pessoa-areas">
         <h3 className="title-cadastrar-pessoa">CADASTRAR ONG</h3>
-        <form id="pessoa-form-area"onSubmit={e => handleSubmit(e) }>
-            <TextInput
-                id="TextInput-44"
+        <form id="form-area"onSubmit={e => handleSubmit(e) }>
+            <TextInput               
                 label="Nome *"
                 onChange={e => setNome (e.target.value)}
             />
             <TextInput
                 email
                 type="email"
-                id="TextInput-47"
                 label="Email *"
                 validate
                 onChange={e => setEmail (e.target.value)}
             />
             <TextInput
-                id="TextInput-50"
                 label="Senha *"
                 password
                 onChange={e => setSenha (e.target.value)}
             />
             <TextInput
-                id="TextInput-50"
                 label="Confirme sua senha *"
                 password
                 onChange={e => setSenha2 (e.target.value)}
             />
             <TextInput
-                id="TextInput-53"
                 label="Endereço *"
                 onChange={e => setEndereco (e.target.value)}
             />
             <TextInput
-                id="TextInput-53"
                 label="Telefone 1 *"
                 onChange={e => setTel1 (e.target.value)}
             />
             <TextInput
-                id="TextInput-53"
                 label="Telefone 2"
                 onChange={e => setTel2 (e.target.value)}
             />
             <Textarea
                 data-length={120}
-                id="Textarea-29"
                 label="Descrição"
                 onChange={e => setDesc (e.target.value)}
             />
             <TextInput
-                id="TextInput-26"
                 label="File"
                 type="file"
                 onChange={handleUpload}

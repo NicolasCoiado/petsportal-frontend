@@ -12,7 +12,7 @@ function NavBar (){
       alignLinks="right"
       brand={
       <NavLink className="brand-logo" to='/'>
-        <img src={Logo} />
+        <img src={Logo} alt="logo" />
       </NavLink>}
       id="mobile-nav"
       menuIcon={
