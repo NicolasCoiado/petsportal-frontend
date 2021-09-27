@@ -1,39 +1,67 @@
-import 'materialize-css';
 import { TextInput, Button, Icon } from 'react-materialize';
 import { Link } from 'react-router-dom';
 import { RiLockPasswordFill } from 'react-icons/ri';
+import { useHistory } from 'react-router-dom';
+import React, {useState} from "react";
+import API from '../../api/'
 import './style.css';
 
 function FormLogin (){
-    return(
+    const [email, setEmail] = useState('');
+    const [senha, setSenha] = useState('');
+    const history = useHistory();
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+
+        let user = {
+            email,
+            senha
+        }
+        API.post("/user/login", user )
+        .then(res => {
+            console.log("Deu bom")
+            console.log(res.data)
+        })
+        .catch(err =>{
+            console.log(err)
+            console.log(user)
+        })
+    }
+
+    return( 
     <div id="login-areas">
         <div id="login-form-area">
-            <h1 id="title-login">LOGIN</h1>
-            <TextInput
-                className="txt-email"
-                icon="email"
-                id="TextInput-102"
-                label="Email"
-                type="email"
-            />
+            <form onSubmit={e => handleSubmit(e) }>
+                <h1 id="title-login">LOGIN</h1>
+                <TextInput
+                    className="white-text"
+                    email
+                    icon="email"
+                    label="Email"
+                    type="email"
+                    onChange={e => setEmail (e.target.value)}
+                />
 
-            <TextInput
-                icon={<RiLockPasswordFill/>}
-                id="TextInput-31"
-                label="Password"
-                password
-            />
-            <Button
-                id="btn-login"
-                node="button"
-                type="submit"
-                waves="light"
-            >
-                ENTRAR
-                <Icon left>
-                    send
-                </Icon>
-            </Button>
+                <TextInput
+                    className="white-text"
+                    icon={<RiLockPasswordFill/>}
+                    label="Password"
+                    password
+                    onChange={e => setSenha(e.target.value)}
+                />
+                <Button
+                    id="btn-login"
+                    node="button"
+                    type="submit"
+                    waves="light"
+                >
+                    ENTRAR
+                    <Icon left>
+                        send
+                    </Icon>
+                </Button>
+            </form>
         </div>
         <div id="cad-area">
             <h1 id="title-cadastrar">CADASTRAR</h1>

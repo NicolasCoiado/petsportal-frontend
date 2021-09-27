@@ -12,7 +12,6 @@
 #login-form-area{
     background-color: #5ce489;
     padding: 5%;
-   
     width: 50%;
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -80,7 +79,3 @@
     border: 0.2em solid #5ce489;
     border-radius: 2em;
 }
-
-.txt-email label{
-    color: white;
-  }

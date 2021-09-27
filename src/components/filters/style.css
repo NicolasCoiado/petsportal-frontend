@@ -1,0 +1,15 @@
+#filters-area{
+    padding: 1em;
+    background-color: #52C478;
+    text-align: center;
+}
+#filters-title{
+    font-family: 'bahnschrift', sans-serif;
+    text-align: center;
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1.5em;
+}
+.chip{
+    background-color: #ffffff;
+}

@@ -37,14 +37,13 @@ function FormPessoa (){
         API.post("/user/cadastrar/pessoaFisica", user )
         .then(res => {
             console.log("Deu bom")
-            console.log(user);
+            //console.log(user);
             console.log(res);
             history.push("/login");
         })
         .catch(err =>{
             console.log(err)
-            console.log(user)
-            window.localStorage.setItem('token', null)
+            //console.log(user)
         })
     }
     return(

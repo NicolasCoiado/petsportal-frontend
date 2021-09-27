@@ -1,0 +1,7 @@
+#cards-area{
+    display: flex;
+}
+.card-name{
+    margin: 1.5%;
+    width: 30%;
+}

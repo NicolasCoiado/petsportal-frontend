@@ -27,6 +27,7 @@
     margin-top: -10px;
 }
 
-#mobile-nav{
-    font-family: 'Oswald', sans-serif;
+.nickname{
+    font-size: x-large;
+    display: flex;
 }
