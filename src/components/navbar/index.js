@@ -4,7 +4,7 @@ import { BiLogOutCircle } from 'react-icons/bi'
 import { IoPersonCircle } from 'react-icons/io5'
 import { Navbar, Button, Dropdown, Divider, Icon } from 'react-materialize';
 import { NavLink, Link } from 'react-router-dom';
-import ViewerIMG from '../viewer-img/'
+import ViewerNavIMG from '../viewer-img-nav/'
 import Logo from '../../images/Logo.svg';
 import './style.css';
 import { Fragment } from 'react';
@@ -87,8 +87,8 @@ function NavBar (){
       <NavLink className="nav-item"  to='/login'>
         <span className="nickname">nickname</span>
       </NavLink>
-      <NavLink className="nav-item"  to='/login'>
-        <ViewerIMG/>
+      <NavLink className="nav-item"  to='/perfil'>
+        <ViewerNavIMG />
       </NavLink>
       <Dropdown
         options={{
@@ -108,7 +108,7 @@ function NavBar (){
         }}
         trigger={<Link to="#!">{' '}<Icon medium>arrow_drop_down</Icon></Link>}
       >
-        <Link to='/login'>
+        <Link to='/perfil'>
           <IoPersonCircle />
           Perfil
         </Link>

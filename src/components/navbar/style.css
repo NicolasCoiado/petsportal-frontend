@@ -1,5 +1,5 @@
 .navbar{
-    background-color: rgb(36, 36, 36);
+    background-color: #324538;
     font-family: 'Oswald', sans-serif;
 }
 .brand-logo{
@@ -31,3 +31,4 @@
     font-size: x-large;
     display: flex;
 }
+

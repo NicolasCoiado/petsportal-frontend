@@ -4,6 +4,7 @@ import Login from '../pages/login/';
 import CadastroPessoa from '../pages/cad-pessoa/';
 import CadastroOng from '../pages/cad-ong/';
 import CadastroAnimal from "../pages/cad-animal";
+import Perfil from "../pages/perfil";
 
 const Rotas = () => (
     <BrowserRouter>
@@ -13,6 +14,7 @@ const Rotas = () => (
             <Route path='/cadastrar' component={ CadastroPessoa } />
             <Route path='/cadastrar-ong' component={ CadastroOng } />
             <Route path='/cadastrar-animal' component={ CadastroAnimal } />
+            <Route path='/perfil' component={ Perfil } />
         </Switch>
     </BrowserRouter>
 );
