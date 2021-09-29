@@ -1,18 +1,41 @@
 import 'materialize-css';
 import { TiThMenu } from 'react-icons/ti';
-import { BiLogOutCircle } from 'react-icons/bi'
-import { IoPersonCircle } from 'react-icons/io5'
+import { BiDonateHeart } from 'react-icons/bi'
+import { GiSittingDog } from 'react-icons/gi'
 import { Navbar, Button, Dropdown, Divider, Icon } from 'react-materialize';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useHistory } from 'react-router-dom';
 import ViewerNavIMG from '../viewer-img-nav/'
 import Logo from '../../images/Logo.svg';
 import './style.css';
-import { Fragment } from 'react';
+import React, { useEffect, useState } from "react";
+import API from '../../api/'
 
 function NavBar (){
+  const [user, setUser] = useState({});
+  const history = useHistory();
+
+  function logoff(){
+    localStorage.setItem('token', null)
+    history.push('/login')
+}
+
+  useEffect(() => {
+    API.post("/navValidation", {}, {
+      headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
+      
+      })
+      .then(res => {
+         console.log(res);
+         setUser(res.data.user);
+      })
+      .catch(err =>{
+         console.log(err);
+      })
+  
+  }, []);
+
     return(
-<>
-{/*  <Navbar
+ <Navbar
       className="navbar"
       alignLinks="right"
       brand={
@@ -34,14 +57,63 @@ function NavBar (){
         outDuration: 200,
         preventScrolling: true
       }}
+      sidenav={
+      <div id="sidenav">
+        {(!user.tipo)
+          ?(<>
+            <NavLink className="nav-item-mobile" to='/'>
+              <BiDonateHeart className="nav-icon-mobile" />
+              DOAR
+            </NavLink>
+            <NavLink className="nav-item-mobile"  to='/'>
+              <GiSittingDog className="nav-icon-mobile"/>
+              ADOTAR
+            </NavLink>
+            <NavLink className="nav-item-mobile"  to='/login'>
+              <Button 
+                className="btn-nav"
+                node="button"
+                style={{
+                marginRight: '5px'
+              }}
+                waves="light"
+              >
+                LOGIN
+              </Button>
+            </NavLink>
+          </>):
+          (<>
+            <NavLink className="nav-pic-mobile" to={`/perfil/${user.id}`}>
+              <ViewerNavIMG uploadUrl={user.img} />
+            </NavLink>
+            <NavLink className="nav-nick-mobile"  to={`/perfil/${user.id}`}>
+              <span className="nickname">{user.nome}</span>
+            </NavLink>
+            <NavLink className="nav-item-mobile" to='/'>
+              <BiDonateHeart className="nav-icon-mobile" />
+              DOAR
+            </NavLink>
+            <NavLink className="nav-item-mobile"  to='/'>
+              <GiSittingDog className="nav-icon-mobile"/>
+              ADOTAR
+            </NavLink>
+        </>)
+        }
+        
+      </div>
+      }
     >
+    <div className="navbar-edited">
       <NavLink className="nav-item" to='/'>
         DOAR
       </NavLink>
-      <NavLink className="nav-item"  to=''>
+      <NavLink className="nav-item"  to='/'>
         ADOTAR
       </NavLink>
-      <NavLink className="nav-item"  to='/login'>
+      {(!user.tipo)
+    
+      ?(
+        <NavLink className="nav-item"  to='/login'>
         <Button 
           className="btn-nav"
           node="button"
@@ -53,73 +125,51 @@ function NavBar (){
           LOGIN
         </Button>
       </NavLink>
-    </Navbar>
-        */}
-    <Navbar
-      className="navbar"
-      alignLinks="right"
-      brand={
-      <NavLink className="brand-logo" to='/'>
-        <img src={Logo} alt="logo" />
-      </NavLink>}
-      id="mobile-nav"
-      menuIcon={
-        <TiThMenu className="nav-menu-mobile" fontSize="x-large" />
-      }
-      options={{
-        draggable: true,
-        edge: 'left',
-        inDuration: 250,
-        onCloseEnd: null,
-        onCloseStart: null,
-        onOpenEnd: null,
-        onOpenStart: null,
-        outDuration: 200,
-        preventScrolling: true
-      }}
-    >
-      <NavLink className="nav-item" to='/cadastrar-animal'>
-        DOAR
-      </NavLink>
-      <NavLink className="nav-item"  to='/'>
-        ADOTAR
-      </NavLink>
-      <NavLink className="nav-item"  to='/login'>
-        <span className="nickname">nickname</span>
-      </NavLink>
-      <NavLink className="nav-item"  to='/perfil'>
-        <ViewerNavIMG />
-      </NavLink>
-      <Dropdown
-        options={{
-          alignment: 'left',
-          autoTrigger: true,
-          closeOnClick: true,
-          constrainWidth: true,
-          container: null,
-          coverTrigger: true,
-          hover: false,
-          inDuration: 150,
-          onCloseEnd: null,
-          onCloseStart: null,
-          onOpenEnd: null,
-          onOpenStart: null,
-          outDuration: 250
-        }}
-        trigger={<Link to="#!">{' '}<Icon medium>arrow_drop_down</Icon></Link>}
-      >
-        <Link to='/perfil'>
-          <IoPersonCircle />
-          Perfil
-        </Link>
-        <Divider />
-          <a>
-            <BiLogOutCircle />
-            logout
+      )
+      :
+      (<>
+        <NavLink className="nav-item"  to={`/perfil/${user.id}`}>
+          <ViewerNavIMG uploadUrl={user.img} />
+        </NavLink>
+        <Dropdown
+          id="Dropdown_14"
+          options={{
+            alignment: 'left',
+            autoTrigger: true,
+            closeOnClick: true,
+            constrainWidth: true,
+            container: null,
+            coverTrigger: true,
+            hover: false,
+            inDuration: 150,
+            onCloseEnd: null,
+            onCloseStart: null,
+            onOpenEnd: null,
+            onOpenStart: null,
+            outDuration: 250
+          }}
+          trigger={<a href="#!">{' '}<Icon right>arrow_drop_down</Icon></a>}
+        >
+          <Link to={`/perfil/${user.id}`}>
+            MyProfile
+          </Link>
+          <Divider />
+          {(user.tipo==='adm')&&(
+            <Link>
+              ADM
+            </Link>
+          )}
+          <Divider />
+          <a onClick={logoff}>
+              Logout
           </a>
-      </Dropdown>
+        </Dropdown>
+    </>)
+    }
+    </div>
     </Navbar>
-</>
+  
+    
     );
 }
 

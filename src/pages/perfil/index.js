@@ -3,13 +3,14 @@ import NavBar from "../../components/navbar";
 import InfosPerfil from "../../components/infos-perfil/";
 import Rodape from "../../components/rodape";
 function Perfil (){
+    
     return(
         <Fragment>
             <header>
                 <NavBar />
             </header>
             <main>
-                <InfosPerfil />
+                <InfosPerfil/>
             </main>
             <footer>
                 <Rodape />

@@ -22,10 +22,13 @@ function FormLogin (){
         .then(res => {
             console.log("Deu bom")
             console.log(res.data)
+            window.localStorage.setItem('token', res.data.token);
+            history.push('/');
         })
         .catch(err =>{
             console.log(err)
             console.log(user)
+            window.localStorage.setItem('token', null)
         })
     }
 

@@ -1,34 +1,48 @@
 import ViewerIMG from '../viewer-img/';
-import { Button, Icon } from 'react-materialize';
+import { Button, Icon, TextInput } from 'react-materialize';
 import React, { useState } from "react";
 import Modal from "../modal/";
-import { Link } from 'react-router-dom';
 import './style.css';
+import { useEffect } from 'react';
+import { useParams } from 'react-router';
+import API from '../../api/';
 
 function InfosPerfil (){
     const [showModal, setShowModal]= useState(false);
+    const [user, setUser] = useState({})
     const OpenModal = () => {
         setShowModal(prev => !prev);
     }
 
+    const { id } = useParams()
+
+    useEffect(() => {
+        API.post(`/user/read/`, {
+            id
+        }, {
+            headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
+        })
+        .then(res => {
+            console.log(res.data)
+            setUser(res.data.user)
+        })
+        .catch(err => {
+            console.log("fuck")
+            console.log(err)
+        })
+    }, [])
+
     return(
         <div id="infos-perfil">
             <div id="upload-image">
-                <ViewerIMG />
+                <ViewerIMG uploadUrl={user.imagem}/>
                 <h1 className="title-upload-image">Upload de imagem</h1>
-                <Button
-                    node="a"
-                    small
-                    style={{
-                        marginRight: '5px'
-                    }}
-                    waves="light"
-                >
-                    Upload
-                    <Icon right>
-                        download
-                    </Icon>
-                </Button>
+                <TextInput
+                    id="TextInput-26"
+                    label="File"
+                    type="file"
+                />
+              
             </div>
             <div>
                 <p className="campo-info">Nome:</p>
@@ -42,7 +56,8 @@ function InfosPerfil (){
                 <p className="campo-info">Sobre você:</p>
             </div>
                 <Button
-                    node="a"
+                    node="button"
+                    type="submit"
                     waves="light"
                     onClick={OpenModal}
                 >
