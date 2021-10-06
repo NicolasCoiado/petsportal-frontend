@@ -29,6 +29,7 @@ function FormLogin (){
             console.log(err)
             console.log(user)
             window.localStorage.setItem('token', null)
+            window.alert('O formulário possui um erro!');
         })
     }
 

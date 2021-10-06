@@ -109,11 +109,12 @@ function FormPessoa (){
             />
             <div className="btn-area-cadPessoa">
                 <Button
+                    className="btn-submit-form"
                     node="button"
                     type="submit"
                     waves="light"
                 >
-                    Enviar
+                    Cadastrar
                     <Icon left>
                         send
                     </Icon>

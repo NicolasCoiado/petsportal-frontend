@@ -2,7 +2,7 @@
     padding: 10%;
 }
 #form-area{
-    margin: 3% 10% 10% 10%;
+    margin: 2% 10% 10% 10%;
     padding: 5% 10% 10% 10%;
     box-shadow: 0.2em 0.2em 0.6em black;
 }
@@ -10,7 +10,7 @@
     text-align: center;
     font-weight: bold;
     font-size: xx-large;
-    padding: 5% 0% 2% 0%;
+    padding: 4% 0% 2% 0%;
     font-family: 'Oswald', sans-serif;
 }
 .btn-area-cadPessoa{
@@ -18,4 +18,12 @@
 }
 .campo-form-pessoa{
     font-family: 'Roboto', sans-serif;
+}
+.btn-submit-form{
+    background-color: #56ca7d;
+    width: 12em;
+    border-radius: 2em;
+}
+.btn-submit-form:hover{
+    background-color: #40965d;
 }

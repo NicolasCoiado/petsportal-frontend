@@ -1,7 +1,6 @@
-#cards-area{
-    display: flex;
-}
-.card-name{
-    margin: 1.5%;
-    width: 30%;
+.coluna{
+    margin-top: 3%;
+    margin-right: -5%;
+    margin-left: -4%;
+    width: 40%;
 }

@@ -1,5 +1,5 @@
 .navbar{
-    background-color: #324538;
+    background-color: #1D452A;
     font-family: 'Oswald', sans-serif;
 }
 @media (min-width: 993px)
@@ -40,6 +40,10 @@
     margin-top: -10px;
 }
 
+.btn-nav:hover{
+    background-color: #f2f2f2;
+    color: #52C478;
+}
 
 #sidenav{
     display: flex;

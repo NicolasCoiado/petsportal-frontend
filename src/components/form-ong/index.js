@@ -104,18 +104,24 @@ function FormOng(){
                 label="Descrição"
                 onChange={e => setDesc (e.target.value)}
             />
-            <TextInput
-                label="File"
-                type="file"
-                onChange={handleUpload}
-            />
+            <div className="upload-area">
+                <h1 className="lbl-upload">Estatuto Social:</h1>
+                <label onChange={handleUpload} for="file-upload" className="custom-file-upload">
+                    <Icon className="icon-file">download</Icon> 
+                        Arquivo
+                </label>
+                <input id="file-upload" type="file" />
+            </div>
+            
             <div className="btn-area-cadPessoa">
                 <Button
+                    className="btn-submit-form-ONG"
                     node="button"
                     type="submit"
                     waves="light"
+                    placeholder="<= Faça o upload de seu arquivo aqui"
                 >
-                    Enviar
+                    Cadastrar ONG
                     <Icon left>
                         send
                     </Icon>

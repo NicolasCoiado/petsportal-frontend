@@ -61,7 +61,7 @@ function NavBar (){
       <div id="sidenav">
         {(!user.tipo)
           ?(<>
-            <NavLink className="nav-item-mobile" to='/'>
+            <NavLink className="nav-item-mobile" to='/cadastrar-animal'>
               <BiDonateHeart className="nav-icon-mobile" />
               DOAR
             </NavLink>
@@ -89,7 +89,7 @@ function NavBar (){
             <NavLink className="nav-nick-mobile"  to={`/perfil/${user.id}`}>
               <span className="nickname">{user.nome}</span>
             </NavLink>
-            <NavLink className="nav-item-mobile" to='/'>
+            <NavLink className="nav-item-mobile" to='/cadastrar-animal'>
               <BiDonateHeart className="nav-icon-mobile" />
               DOAR
             </NavLink>
@@ -104,7 +104,7 @@ function NavBar (){
       }
     >
     <div className="navbar-edited">
-      <NavLink className="nav-item" to='/'>
+      <NavLink className="nav-item" to='/cadastrar-animal'>
         DOAR
       </NavLink>
       <NavLink className="nav-item"  to='/'>
