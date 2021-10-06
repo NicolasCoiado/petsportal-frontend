@@ -14,7 +14,8 @@ const Rotas = () => (
             <Route path='/cadastrar' component={ CadastroPessoa } />
             <Route path='/cadastrar-ong' component={ CadastroOng } />
             <Route path='/cadastrar-animal' component={ CadastroAnimal } />
-            <Route path='/perfil/:id' component={ Perfil } />
+            <Route path='/perfil' component={ Perfil } /> 
+            {/*<Route path='/perfil/:id' component={ Perfil } /> */}
         </Switch>
     </BrowserRouter>
 );

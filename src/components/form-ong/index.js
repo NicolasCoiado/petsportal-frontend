@@ -17,6 +17,9 @@ function FormOng(){
     const [tel2, setTel2] = useState('');
     const [desc, setDesc] = useState('');
     const [social, setSocial] = useState('');
+
+    const [upload, setUpload] = useState('vazio');
+
     const history = useHistory();
 
     const handleSubmit = (e) =>{
@@ -57,6 +60,7 @@ function FormOng(){
         // this.image = e.target.files[0]
         //setSocial(JSON.stringify(e.target.files[0]))
         setSocial (e.target.files[0])
+        setUpload ('uploded')
         console.log(e.target.files[0])
         console.log("e::::::::::::")
         console.log(social)
@@ -66,7 +70,7 @@ function FormOng(){
     <div id="pessoa-areas">
         <h3 className="title-cadastrar-pessoa">CADASTRAR ONG</h3>
         <form id="form-area"onSubmit={e => handleSubmit(e) }>
-            <TextInput               
+            <TextInput            
                 label="Nome *"
                 onChange={e => setNome (e.target.value)}
             />
@@ -105,12 +109,34 @@ function FormOng(){
                 onChange={e => setDesc (e.target.value)}
             />
             <div className="upload-area">
-                <h1 className="lbl-upload">Estatuto Social:</h1>
-                <label onChange={handleUpload} for="file-upload" className="custom-file-upload">
-                    <Icon className="icon-file">download</Icon> 
-                        Arquivo
-                </label>
-                <input id="file-upload" type="file" />
+                {(upload !== "uploded")
+                    ?(
+                        <>
+                            <h1 className="lbl-upload">Estatuto Social:</h1>
+                            <label for="file-upload" className="custom-file-upload">
+                                <Icon className="icon-file">download</Icon> 
+                                    Arquivo
+                            </label>
+                            <input  onChange={handleUpload}  id="file-upload" type="file" />
+                        </>
+                    ):(
+                        <>
+                            <h1 className="lbl-upload">Estatuto Social:</h1>
+                            <label for="file-upload" className="custom-file-upload">
+                                <Icon className="icon-file">download</Icon> 
+                                Arquivo
+                            </label>
+                            <input  onChange={handleUpload}  id="file-upload" type="file" />
+                            <Button
+                                className="icon-remove-file"
+                                floating
+                                icon={<Icon>done</Icon>}
+                                large
+                                node="button"
+                        
+                            />
+                        </>
+                    )}
             </div>
             
             <div className="btn-area-cadPessoa">
@@ -119,7 +145,6 @@ function FormOng(){
                     node="button"
                     type="submit"
                     waves="light"
-                    placeholder="<= Faça o upload de seu arquivo aqui"
                 >
                     Cadastrar ONG
                     <Icon left>

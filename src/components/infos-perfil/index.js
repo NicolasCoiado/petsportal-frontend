@@ -1,5 +1,5 @@
 import ViewerIMG from '../viewer-img/';
-import { Button, Icon, TextInput } from 'react-materialize';
+import { Button, Icon } from 'react-materialize';
 import React, { useState } from "react";
 import Modal from "../modal/";
 import './style.css';
@@ -36,12 +36,11 @@ function InfosPerfil (){
         <div id="infos-perfil">
             <div id="upload-image">
                 <ViewerIMG uploadUrl={user.imagem}/>
-                <h1 className="title-upload-image">Upload de imagem</h1>
-                <TextInput
-                    id="TextInput-26"
-                    label="File"
-                    type="file"
-                />
+                <label for="file-upload" className="custom-file-upload">
+                    <Icon className="icon-file">download</Icon> 
+                        Upload imagem
+                </label>
+                <input   id="file-upload" type="file" /> 
               
             </div>
             <div>

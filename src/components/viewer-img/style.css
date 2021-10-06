@@ -1,14 +1,19 @@
 @media (min-width: 993px)
 {
     .img-viewer{
+        width: 15em;
+        height: 15em;
         border-radius: 100%;
-        width: 20%;
+        object-fit: cover;
+        margin-bottom: 3em;
     }
 }
 @media (max-width: 993px)
 {
     .img-viewer{
+        width: 10em;
+        height: 10em;
         border-radius: 100%;
-        width: 30%;
+        object-fit: cover;
     }
 }
