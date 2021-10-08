@@ -47,7 +47,7 @@ function FormPessoa (){
         })
     }
     return(
-    <div id="pessoa-areas">
+    <div id="form-areas">
         <h3 className="title-cadastrar-pessoa">CADASTRAR USUÁRIO</h3>
         <form id="form-area" onSubmit={e => handleSubmit(e) }>
             <TextInput            

@@ -5,8 +5,7 @@ import './style.css';
 function Carrossel (){
     return(
         <Carousel
-            className="i"
-            carouselId="Carousel-33"
+            className="Carrossel"
             images={[
                 'https://picsum.photos/250/250?image=0',
                 'https://picsum.photos/250/250?image=1',

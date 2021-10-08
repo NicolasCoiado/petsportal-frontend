@@ -1,7 +1,7 @@
 .rodape{
     width: 100%;  
-    position:relative;
-    margin-top: 12.5%;
-    bottom: 0;
+    position: relative;
+    bottom:0;
+    left:0;
     background-color: #1D452A;
 }

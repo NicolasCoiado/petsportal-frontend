@@ -2,18 +2,18 @@
     background-color: #1D452A;
     font-family: 'Oswald', sans-serif;
 }
-@media (min-width: 993px)
+@media (min-width: 990px)
 {
     .navbar-edited{
         display: flex;
     }
 }
-@media (max-width: 993px)
+/*@media (max-width: 993px)
 {
     .navbar-edited{
         display: inline;
     }
-}
+}*/
 
 .brand-logo{
     width: 1.5em;
@@ -38,6 +38,7 @@
     background-color: #52C478;
     height: 40px;
     margin-top: -10px;
+    border-radius: 2em;
 }
 
 .btn-nav:hover{

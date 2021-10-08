@@ -1,4 +1,4 @@
-import { TextInput, Button, Icon } from 'react-materialize';
+import { TextInput, Button} from 'react-materialize';
 import { Link } from 'react-router-dom';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { useHistory } from 'react-router-dom';
@@ -36,40 +36,39 @@ function FormLogin (){
     return( 
     <div id="login-areas">
         <div id="login-form-area">
-            <form onSubmit={e => handleSubmit(e) }>
-                <h1 id="title-login">LOGIN</h1>
-                <TextInput
-                    className="white-text"
-                    email
-                    icon="email"
-                    label="Email"
-                    type="email"
-                    onChange={e => setEmail (e.target.value)}
-                />
-
-                <TextInput
-                    className="white-text"
-                    icon={<RiLockPasswordFill/>}
-                    label="Password"
-                    password
-                    onChange={e => setSenha(e.target.value)}
-                />
+            <h1 id="title-login">LOGIN</h1>
+            <p id="txt-login">Logado no nosso site, você tem acesso a diversas funções!</p>
+            <form className="form-login" onSubmit={e => handleSubmit(e) }>
+                <div id="inputs-login">
+                    <TextInput
+                        email
+                        icon="email"
+                        label="Email"
+                        type="email"
+                        onChange={e => setEmail (e.target.value)}
+                    />
+                    <TextInput
+                        icon={<RiLockPasswordFill/>}
+                        label="Password"
+                        password
+                        onChange={e => setSenha(e.target.value)}
+                    />
+                </div>
+                <Link className="EsqueciSenha">Esqueceu sua senha?</Link><br/>
                 <Button
                     id="btn-login"
                     node="button"
                     type="submit"
                     waves="light"
                 >
-                    ENTRAR
-                    <Icon left>
-                        send
-                    </Icon>
+                    LOGIN
                 </Button>
+
             </form>
         </div>
         <div id="cad-area">
-            <h1 id="title-cadastrar">CADASTRAR</h1>
-            <p id="txt-cadastrar">Somente pessoas cadastradas podem adotar e doar animais, fazemos isso pois prezamos pela sua segurança e também a dos pequeninos</p>
+            <h1 id="title-cadastrar">OLÁ, NOVO AQUI?</h1>
+            <p id="txt-cadastrar">Exigimos cadastro para adoção e doação de animais, pois prezamos pela segurança dos pequeninos!</p>
             <div id="buttons-area-cad">
                 <Link to='/cadastrar'>
                 <Button
@@ -97,7 +96,7 @@ function FormLogin (){
                 </Link>
             </div>
         </div>
-    </div>
+    </div> 
     );
 }
 
