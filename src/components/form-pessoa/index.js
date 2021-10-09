@@ -48,8 +48,8 @@ function FormPessoa (){
     }
     return(
     <div id="form-areas">
-        <h3 className="title-cadastrar-pessoa">CADASTRAR USUÁRIO</h3>
         <form id="form-area" onSubmit={e => handleSubmit(e) }>
+        <h3 className="title-cadastrar-pessoa">CADASTRAR USUÁRIO</h3>
             <TextInput            
                 label="Nome *"
                 onChange={e => setNome (e.target.value)}

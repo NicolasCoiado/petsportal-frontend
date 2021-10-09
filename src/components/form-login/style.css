@@ -1,55 +1,57 @@
-#login-areas{
-    padding: 8% 20% 7.85% 20%;
-    display: flex;
-    flex-direction:row;
-    font-family: 'Oswald', sans-serif;
-}
 
-#login-form-area{
-    text-align: center;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding-top: 4.5%;
-    width: 70%;
-    text-align: center;
-    box-shadow: -0.1em 0.2em 0.4em black;
-}
-
-#title-login{
-    font-size: 2.5em;
-    padding-bottom: 0.6em;
-    color: #55cc7c;
-}
-#txt-login{
-    font-size: 1em;
-    margin-bottom: 2em;
-}
-.form-login{
-    width: 19em;
-}
-#inputs-login{
-    margin-bottom: 2em;
-}
-
-#btn-login{
-    font-size: large;
-    margin-top: 1.5em;
-    margin-bottom: 3em;
-    width: 8em;
-    height: 3em;
-    font-weight:bolder;
-    background-color: #55cc7c;
-    border-radius: 2em;
-}
-.EsqueciSenha{
-    color: grey;
-    text-decoration: underline;
-}
 
 /*===================================*/
 @media (min-width: 1675px)
 {
+    #login-areas{
+        padding: 8% 20% 7.85% 20%;
+        display: flex;
+        flex-direction:row;
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    #login-form-area{
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding-top: 4.5%;
+        width: 70%;
+        text-align: center;
+        box-shadow: -0.1em 0.2em 0.4em black;
+    }
+    
+    #title-login{
+        font-size: 2.5em;
+        padding-bottom: 0.6em;
+        color: #55cc7c;
+    }
+    #txt-login{
+        font-size: 1em;
+        margin-bottom: 2em;
+    }
+    .form-login{
+        width: 19em;
+    }
+    #inputs-login{
+        margin-bottom: 2em;
+    }
+    
+    #btn-login{
+        font-size: large;
+        margin-top: 1.5em;
+        margin-bottom: 3em;
+        width: 8em;
+        height: 3em;
+        font-weight:bolder;
+        background-color: #55cc7c;
+        border-radius: 2em;
+    }
+    .EsqueciSenha{
+        color: grey;
+        text-decoration: underline;
+    }
+    /*======================*/
     #cad-area{
         padding: 4% 5% 5% 5%;
         width: 30%;
@@ -89,8 +91,57 @@
         background-color: #51c578;
     }
 }
-@media (max-width: 1675px) and (min-width:1255px)
+@media (max-width: 1675px) and (min-width:1300px)
 {
+    #login-areas{
+        padding: 8% 20% 7.85% 20%;
+        display: flex;
+        flex-direction:row;
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    #login-form-area{
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding-top: 4.5%;
+        width: 70%;
+        text-align: center;
+        box-shadow: -0.1em 0.2em 0.4em black;
+    }
+    
+    #title-login{
+        font-size: 2.5em;
+        padding-bottom: 0.6em;
+        color: #55cc7c;
+    }
+    #txt-login{
+        font-size: 1em;
+        margin-bottom: 2em;
+    }
+    .form-login{
+        width: 19em;
+    }
+    #inputs-login{
+        margin-bottom: 2em;
+    }
+    
+    #btn-login{
+        font-size: large;
+        margin-top: 1.5em;
+        margin-bottom: 3em;
+        width: 8em;
+        height: 3em;
+        font-weight:bolder;
+        background-color: #55cc7c;
+        border-radius: 2em;
+    }
+    .EsqueciSenha{
+        color: grey;
+        text-decoration: underline;
+    }
+    /*======================*/
     #cad-area{
         padding: 4% 5% 5% 5%;
         width: 30%;
@@ -130,8 +181,57 @@
         background-color: #51c578;
     }
 }
-@media (max-width: 1255px)
+@media (max-width: 1300px) and (min-width:940px)
 {
+    #login-areas{
+        padding: 8% 20% 7.85% 20%;
+        display: flex;
+        flex-direction:row;
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    #login-form-area{
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding-top: 5%;
+        width: 70%;
+        text-align: center;
+        box-shadow: -0.1em 0.2em 0.4em black;
+    }
+    
+    #title-login{
+        font-size: 2em;
+        padding-bottom: 0.6em;
+        color: #55cc7c;
+    }
+    #txt-login{
+        font-size: 0.8em;
+        margin-bottom: 2em;
+    }
+    .form-login{
+        width: 17em;
+    }
+    #inputs-login{
+        margin-bottom: 2em;
+    }
+    
+    #btn-login{
+        font-size: large;
+        margin-top: 1.5em;
+        margin-bottom: 3em;
+        width: 6em;
+        height: 2em;
+        font-weight:bolder;
+        background-color: #55cc7c;
+        border-radius: 2em;
+    }
+    .EsqueciSenha{
+        color: grey;
+        text-decoration: underline;
+    }
+    /*======================*/
     #cad-area{
         padding: 5% 5% 5% 5%;
         width: 30%;
@@ -148,7 +248,7 @@
     }
     #txt-cadastrar{
         color: white;
-        font-size: medium;
+        font-size: small;
         margin-bottom: 2em;
     }
     #buttons-area-cad{
@@ -157,15 +257,384 @@
     }
     .btn-cad{
         font-family: 'Oswald', sans-serif;
-        font-size: 1em;
+        font-size: 0.8em;
         width: 10em;
-        height: 2.5em;
+        height: 3em;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
         border:solid 0.13em;
         border-color: white;
         margin-bottom: 0.7em;
+    }
+    .btn-cad:hover{
+        background-color: #51c578;
+    }
+}
+@media (max-width: 940px) and (min-width: 750px)
+{
+    #login-areas{
+        padding: 8% 20% 7.85% 20%;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    #login-form-area{
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding-top: 8%;
+        width: 100%;
+        text-align: center;
+        box-shadow: -0.1em 0.2em 0.4em black;
+    }
+    
+    #title-login{
+        font-size: 2em;
+        padding-bottom: 0.6em;
+        color: #55cc7c;
+    }
+    #txt-login{
+        font-size: 0.8em;
+        margin-bottom: 2em;
+    }
+    .form-login{
+        width: 17em;
+    }
+    #inputs-login{
+        margin-bottom: 2em;
+    }
+    
+    #btn-login{
+        font-size: large;
+        margin-top: 1.5em;
+        margin-bottom: 3em;
+        width: 6em;
+        height: 2em;
+        font-weight:bolder;
+        background-color: #55cc7c;
+        border-radius: 2em;
+    }
+    .EsqueciSenha{
+        color: grey;
+        text-decoration: underline;
+    }
+    /*======================*/
+    #cad-area{
+        padding: 5% 5% 5% 5%;
+        width: 100%;
+        text-align: center;
+        background-image: url("../../images/BackgroundLoginMobile.svg");
+        box-shadow: -0.1em 0.2em 0.4em black;
+    }
+
+    #title-cadastrar{
+        font-weight:bolder;
+        color: white;
+        font-size: x-large;
+        margin-top: 2em;
+        margin-bottom: 0.2em;
+    }
+    #txt-cadastrar{
+        padding: 2em 8em 2em 8em;
+        color: white;
+        font-size: medium;
+        margin-bottom: 0.2em;
+    }
+    #buttons-area-cad{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn-cad{
+        font-family: 'Oswald', sans-serif;
+        font-size: 1em;
+        width: 9em;
+        height: 3em;
+        border-radius: 3em;
+        background-color: #319860;
+        box-shadow: none;
+        border:solid 0.12em;
+        border-color: white;
+        margin-bottom: 0.8em;
+    }
+    .btn-cad:hover{
+        background-color: #51c578;
+    }
+}
+@media (max-width: 750px) and (min-width: 590px)
+{
+    #login-areas{
+        padding: 8% 20% 7.85% 20%;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    #login-form-area{
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding-top: 8%;
+        width: 100%;
+        text-align: center;
+        box-shadow: -0.1em 0.2em 0.4em black;
+    }
+    
+    #title-login{
+        font-size: 1.8em;
+        padding-bottom: 0.6em;
+        color: #55cc7c;
+    }
+    #txt-login{
+        font-size: 0.75em;
+        margin-bottom: 2em;
+    }
+    .form-login{
+        width: 15em;
+    }
+    #inputs-login{
+        margin-bottom: 2em;
+    }
+    
+    #btn-login{
+        font-size: large;
+        margin-top: 1.5em;
+        margin-bottom: 3em;
+        width: 6em;
+        height: 2em;
+        font-weight:bolder;
+        background-color: #55cc7c;
+        border-radius: 2em;
+    }
+    .EsqueciSenha{
+        color: grey;
+        text-decoration: underline;
+    }
+    /*======================*/
+    #cad-area{
+        padding: 5% 5% 5% 5%;
+        width: 100%;
+        text-align: center;
+        background-image: url("../../images/BackgroundLoginMobile.svg");
+        box-shadow: -0.1em 0.2em 0.4em black;
+    }
+
+    #title-cadastrar{
+        font-weight:bolder;
+        color: white;
+        font-size: x-large;
+        margin-top: 2em;
+        margin-bottom: 0.2em;
+    }
+    #txt-cadastrar{
+        padding: 2em 8em 2em 8em;
+        color: white;
+        font-size: small;
+        margin-bottom: 0.2em;
+    }
+    #buttons-area-cad{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn-cad{
+        font-family: 'Oswald', sans-serif;
+        font-size: 1em;
+        width: 9em;
+        height: 3em;
+        border-radius: 3em;
+        background-color: #319860;
+        box-shadow: none;
+        border:solid 0.12em;
+        border-color: white;
+        margin-bottom: 0.8em;
+    }
+    .btn-cad:hover{
+        background-color: #51c578;
+    }
+}
+
+@media (max-width: 590px) and (min-width: 390px)
+{
+    #login-areas{
+        padding: 8% 15% 7.85% 15%;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    #login-form-area{
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10%;
+        width: 100%;
+        text-align: center;
+        box-shadow: -0.1em 0.2em 0.4em black;
+    }
+    
+    #title-login{
+        font-size: 1.8em;
+        padding-bottom: 0.6em;
+        color: #55cc7c;
+    }
+    #txt-login{
+        font-size: 0.70em;
+        margin-bottom: 2em;
+    }
+    .form-login{
+        width: 13em;
+    }
+    #inputs-login{
+        margin-bottom: 2em;
+    }
+    
+    #btn-login{
+        font-size: large;
+        margin-top: 1.5em;
+        margin-bottom: 3em;
+        width: 6em;
+        height: 2em;
+        font-weight:bolder;
+        background-color: #55cc7c;
+        border-radius: 2em;
+    }
+    .EsqueciSenha{
+        color: grey;
+        text-decoration: underline;
+    }
+    /*======================*/
+    #cad-area{
+        padding: 5% 2% 5% 2%;
+        width: 100%;
+        text-align: center;
+        background-image: url("../../images/BackgroundLoginMobile.svg");
+        box-shadow: -0.1em 0.2em 0.4em black;
+    }
+
+    #title-cadastrar{
+        font-weight:bolder;
+        color: white;
+        font-size: x-large;
+        margin-top: 2em;
+        margin-bottom: 0.2em;
+    }
+    #txt-cadastrar{
+        padding: 2em 4em 2em 4em;
+        color: white;
+        font-size: small;
+        margin-bottom: 0.2em;
+    }
+    #buttons-area-cad{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn-cad{
+        font-family: 'Oswald', sans-serif;
+        font-size: 0.8em;
+        width: 10em;
+        height: 3em;
+        border-radius: 3em;
+        background-color: #319860;
+        box-shadow: none;
+        border:solid 0.12em;
+        border-color: white;
+        margin-bottom: 0.8em;
+    }
+    .btn-cad:hover{
+        background-color: #51c578;
+    }
+}
+@media (max-width: 390px) 
+{
+    #login-areas{
+        padding: 8% 15% 7.85% 15%;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    #login-form-area{
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10%;
+        width: 100%;
+        text-align: center;
+        box-shadow: -0.1em 0.2em 0.4em black;
+    }
+    
+    #title-login{
+        font-size: 1.6em;
+        padding-bottom: 0.6em;
+        color: #55cc7c;
+    }
+    #txt-login{
+        font-size: 0.55em;
+        margin-bottom: 2em;
+    }
+    .form-login{
+        width: 10em;
+    }
+    #inputs-login{
+        margin-bottom: 2em;
+    }
+    
+    #btn-login{
+        font-size: large;
+        margin-top: 1.5em;
+        margin-bottom: 3em;
+        width: 6em;
+        height: 2em;
+        font-weight:bolder;
+        background-color: #55cc7c;
+        border-radius: 2em;
+    }
+    .EsqueciSenha{
+        color: grey;
+        text-decoration: underline;
+    }
+    /*======================*/
+    #cad-area{
+        padding: 5% 2% 5% 2%;
+        width: 100%;
+        text-align: center;
+        background-image: url("../../images/BackgroundLoginMobile.svg");
+        box-shadow: -0.1em 0.2em 0.4em black;
+    }
+
+    #title-cadastrar{
+        font-weight:bolder;
+        color: white;
+        font-size: x-large;
+        margin-top: 2em;
+        margin-bottom: 0.2em;
+    }
+    #txt-cadastrar{
+        padding: 2em 4em 2em 4em;
+        color: white;
+        font-size: small;
+        margin-bottom: 0.2em;
+    }
+    #buttons-area-cad{
+        display: flex;
+        flex-direction: column;
+    }
+    .btn-cad{
+        font-family: 'Oswald', sans-serif;
+        font-size: 0.8em;
+        width: 10em;
+        height: 3em;
+        border-radius: 3em;
+        background-color: #319860;
+        box-shadow: none;
+        border:solid 0.12em;
+        border-color: white;
+        margin-bottom: 0.8em;
     }
     .btn-cad:hover{
         background-color: #51c578;

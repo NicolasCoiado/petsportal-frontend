@@ -1,16 +1,16 @@
 #form-areas{
-    padding: 2em;
+    padding: 1em;
 }
 #form-area{
-    margin: 2% 10% 10% 10%;
-    padding: 5% 10% 10% 10%;
+    margin: 2% 10% 5% 10%;
+    padding: 5% 10% 5% 10%;
     box-shadow: 0.2em 0.2em 0.6em black;
 }
 .title-cadastrar-pessoa{
     text-align: center;
     font-weight: bold;
     font-size: xx-large;
-    padding: 4% 0% 2% 0%;
+    padding: 2% 0% 5% 0%;
     font-family: 'Oswald', sans-serif;
 }
 .btn-area-cadPessoa{
