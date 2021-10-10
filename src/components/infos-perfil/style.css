@@ -1,13 +1,42 @@
 #infos-perfil{
     margin: 5% 10% 10% 10%;
+    font-family: 'Oswald', sans-serif;
 }
 #upload-image{
     text-align: center;
-}
-.title-upload-image{
-    padding: 2%;
+    margin-bottom: 2em;
 }
 .campo-info{
     font-size: large;
-    padding: 1%;
+    padding: 0.8em;
 }
+.custom-file-upload-perfil{
+    color: white;
+    border-radius: 2em;
+    padding: 1.2em  2em  1em   1em;
+    cursor: pointer;
+    background-color: #56ca7d;
+}
+
+.custom-file-upload-perfil:hover{
+    background-color: #48a567;
+}
+.campos-info{
+    text-align: center;
+    margin-bottom: 2em;
+}
+.btn-editar-infos{
+    background-color: #56ca7d;
+    font-size: large;
+    border-radius: 2em;
+    font-family: 'Oswald', sans-serif;
+}
+.btn-editar-infos:hover{
+    background-color: #48a567;
+}
+.card{
+    text-align: center;
+    padding: 4%;
+    margin: 5% 10% 3% 10%;
+}
+

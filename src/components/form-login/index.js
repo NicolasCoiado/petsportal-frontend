@@ -54,7 +54,7 @@ function FormLogin (){
                         onChange={e => setSenha(e.target.value)}
                     />
                 </div>
-                <Link className="EsqueciSenha">Esqueceu sua senha?</Link><br/>
+                <Link to="/editar" className="EsqueciSenha">Esqueceu sua senha?</Link><br/>
                 <Button
                     id="btn-login"
                     node="button"
