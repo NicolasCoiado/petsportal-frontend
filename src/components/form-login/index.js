@@ -18,6 +18,7 @@ function FormLogin (){
             email,
             senha
         }
+        
         API.post("/user/login", user )
         .then(res => {
             console.log("Deu bom")
