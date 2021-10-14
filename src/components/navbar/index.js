@@ -57,9 +57,11 @@ function NavBar (){
         outDuration: 200,
         preventScrolling: true
       }}
+
+      //NAVMOBILE:
       sidenav={
       <div id="sidenav">
-        {(!user.tipo)
+        {(!user.tipo) //Se o usuário não estiver logado...
           ?(<>
             <NavLink className="nav-item-mobile" to='/cadastrar-animal'>
               <BiDonateHeart className="nav-icon-mobile" />
@@ -81,8 +83,8 @@ function NavBar (){
                 LOGIN
               </Button>
             </NavLink>
-          </>):
-          (<>
+          </>)://Se o usuário ESTIVER logado...
+          (<> 
             <NavLink className="nav-pic-mobile" to={`/perfil/${user.id}`}>
               <ViewerNavIMG uploadUrl={user.img} />
             </NavLink>
@@ -97,76 +99,82 @@ function NavBar (){
               <GiSittingDog className="nav-icon-mobile"/>
               ADOTAR
             </NavLink>
+            <a onClick={logoff}>
+                Logout
+            </a>
         </>)
         }
-        
       </div>
       }
     >
-    <div className="navbar-edited">
-      <NavLink className="nav-item" to='/cadastrar-animal'>
-        DOAR
-      </NavLink>
-      <NavLink className="nav-item"  to='/'>
-        ADOTAR
-      </NavLink>
-      {(!user.tipo)
-    
-      ?(
-        <NavLink className="nav-item"  to='/login'>
-        <Button 
-          className="btn-nav"
-          node="button"
-          style={{
-            marginRight: '5px'
-          }}
-          waves="light"
-        >
-          LOGIN
-        </Button>
-      </NavLink>
-      )
-      :
-      (<>
-        <NavLink className="nav-item"  to={`/perfil/${user.id}`}>
-          <ViewerNavIMG uploadUrl={user.img} />
+      <div className="navbar-edited">
+        <NavLink className="nav-item" to='/cadastrar-animal'>
+          DOAR
         </NavLink>
-        <Dropdown
-          id="Dropdown_14"
-          options={{
-            alignment: 'left',
-            autoTrigger: true,
-            closeOnClick: true,
-            constrainWidth: true,
-            container: null,
-            coverTrigger: true,
-            hover: false,
-            inDuration: 150,
-            onCloseEnd: null,
-            onCloseStart: null,
-            onOpenEnd: null,
-            onOpenStart: null,
-            outDuration: 250
-          }}
-          trigger={<a href="#!">{' '}<Icon right>arrow_drop_down</Icon></a>}
-        >
-          <Link to={`/perfil/${user.id}`}>
-            MyProfile
-          </Link>
-          <Divider />
-          {(user.tipo==='adm')&&(
-            <Link>
-              ADM
+        <NavLink className="nav-item"  to='/'>
+          ADOTAR
+        </NavLink>
+        {(!user.tipo)//Se o usuário não estiver logado...
+        ?(
+          <NavLink className="nav-item"  to='/login'>
+          <Button 
+            className="btn-nav"
+            node="button"
+            style={{
+              marginRight: '5px'
+            }}
+            waves="light"
+          >
+            LOGIN
+          </Button>
+        </NavLink>
+        )
+        ://Se o usuário ESTIVER logado...
+        (<>
+          <NavLink className="nav-item"  to={`/perfil/${user.id}`}>
+            <ViewerNavIMG uploadUrl={user.img} />
+          </NavLink>
+          <Dropdown
+            id="Dropdown_14"
+            options={{
+              alignment: 'left',
+              autoTrigger: true,
+              closeOnClick: true,
+              constrainWidth: true,
+              container: null,
+              coverTrigger: true,
+              hover: false,
+              inDuration: 150,
+              onCloseEnd: null,
+              onCloseStart: null,
+              onOpenEnd: null,
+              onOpenStart: null,
+              outDuration: 250
+            }}
+            trigger={<a href="#!">{' '}<Icon right>arrow_drop_down</Icon></a>}
+          >
+            <Link to={`/perfil/${user.id}`}>
+              Meu perfil
             </Link>
-          )}
-          <Divider />
-          <a onClick={logoff}>
-              Logout
-          </a>
-        </Dropdown>
-    </>)
-    }
-    </div>
+            <Divider />
+            {(user.tipo==='adm')&&(
+              <Link to='/'>
+                ADM
+              </Link>
+            )}
+            {(user.tipo==='ong')&&(
+              <Link to='/'>
+                  +Evento
+              </Link>
+            )}
+            <Divider />
+            <a onClick={logoff}>
+                Logout
+            </a>
+          </Dropdown>
+      </>)
+      }
+      </div>
     </Navbar>
   
     

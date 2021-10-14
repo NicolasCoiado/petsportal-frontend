@@ -22,28 +22,29 @@
 @media (min-width: 993px)
 {
     .brand-logo{
-        width: 1.9em;
+        width: 1.5em;
         margin-left: 1em;
     }
 }
 
 .nav-item{
-    padding-top: 0.5em;
+    padding-top: 0.3em;
+    padding-bottom: 0.25em;
     font-size: xx-large;
 }
 
 .btn-nav{
     font-family: 'Oswald', sans-serif;   
-    font-size: xx-large;
+    font-size: x-large;
     background-color: #52C478;
     height: 40px;
     margin-top: -10px;
-    border-radius: 2em;
+    border-radius: 0.4em;
 }
 
 .btn-nav:hover{
-    background-color: #f2f2f2;
-    color: #52C478;
+    background-color: #00aa41;
+    color: white;
 }
 
 #sidenav{

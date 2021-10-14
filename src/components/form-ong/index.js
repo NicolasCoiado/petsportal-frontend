@@ -113,7 +113,7 @@ function FormOng(){
                     ?(
                         <>
                             <h1 className="lbl-upload">Estatuto Social:</h1>
-                            <label for="file-upload" className="custom-file-upload">
+                            <label to="file-upload" className="custom-file-upload">
                                 <Icon className="icon-file">download</Icon> 
                                     Arquivo
                             </label>
@@ -122,7 +122,7 @@ function FormOng(){
                     ):(
                         <>
                             <h1 className="lbl-upload">Estatuto Social:</h1>
-                            <label for="file-upload" className="custom-file-upload">
+                            <label to="file-upload" className="custom-file-upload">
                                 <Icon className="icon-file">download</Icon> 
                                 Arquivo
                             </label>
