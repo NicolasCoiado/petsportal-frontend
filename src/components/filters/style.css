@@ -1,15 +1,36 @@
-#filters-area{
-    padding: 1em;
-    background-color: #52C478;
-    text-align: center;
-}
-#filters-title{
-    font-family: 'bahnschrift', sans-serif;
-    text-align: center;
-    color: white;
-    padding-top: 1em;
-    padding-bottom: 1.5em;
-}
-.chip{
-    background-color: white;
-}
+@media (min-width: 600px) {
+    #filters-area{
+        padding: 0.5em 1em 0.5em 1em;
+        background-color: #52C478;
+        text-align: center;
+    }
+    #filters-title{
+        text-align: center;
+        font-size: 1em;
+        color: white;
+        padding-top: 0.8em;
+        padding-bottom: 1em;
+    }
+    .chip{
+        background-color: white;
+    }
+}    
+@media (max-width: 600px) {
+    #filters-area{
+        padding: 0.5em 1em 0.5em 1em;
+        background-color: #52C478;
+        text-align: center;
+    }
+    #filters-title{
+        text-align: center;
+        font-size: 0.7em;
+        color: white;
+        padding-top: 0.5em;
+        padding-bottom: 1em;
+    }
+    .chip{
+        font-size: 0.5em;
+        background-color: white;
+    }
+}    
+

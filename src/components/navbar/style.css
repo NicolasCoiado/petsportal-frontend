@@ -14,11 +14,6 @@
         display: inline;
     }
 }*/
-
-.brand-logo{
-    width: 1.5em;
-}
-
 @media (min-width: 993px)
 {
     .brand-logo{
@@ -87,4 +82,14 @@
 }
 .nav-icon-mobile{
     margin-right: 0.6em;
+}
+@media (min-width: 600px) {
+    .brand-logo{
+        width: 1.5em;
+    }    
+}
+@media (max-width: 600px) {
+    .brand-logo{
+        width: 1.2em;
+    }    
 }

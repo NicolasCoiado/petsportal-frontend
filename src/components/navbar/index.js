@@ -2,6 +2,7 @@ import 'materialize-css';
 import { TiThMenu } from 'react-icons/ti';
 import { BiDonateHeart } from 'react-icons/bi'
 import { GiSittingDog } from 'react-icons/gi'
+import { RiLogoutBoxRLine } from 'react-icons/ri'
 import { Navbar, Button, Dropdown, Divider, Icon } from 'react-materialize';
 import { NavLink, Link, useHistory } from 'react-router-dom';
 import ViewerNavIMG from '../viewer-img-nav/'
@@ -99,8 +100,9 @@ function NavBar (){
               <GiSittingDog className="nav-icon-mobile"/>
               ADOTAR
             </NavLink>
-            <a onClick={logoff}>
-                Logout
+            <a className="nav-item-mobile" onClick={logoff}>
+              <RiLogoutBoxRLine className="nav-icon-mobile" />
+              LOGOUT
             </a>
         </>)
         }

@@ -59,9 +59,36 @@ function InfosPerfil (){
     }
     
     
-    const handleSubmit = (e) =>{
+    const handleSubmitNormal = (e) =>{
         e.preventDefault();
         API.post("/user/edit/pessoaFisica",{
+            nome,
+            cpf,
+            nasc,
+            endereco,
+            tel1,
+            tel2,
+            desc
+        }, {
+            headers: {
+                Authorization : 'Bearer ' + window.localStorage.getItem('token')
+
+            }
+          })
+          
+        .then(res => {
+            console.log("Deu bom")
+            window.location.reload();
+    
+        })
+        .catch(err =>{
+            console.log(err)
+        })
+    }
+
+    const handleSubmitONG= (e) =>{
+        e.preventDefault();
+        API.post("/user/edit/ONG",{
             nome,
             cpf,
             nasc,
@@ -92,7 +119,7 @@ function InfosPerfil (){
             <div id="upload-image">
                 {user &&  <ViewerIMG uploadUrl={user.imagem}/>}
                 {user &&
-                    <label for="file-upload" className="custom-file-upload-perfil">
+                    <label htmlFor="file-upload" className="custom-file-upload-perfil">
                         <Icon className="icon-file">download</Icon> 
                             Upload imagem
                     </label>
@@ -140,7 +167,8 @@ function InfosPerfil (){
                 </div>
             }
             <div className="center">
-            {user.tipo==='nrm' || user.tipo==='adm'
+            {user &&
+                (user.tipo==='nrm' || user.tipo==='adm')
                 ?
                     <Modal
                         actions={[
@@ -173,31 +201,41 @@ function InfosPerfil (){
                         }
                         >
                         <div className="card">
-                            <form>
+                            <form onSubmit={handleSubmitNormal}>
                                 <TextInput
                                     label="Nome completo" 
                                     type="text"
-                                    
+                                    onChange={e => setNome (e.target.value)}
+                                />
+                                <TextInput
+                                    label="CPF" 
+                                    type="text"
+                                    onChange={e => setCpf (e.target.value)}
+                                />
+                                <TextInput
+                                    label="Data de Nascimento" 
+                                    type="date"
+                                    onChange={e => setNasc(e.target.value)}
                                 />
                                 <TextInput
                                     label="Endereço" 
                                     type="text"
-                                    
+                                    onChange={e => setEndereco (e.target.value)}
                                 />
                                 <TextInput
                                     label="Telefone 1" 
                                     type="number"
-                                    
+                                    onChange={e => setTel1 (e.target.value)}
                                 />
                                 <TextInput
                                     label="Telefone 2" 
                                     type="number"
-                                    
+                                    onChange={e => setTel2 (e.target.value)}
                                 />
                                 <TextInput
                                     label="Sobre mim..." 
                                     type="text"
-                                    
+                                    onChange={e => setDesc (e.target.value)}
                                 />
                                 <Button
                                     node="button"
@@ -244,37 +282,32 @@ function InfosPerfil (){
                 }
                 >
                 <div className="card">
-                    <form>
+                    <form onSubmit={handleSubmitONG}>
                         <TextInput
                             label="Nome completo" 
                             type="text"
-                            
+                            onChange={e => setNome (e.target.value)}
                         />
                         <TextInput
                             label="Endereço" 
                             type="text"
-                            
+                            onChange={e => setEndereco (e.target.value)}
                         />
                         <TextInput
                             label="Telefone 1" 
                             type="number"
-                            
+                            onChange={e => setTel1 (e.target.value)}
                         />
                         <TextInput
                             label="Telefone 2" 
                             type="number"
-                            
+                            onChange={e => setTel2 (e.target.value)}
                         />
                         <TextInput
                             label="Sobre mim..." 
                             type="text"
-                            
+                            onChange={e => setDesc (e.target.value)}
                         />
-                        <label for="file-upload" className="custom-file-upload-perfil">
-                        <Icon className="icon-file">download</Icon> 
-                            Upload imagem
-                        </label>
-                        <input onChange={e => handleUpload (e)} id="file-upload" type="file" />
                         <Button
                             node="button"
                             type="submit"

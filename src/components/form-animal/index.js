@@ -67,23 +67,23 @@ function FormPessoa (){
 
             <div className="center upload-area-animal">
 
-                <label to="file-upload" className="custom-file-upload-animal">
+                <label htmlFor="file-upload" className="custom-file-upload-animal">
                     <Icon className="icon-file">download</Icon> 
                         Foto Animal 1
                 </label>
                 <input id="file-upload" type="file" />    
 
-                <label to="file-upload" className="custom-file-upload-animal">
+                <label htmlFor="file-upload" className="custom-file-upload-animal">
                     <Icon className="icon-file">download</Icon> 
                         Foto Animal 2
                 </label>
                 <input id="file-upload" type="file" />  
 
-                <label to="file-upload" className="custom-file-upload-animal">
+                <label htmlFor="file-upload" className="custom-file-upload-animal">
                     <Icon className="icon-file">download</Icon> 
                         Foto Animal 3
                 </label>
-                <input id="file-upload" type="file" /> 
+                <input htmlFor="file-upload" type="file" /> 
             </div>
 
             <Modal
