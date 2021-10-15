@@ -32,12 +32,5 @@
    ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
    ![materialize-css](https://img.shields.io/badge/-materialize--css-ff69b4?style=for-the-badge&logo=materialize--css&logoColor=white)
    ![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)
-   
-   # Como posso ajudar o projeto?
-   
-   ## Nos dê uma estrela:
-   
-   [![GitHub stars](https://img.shields.io/github/stars/Naereen/StrapDown.js.svg?style=social&label=Star&maxAge=2592000)](https://github.com/NicolasCoiado/TCC-Pets-Portal-FrontEnd)
-   [![GitHub stars](https://badgen.net/github/stars/Naereen/Strapdown.js)](https://github.com/NicolasCoiado/TCC-Pets-Portal-FrontEnd)
-   
+  
    </div>
