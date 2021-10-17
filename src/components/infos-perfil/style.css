@@ -1,6 +1,6 @@
 #infos-perfil{
     margin: 5% 10% 10% 10%;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 #upload-image{
     text-align: center;
@@ -27,16 +27,23 @@
 }
 .btn-editar-infos{
     background-color: #56ca7d;
-    font-size: large;
+    font-size: medium;
     border-radius: 2em;
-    font-family: 'Oswald', sans-serif;
 }
 .btn-editar-infos:hover{
     background-color: #48a567;
 }
-.card{
-    text-align: center;
-    padding: 4%;
-    margin: 5% 10% 3% 10%;
-}
 
+
+.form-editar{
+    padding: 2em 1em 1em 1em;
+}
+.submmit-edit{
+    background-color: #56ca7d;
+    font-size: medium;
+    border-radius: 2em;
+    font-family: 'Raleway', sans-serif;
+}
+.submmit-edit:hover{
+    background-color: #48a567;
+}

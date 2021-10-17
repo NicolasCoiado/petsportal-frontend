@@ -7,53 +7,22 @@ function Filter (){
         <div id="filters-area">
             <h1 id="filters-title">Filtros:</h1>
             <Chip
-                close
+                close={false}
                 closeIcon={<Icon className="close">close</Icon>}
-                options={null}
-                className="chip"
-            >
-                Cãos
-            </Chip>
-            <Chip
-                close
-                closeIcon={<Icon className="close">close</Icon>}
-                options={null}
-                className="chip"
-            >
-                Gatos
-            </Chip>
-            <Chip
-                close
-                closeIcon={<Icon className="close">close</Icon>}
-                options={null}
-                className="chip"
-            >
-                Pequenos
-            </Chip>
-            <Chip
-                close
-                closeIcon={<Icon className="close">close</Icon>}
-                options={null}
-                className="chip"
-            >
-                Grandes
-            </Chip>
-            <Chip
-                close
-                closeIcon={<Icon className="close">close</Icon>}
-                options={null}
-                className="chip"
-            >
-                Preto
-            </Chip>
-            <Chip
-                close
-                closeIcon={<Icon className="close">close</Icon>}
-                options={null}
-                className="chip"
-            >
-                Símio
-            </Chip>
+                options={{
+                    data: [
+                    {
+                        tag: 'Apple'
+                    },
+                    {
+                        tag: 'Microsoft'
+                    },
+                    {
+                        tag: 'Google'
+                    }
+                    ]
+                }}
+            />
         </div>
     );
 }

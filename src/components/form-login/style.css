@@ -1,10 +1,9 @@
-@media (min-width: 1635px)
+@media (min-width: 1755px)
 {
     #login-areas{
         padding: 8% 20% 7.85% 20%;
         display: flex;
         flex-direction:row;
-        font-family: 'Oswald', sans-serif;
     }
     
     #login-form-area{
@@ -19,12 +18,12 @@
     }
     
     #title-login{
-        font-size: 2.5em;
+        font-size: 2em;
         padding-bottom: 0.6em;
         color: #55cc7c;
     }
     #txt-login{
-        font-size: 1em;
+        font-size: 0.9em;
         margin-bottom: 2em;
     }
     .form-login{
@@ -60,13 +59,13 @@
     #title-cadastrar{
         font-weight:bolder;
         color: white;
-        font-size: 1.5em;
+        font-size: 1.2em;
         margin-top: 3em;
         margin-bottom: 1em;
     }
     #txt-cadastrar{
         color: white;
-        font-size: 1em;
+        font-size: 0.9em;
         margin-bottom: 2em;
     }
     #buttons-area-cad{
@@ -74,9 +73,8 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-family: 'Oswald', sans-serif;
-        font-size: 1em;
-        width: 10em;
+        font-size: 0.9em;
+        width: 11em;
         height: 2.5em;
         border-radius: 3em;
         background-color: #319860;
@@ -90,13 +88,12 @@
     }
 }
 
-@media (max-width: 1635px) and (min-width:1300px)
+@media (max-width: 1755px) and (min-width:1470px)
 {
     #login-areas{
         padding: 8% 20% 7.85% 20%;
         display: flex;
         flex-direction:row;
-        font-family: 'Oswald', sans-serif;
     }
     
     #login-form-area{
@@ -111,12 +108,12 @@
     }
     
     #title-login{
-        font-size: 2.5em;
+        font-size: 2em;
         padding-bottom: 0.6em;
         color: #55cc7c;
     }
     #txt-login{
-        font-size: 1em;
+        font-size: 0.9em;
         margin-bottom: 2em;
     }
     .form-login{
@@ -140,9 +137,10 @@
         color: grey;
         text-decoration: underline;
     }
-    /*======================*/
+
+    
     #cad-area{
-        padding: 10% 5% 5% 5%;
+        padding: 4% 5% 5% 5%;
         width: 30%;
         text-align: center;
         background-image: url("../../images/BackgroundLogin.svg");
@@ -151,7 +149,7 @@
     #title-cadastrar{
         font-weight:bolder;
         color: white;
-        font-size: 1.1em;
+        font-size: 1em;
         margin-top: 3em;
         margin-bottom: 1em;
     }
@@ -165,9 +163,8 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-family: 'Oswald', sans-serif;
-        font-size: 0.8em;
-        width: 10em;
+        font-size: 0.9em;
+        width: 11em;
         height: 2.5em;
         border-radius: 3em;
         background-color: #319860;
@@ -180,12 +177,12 @@
         background-color: #51c578;
     }
 }
-@media (max-width: 1300px) and (min-width:1100px){
+@media (max-width: 1470px) and (min-width:1200px)
+{
     #login-areas{
         padding: 8% 20% 7.85% 20%;
         display: flex;
         flex-direction:row;
-        font-family: 'Oswald', sans-serif;
     }
     
     #login-form-area{
@@ -200,7 +197,7 @@
     }
     
     #title-login{
-        font-size: 2em;
+        font-size: 1.9em;
         padding-bottom: 0.6em;
         color: #55cc7c;
     }
@@ -219,8 +216,8 @@
         font-size: large;
         margin-top: 1.5em;
         margin-bottom: 3em;
-        width: 7em;
-        height: 2.5em;
+        width: 8em;
+        height: 3em;
         font-weight:bolder;
         background-color: #55cc7c;
         border-radius: 2em;
@@ -229,9 +226,10 @@
         color: grey;
         text-decoration: underline;
     }
-    /*======================*/
+
+    
     #cad-area{
-        padding: 10% 5% 5% 5%;
+        padding: 10% 3% 5% 3%;
         width: 30%;
         text-align: center;
         background-image: url("../../images/BackgroundLogin.svg");
@@ -240,7 +238,7 @@
     #title-cadastrar{
         font-weight:bolder;
         color: white;
-        font-size: 1em;
+        font-size: 0.9em;
         margin-top: 3em;
         margin-bottom: 1em;
     }
@@ -254,10 +252,9 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-family: 'Oswald', sans-serif;
-        font-size: 0.6em;
-        width: 10em;
-        height: 3em;
+        font-size: 0.8em;
+        width: 11em;
+        height: 2.5em;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
@@ -269,12 +266,12 @@
         background-color: #51c578;
     }
 }
-@media (max-width: 1100px) and (min-width:900px){
+@media (max-width: 1200px) and (min-width:1000px)
+{
     #login-areas{
         padding: 8% 20% 7.85% 20%;
         display: flex;
         flex-direction:row;
-        font-family: 'Oswald', sans-serif;
     }
     
     #login-form-area{
@@ -282,14 +279,14 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-        padding-top: 4.5%;
+        padding-top: 7%;
         width: 70%;
         text-align: center;
         box-shadow: -0.1em 0.2em 0.4em black;
     }
     
     #title-login{
-        font-size: 1.8em;
+        font-size: 1.7em;
         padding-bottom: 0.6em;
         color: #55cc7c;
     }
@@ -298,18 +295,18 @@
         margin-bottom: 2em;
     }
     .form-login{
-        width: 14em;
+        width: 18em;
     }
     #inputs-login{
         margin-bottom: 2em;
     }
     
     #btn-login{
-        font-size: 1em;
+        font-size: large;
         margin-top: 1.5em;
         margin-bottom: 3em;
-        width: 7em;
-        height: 2.5em;
+        width: 8em;
+        height: 3em;
         font-weight:bolder;
         background-color: #55cc7c;
         border-radius: 2em;
@@ -318,9 +315,10 @@
         color: grey;
         text-decoration: underline;
     }
-    /*======================*/
+
+    
     #cad-area{
-        padding: 10% 5% 5% 5%;
+        padding: 15% 3% 5% 3%;
         width: 30%;
         text-align: center;
         background-image: url("../../images/BackgroundLogin.svg");
@@ -329,13 +327,13 @@
     #title-cadastrar{
         font-weight:bolder;
         color: white;
-        font-size: 1em;
+        font-size: 0.8em;
         margin-top: 3em;
         margin-bottom: 1em;
     }
     #txt-cadastrar{
         color: white;
-        font-size: 0.8em;
+        font-size: 0.6em;
         margin-bottom: 2em;
     }
     #buttons-area-cad{
@@ -343,14 +341,13 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-family: 'Oswald', sans-serif;
-        font-size: 0.6em;
-        width: 10em;
+        font-size: 0.7em;
+        width: 11em;
         height: 3em;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
-        border:solid 0.13em;
+        border:solid 0.14em;
         border-color: white;
         margin-bottom: 0.7em;
     }
@@ -358,13 +355,12 @@
         background-color: #51c578;
     }
 }
-@media (max-width: 900px) and (min-width:500px){
+@media (max-width: 1000px) and (min-width:800px)
+{
     #login-areas{
-        align-items: center;
-        padding: 8% 20% 7.85% 20%;
+        padding: 8% 20% 10% 20%;
         display: flex;
         flex-direction:column;
-        font-family: 'Oswald', sans-serif;
     }
     
     #login-form-area{
@@ -372,14 +368,14 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-        padding-top: 4.5%;
+        padding-top: 7%;
         width: 100%;
         text-align: center;
         box-shadow: -0.1em 0.2em 0.4em black;
     }
     
     #title-login{
-        font-size: 1.8em;
+        font-size: 1.7em;
         padding-bottom: 0.6em;
         color: #55cc7c;
     }
@@ -388,18 +384,18 @@
         margin-bottom: 2em;
     }
     .form-login{
-        width: 14em;
+        width: 18em;
     }
     #inputs-login{
         margin-bottom: 2em;
     }
     
     #btn-login{
-        font-size: 1em;
+        font-size: large;
         margin-top: 1.5em;
         margin-bottom: 3em;
-        width: 7em;
-        height: 2.5em;
+        width: 8em;
+        height: 3em;
         font-weight:bolder;
         background-color: #55cc7c;
         border-radius: 2em;
@@ -408,9 +404,10 @@
         color: grey;
         text-decoration: underline;
     }
-    /*======================*/
+
+    
     #cad-area{
-        padding: 10% 5% 5% 5%;
+        padding: 15% 10% 5% 10%;
         width: 100%;
         text-align: center;
         background-image: url("../../images/BackgroundLoginMobile.svg");
@@ -419,13 +416,13 @@
     #title-cadastrar{
         font-weight:bolder;
         color: white;
-        font-size: 1em;
-        margin-top: 3em;
+        font-size: 1.3em;
+        margin-top: 1em;
         margin-bottom: 1em;
     }
     #txt-cadastrar{
         color: white;
-        font-size: 0.8em;
+        font-size: 1em;
         margin-bottom: 2em;
     }
     #buttons-area-cad{
@@ -433,14 +430,13 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-family: 'Oswald', sans-serif;
-        font-size: 0.6em;
-        width: 10em;
+        font-size: 0.9em;
+        width: 11em;
         height: 3em;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
-        border:solid 0.13em;
+        border:solid 0.12em;
         border-color: white;
         margin-bottom: 0.7em;
     }
@@ -448,13 +444,12 @@
         background-color: #51c578;
     }
 }
-@media (max-width: 500px) and (min-width:350px){
+@media (max-width: 800px) and (min-width:500px)
+{
     #login-areas{
-        align-items: center;
-        padding: 8% 20% 7.85% 20%;
+        padding: 8% 20% 10% 20%;
         display: flex;
         flex-direction:column;
-        font-family: 'Oswald', sans-serif;
     }
     
     #login-form-area{
@@ -462,46 +457,47 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-        padding-top: 4.5%;
+        padding-top: 7%;
         width: 100%;
         text-align: center;
         box-shadow: -0.1em 0.2em 0.4em black;
     }
     
     #title-login{
-        font-size: 1.4em;
+        font-size: 1.7em;
         padding-bottom: 0.6em;
         color: #55cc7c;
     }
     #txt-login{
-        font-size: 0.55em;
+        font-size: 0.5em;
         margin-bottom: 2em;
     }
     .form-login{
-        font-size: 1em;
-        width: 10em;
+        width: 12em;
     }
     #inputs-login{
         margin-bottom: 2em;
     }
     
     #btn-login{
-        font-size: 1em;
+        font-size: medium;
         margin-top: 1.5em;
         margin-bottom: 3em;
-        width: 7em;
-        height: 2.5em;
+        width: 8em;
+        height: 3em;
         font-weight:bolder;
         background-color: #55cc7c;
         border-radius: 2em;
     }
     .EsqueciSenha{
+        font-size: 0.8em;
         color: grey;
         text-decoration: underline;
     }
-    /*======================*/
+
+    
     #cad-area{
-        padding: 10% 5% 5% 5%;
+        padding: 15% 10% 5% 10%;
         width: 100%;
         text-align: center;
         background-image: url("../../images/BackgroundLoginMobile.svg");
@@ -510,13 +506,13 @@
     #title-cadastrar{
         font-weight:bolder;
         color: white;
-        font-size: 1em;
-        margin-top: 3em;
+        font-size: 1.3em;
+        margin-top: 1em;
         margin-bottom: 1em;
     }
     #txt-cadastrar{
         color: white;
-        font-size: 0.8em;
+        font-size: 1em;
         margin-bottom: 2em;
     }
     #buttons-area-cad{
@@ -524,14 +520,13 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-family: 'Oswald', sans-serif;
-        font-size: 0.6em;
-        width: 10em;
+        font-size: 0.9em;
+        width: 11em;
         height: 3em;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
-        border:solid 0.13em;
+        border:solid 0.12em;
         border-color: white;
         margin-bottom: 0.7em;
     }
@@ -539,13 +534,12 @@
         background-color: #51c578;
     }
 }
-@media (max-width: 350px) and (min-width:250px){
+@media (max-width: 500px) and (min-width:300px)
+{
     #login-areas{
-        align-items: center;
-        padding: 8% 10% 7.85% 10%;
+        padding: 8% 9% 10% 9%;
         display: flex;
         flex-direction:column;
-        font-family: 'Oswald', sans-serif;
     }
     
     #login-form-area{
@@ -553,14 +547,14 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-        padding-top: 4.5%;
+        padding-top: 7%;
         width: 100%;
         text-align: center;
         box-shadow: -0.1em 0.2em 0.4em black;
     }
     
     #title-login{
-        font-size: 1.2em;
+        font-size: 1.5em;
         padding-bottom: 0.6em;
         color: #55cc7c;
     }
@@ -569,7 +563,6 @@
         margin-bottom: 2em;
     }
     .form-login{
-        font-size: 1em;
         width: 9em;
     }
     #inputs-login{
@@ -577,22 +570,24 @@
     }
     
     #btn-login{
-        font-size: 1em;
+        font-size: medium;
         margin-top: 1.5em;
         margin-bottom: 3em;
-        width: 7em;
-        height: 2.5em;
+        width: 8em;
+        height: 3em;
         font-weight:bolder;
         background-color: #55cc7c;
         border-radius: 2em;
     }
     .EsqueciSenha{
+        font-size: 0.8em;
         color: grey;
         text-decoration: underline;
     }
-    /*======================*/
+
+    
     #cad-area{
-        padding: 10% 5% 5% 5%;
+        padding: 15% 10% 5% 10%;
         width: 100%;
         text-align: center;
         background-image: url("../../images/BackgroundLoginMobile.svg");
@@ -602,7 +597,7 @@
         font-weight:bolder;
         color: white;
         font-size: 1em;
-        margin-top: 3em;
+        margin-top: 1em;
         margin-bottom: 1em;
     }
     #txt-cadastrar{
@@ -615,14 +610,13 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-family: 'Oswald', sans-serif;
-        font-size: 0.6em;
-        width: 10em;
+        font-size: 0.7em;
+        width: 11em;
         height: 3em;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
-        border:solid 0.13em;
+        border:solid 0.12em;
         border-color: white;
         margin-bottom: 0.7em;
     }
@@ -630,13 +624,12 @@
         background-color: #51c578;
     }
 }
-@media (max-width: 350px) and (min-width:250px){
+@media (max-width: 300px) and (min-width:100px)
+{
     #login-areas{
-        align-items: center;
-        padding: 8% 10% 7.85% 10%;
+        padding: 8% 9% 10% 9%;
         display: flex;
         flex-direction:column;
-        font-family: 'Oswald', sans-serif;
     }
     
     #login-form-area{
@@ -644,14 +637,14 @@
         align-items: center;
         display: flex;
         flex-direction: column;
-        padding-top: 4.5%;
+        padding-top: 7%;
         width: 100%;
         text-align: center;
         box-shadow: -0.1em 0.2em 0.4em black;
     }
     
     #title-login{
-        font-size: 1.2em;
+        font-size: 1.5em;
         padding-bottom: 0.6em;
         color: #55cc7c;
     }
@@ -660,98 +653,7 @@
         margin-bottom: 2em;
     }
     .form-login{
-        font-size: 1em;
-        width: 9em;
-    }
-    #inputs-login{
-        margin-bottom: 2em;
-    }
-    
-    #btn-login{
-        font-size: 1em;
-        margin-top: 1.5em;
-        margin-bottom: 3em;
-        width: 7em;
-        height: 2.5em;
-        font-weight:bolder;
-        background-color: #55cc7c;
-        border-radius: 2em;
-    }
-    .EsqueciSenha{
-        color: grey;
-        text-decoration: underline;
-    }
-    /*======================*/
-    #cad-area{
-        padding: 10% 5% 5% 5%;
-        width: 100%;
-        text-align: center;
-        background-image: url("../../images/BackgroundLoginMobile.svg");
-    }
-
-    #title-cadastrar{
-        font-weight:bolder;
-        color: white;
-        font-size: 1em;
-        margin-top: 3em;
-        margin-bottom: 1em;
-    }
-    #txt-cadastrar{
-        color: white;
-        font-size: 0.8em;
-        margin-bottom: 2em;
-    }
-    #buttons-area-cad{
-        display: flex;
-        flex-direction: column;
-    }
-    .btn-cad{
-        font-family: 'Oswald', sans-serif;
-        font-size: 0.6em;
-        width: 10em;
-        height: 3em;
-        border-radius: 3em;
-        background-color: #319860;
-        box-shadow: none;
-        border:solid 0.13em;
-        border-color: white;
-        margin-bottom: 0.7em;
-    }
-    .btn-cad:hover{
-        background-color: #51c578;
-    }
-}
-@media (max-width: 250px) and (min-width:0px){
-    #login-areas{
-        align-items: center;
-        padding: 8% 10% 7.85% 10%;
-        display: flex;
-        flex-direction:column;
-        font-family: 'Oswald', sans-serif;
-    }
-    
-    #login-form-area{
-        text-align: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        padding-top: 4.5%;
-        width: 100%;
-        text-align: center;
-        box-shadow: -0.1em 0.2em 0.4em black;
-    }
-    
-    #title-login{
-        font-size: 1.2em;
-        padding-bottom: 0.6em;
-        color: #55cc7c;
-    }
-    #txt-login{
-        font-size: 0.4em;
-        margin-bottom: 2em;
-    }
-    .form-login{
-        font-size: 1em;
+        margin-left: -4em;
         width: 5em;
     }
     #inputs-login{
@@ -759,23 +661,25 @@
     }
     
     #btn-login{
-        font-size: 0.5em;
-        margin-top: 1em;
+        margin-left: 3em;
+        font-size: xx-small;
+        margin-top: 1.5em;
         margin-bottom: 3em;
-        width: 7em;
-        height: 3.5em;
+        width: 8em;
+        height: 3em;
         font-weight:bolder;
         background-color: #55cc7c;
         border-radius: 2em;
     }
     .EsqueciSenha{
-        font-size: 0.5em;
+        font-size: 0.3em;
         color: grey;
         text-decoration: underline;
     }
-    /*======================*/
+
+    
     #cad-area{
-        padding: 10% 5% 5% 5%;
+        padding: 15% 10% 5% 10%;
         width: 100%;
         text-align: center;
         background-image: url("../../images/BackgroundLoginMobile.svg");
@@ -785,7 +689,7 @@
         font-weight:bolder;
         color: white;
         font-size: 1em;
-        margin-top: 3em;
+        margin-top: 1em;
         margin-bottom: 1em;
     }
     #txt-cadastrar{
@@ -798,14 +702,13 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-family: 'Oswald', sans-serif;
-        font-size: 0.6em;
-        width: 10em;
+        font-size: 0.7em;
+        width: 11em;
         height: 3em;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
-        border:solid 0.13em;
+        border:solid 0.12em;
         border-color: white;
         margin-bottom: 0.7em;
     }

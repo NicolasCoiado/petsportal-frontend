@@ -1,6 +1,7 @@
-.coluna{
-    margin-top: 3%;
-    margin-right: -5%;
-    margin-left: -4%;
-    width: 40%;
+.cards{
+    display: flex;
+}
+.card{
+   width: 15em;
+   height: 17em;
 }

@@ -200,8 +200,7 @@ function InfosPerfil (){
                             </Button>    
                         }
                         >
-                        <div className="card">
-                            <form onSubmit={handleSubmitNormal}>
+                            <form className="form-editar" onSubmit={handleSubmitNormal}>
                                 <TextInput
                                     label="Nome completo" 
                                     type="text"
@@ -237,18 +236,20 @@ function InfosPerfil (){
                                     type="text"
                                     onChange={e => setDesc (e.target.value)}
                                 />
-                                <Button
-                                    node="button"
-                                    type="submit"
-                                    waves="light"
-                                >
-                                    Enviar
-                                    <Icon left>
-                                        send
-                                    </Icon>
-                                </Button>
+                                <div className="center">
+                                    <Button
+                                        node="button"
+                                        type="submit"
+                                        waves="light"
+                                        className="submmit-edit"
+                                    >
+                                        Enviar
+                                        <Icon left>
+                                            send
+                                        </Icon>
+                                    </Button>
+                                </div>
                             </form>
-                        </div>
                     </Modal>
                 :
                 <Modal
@@ -281,8 +282,7 @@ function InfosPerfil (){
                     </Button>    
                 }
                 >
-                <div className="card">
-                    <form onSubmit={handleSubmitONG}>
+                    <form className="form-editar" onSubmit={handleSubmitONG}>
                         <TextInput
                             label="Nome completo" 
                             type="text"
@@ -308,18 +308,20 @@ function InfosPerfil (){
                             type="text"
                             onChange={e => setDesc (e.target.value)}
                         />
-                        <Button
-                            node="button"
-                            type="submit"
-                            waves="light"
-                        >
-                            Enviar
-                            <Icon left>
-                                send
-                            </Icon>
-                        </Button>
+                        <div className="center">
+                            <Button
+                                node="button"
+                                type="submit"
+                                waves="light"
+                                className="submmit-edit"
+                            >
+                                Enviar
+                                <Icon left>
+                                    send
+                                </Icon>
+                            </Button>
+                        </div>
                     </form>
-                </div>
             </Modal>
             }
             </div>
