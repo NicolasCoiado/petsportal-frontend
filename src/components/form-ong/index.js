@@ -42,18 +42,18 @@ function FormOng(){
             }
           })
           
-        .then(res => {
-            console.log("Deu bom")
-            //console.log(user);
-            //console.log(res);
-            history.push("/login");
-        })
-        .catch(err =>{
-            console.log(err)
-            //console.log(user)
-           
-        })
-    }
+            .then(res => {
+                console.log("Deu bom")
+                //console.log(user);
+                //console.log(res);
+                history.push("/login");
+            })
+            .catch(err =>{
+                console.log(err)
+                //console.log(user)
+            
+            })
+        }
 
     const handleUpload= (e) => {
         e.preventDefault()
@@ -68,8 +68,9 @@ function FormOng(){
 
     return(
     <div id="form-areas">
-        <form id="form-area"onSubmit={e => handleSubmit(e) }>
-        <h3 className="title-cadastrar-pessoa">CADASTRAR ONG</h3>
+        <form id="form-area" onSubmit={e => handleSubmit(e)} >
+        <h3 className="title-cadastrar">Cadastrar ONG</h3>
+        <p className="paragraph-cadastrar">Os campos que possuem * são obrigatórios!</p>
             <TextInput            
                 label="Nome *"
                 onChange={e => setNome (e.target.value)}

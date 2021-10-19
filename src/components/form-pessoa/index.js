@@ -49,7 +49,8 @@ function FormPessoa (){
     return(
     <div id="form-areas">
         <form id="form-area" onSubmit={e => handleSubmit(e) }>
-        <h3 className="title-cadastrar-pessoa">CADASTRAR USUÁRIO</h3>
+        <h3 className="title-cadastrar">Cadastrar Usuário</h3>
+        <p className="paragraph-cadastrar">Os campos que possuem * são obrigatórios!</p>
             <TextInput            
                 label="Nome *"
                 onChange={e => setNome (e.target.value)}

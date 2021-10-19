@@ -125,7 +125,6 @@ function NavBar (){
             style={{
               marginRight: '5px'
             }}
-            waves="light"
           >
             LOGIN
           </Button>

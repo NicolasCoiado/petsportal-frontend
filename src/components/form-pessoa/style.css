@@ -1,23 +1,45 @@
 #form-areas{
     padding: 1em;
 }
-#form-area{
-    margin: 2% 10% 5% 10%;
-    padding: 5% 10% 5% 10%;
-    box-shadow: 0.2em 0.2em 0.6em black;
+@media (min-width: 993px)
+{
+    #form-area{
+        margin: 2% 10% 5% 10%;
+        padding: 5% 10% 5% 10%;
+        box-shadow: 0.2em 0.2em 0.6em black;
+    }
+    .title-cadastrar{
+        text-align: center;
+        font-size: xx-large;
+        padding: 2% 0% 3% 0%;
+
+    }
+    .paragraph-cadastrar{
+        text-align: center;
+        margin-bottom: 2em;
+    }
 }
-.title-cadastrar-pessoa{
-    text-align: center;
-    font-weight: bold;
-    font-size: xx-large;
-    padding: 2% 0% 5% 0%;
-    font-family: 'Oswald', sans-serif;
+@media (max-width: 993px)
+{
+    #form-area{
+        margin: 2% 3% 5% 3%;
+        padding: 5% 10% 5% 10%;
+        box-shadow: 0.2em 0.2em 0.6em black;
+    }
+    .title-cadastrar{
+        text-align: center;
+        font-size: large;
+        padding: 2% 0% 3% 0%;
+
+    }
+    .paragraph-cadastrar{
+        font-size: xx-small;
+        text-align: center;
+        margin-bottom: 2em;
+    }
 }
 .btn-area-cadPessoa{
     text-align: center;
-}
-.campo-form-pessoa{
-    font-family: 'Roboto', sans-serif;
 }
 .btn-submit-form{
     background-color: #56ca7d;

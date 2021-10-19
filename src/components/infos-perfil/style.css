@@ -1,5 +1,5 @@
 #infos-perfil{
-    margin: 5% 10% 10% 10%;
+    margin: 5% 10% 4% 10%;
     font-family: 'Raleway', sans-serif;
 }
 #upload-image{
@@ -22,7 +22,7 @@
     background-color: #48a567;
 }
 .campos-info{
-    text-align: center;
+    text-align: left;
     margin-bottom: 2em;
 }
 .btn-editar-infos{
@@ -46,4 +46,33 @@
 }
 .submmit-edit:hover{
     background-color: #48a567;
+}
+.animais-area{
+    background-color: #56ca7d;
+    text-align: center;
+}
+
+.animais-display{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em 0em 1em 0em;
+}
+
+@media (min-width: 993px)
+{
+    .title-animais{
+        font-size: 1.8em;
+        color: white;
+        padding: 1.5em 0em 1em 0em;
+    }
+}
+@media (max-width: 993px)
+{
+    .title-animais{
+        font-size: 1.2em;
+        color: white;
+        padding: 2em 0em 1em 0em;
+    }
 }

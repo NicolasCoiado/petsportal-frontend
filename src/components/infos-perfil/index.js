@@ -1,15 +1,19 @@
 import ViewerIMG from '../viewer-img/';
 import { Button, Icon, Modal, TextInput, Preloader} from 'react-materialize';
+import { MdEdit  } from 'react-icons/md';
 import React, { useState } from "react";
 import { useEffect } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 import FormData from 'form-data'
 import API from '../../api/';
+import ViewerAnimal from '../viewer-animal/'
 import './style.css';
 
 
 function InfosPerfil (){
     const [user, setUser] = useState()
+    const [animais, setAnimais] = useState()
     const { id } = useParams()
     const [nome, setNome] = useState('');
     const [cpf, setCpf] = useState('');
@@ -29,6 +33,7 @@ function InfosPerfil (){
         .then(res => {
             console.log(res.data)
             setUser(res.data.user)
+            setAnimais(res.data.animais)
         })
         .catch(err => {
             console.log(err)
@@ -114,7 +119,7 @@ function InfosPerfil (){
     }
 
     return(
-        
+    <>
         <div id="infos-perfil">
             <div id="upload-image">
                 {user &&  <ViewerIMG uploadUrl={user.imagem}/>}
@@ -261,17 +266,17 @@ function InfosPerfil (){
                 header="Editar suas informações"
                 open={false}
                 options={{
-                dismissible: true,
-                endingTop: '10%',
-                inDuration: 250,
-                onCloseEnd: null,
-                onCloseStart: null,
-                onOpenEnd: null,
-                onOpenStart: null,
-                opacity: 0.5,
-                outDuration: 250,
-                preventScrolling: true,
-                startingTop: '4%'
+                    dismissible: true,
+                    endingTop: '10%',
+                    inDuration: 250,
+                    onCloseEnd: null,
+                    onCloseStart: null,
+                    onOpenEnd: null,
+                    onOpenStart: null,
+                    opacity: 0.5,
+                    outDuration: 250,
+                    preventScrolling: true,
+                    startingTop: '4%'
                 }}
                 trigger={
                     <Button className="btn-editar-infos" node="button">
@@ -322,12 +327,26 @@ function InfosPerfil (){
                             </Button>
                         </div>
                     </form>
-            </Modal>
-            }
+                </Modal>
+                }  
             </div>
         </div>
-       
-    
+        <div className="animais-area">
+            <h3 className="title-animais">Animais para adoção:</h3>
+                <div className="animais-display">
+                    {
+                        animais && animais.map(animal => (
+                            <Link className="unidade-animal" to='/'>
+                                <div className="edit-animal">
+                                    <MdEdit className="icon-edit-animal"/>
+                                </div>
+                                <ViewerAnimal  animal={animal}/>
+                            </Link>
+                        ))
+                    }
+                </div>  
+        </div>
+    </>
     );
 }
 
