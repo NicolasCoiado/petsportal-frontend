@@ -1,33 +1,3 @@
-.btn-health{
-    background-color: rgb(255, 95, 95);
-    border-radius: 2em;
-    margin-bottom: 3em;
-    width: 100%;
-}
-.btn-health:hover{
-    background-color: rgb(255, 45, 45);
-    border-radius: 2em;
-}
-.close-modal{
-    background-color: transparent;
-    color: rgb(255, 0, 0);
-    box-shadow: none;
-}
-.close-modal:hover{
-    background-color: transparent;
-    color: rgb(255, 0, 0);
-    box-shadow: none;
-}
-.btn-submit-health{
-    box-shadow: none;
-    border-radius: 2em;
-    background-color: #51c578;
-}
-.btn-submit-health:hover{
-    box-shadow: none;
-    border-radius: 2em;
-    background-color: #40965d;
-}
 .upload-area-animal{
     margin-bottom: 2.5em;
 }
@@ -42,7 +12,4 @@
 }
 .custom-file-upload-animal:hover {
     background-color: #48a567;
-}
-.modal-health{
-    padding: 2em 3em 0em 3em;
 }

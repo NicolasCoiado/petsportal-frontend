@@ -1,7 +1,5 @@
 import 'materialize-css';
-import { TextInput, Textarea, Button, Icon, Select, Modal, Chip } from 'react-materialize';
-import { GiHealthNormal} from 'react-icons/gi';
-import { ImCross } from 'react-icons/im';
+import { TextInput, Textarea, Button, Icon, Select} from 'react-materialize';
 import { useHistory } from 'react-router-dom';
 import React, {useState, useEffect} from "react";
 import './style.css';
@@ -100,7 +98,6 @@ function FormPessoa (){
                 multiple={false}
                 onChange={e => {
                     setEspecie (e.target.value) 
-                    function noRefCheck(){}
                     }
                 }
                 options={{
@@ -141,7 +138,6 @@ function FormPessoa (){
                 multiple={false}
                 onChange={e => {
                     setPorte (e.target.value) 
-                    function noRefCheck(){}
                     }
                 }
                 options={{
@@ -203,7 +199,6 @@ function FormPessoa (){
                 multiple={false}
                 onChange={e => {
                     setVacinas (e.target.value) 
-                    function noRefCheck(){}
                     }
                 }
                 options={{

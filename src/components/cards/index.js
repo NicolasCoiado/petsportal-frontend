@@ -1,9 +1,11 @@
 import 'materialize-css';
 import './style.css';
-import { Carousel, Card , Icon, CardTitle} from 'react-materialize';
+//import {Card , Icon, CardTitle} from 'react-materialize';
 function Cards (){
     return(
-        <div className="cards">
+        <>
+        <h1>aaa </h1>
+        {/*<div className="cards">
             <Card
                 closeIcon={<Icon>close</Icon>}
                 header={<CardTitle image="https://materializecss.com/images/sample-1.jpg" reveal waves="light"/>}
@@ -43,7 +45,8 @@ function Cards (){
                     </a>
                 </p>
             </Card>
-        </div>
+        </div>*/}
+    </>
     );
 }
 

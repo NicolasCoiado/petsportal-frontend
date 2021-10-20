@@ -7,7 +7,7 @@ function ViewerAnimal({animal}){
 
     return(
         <div className="viewer-animal">
-            <img  className="foto-animal" src={(animal)? config.url +  animal.foto : defaultImage} />
+            <img  className="foto-animal" alt="imagem-animal" src={(animal)? config.url +  animal.foto : defaultImage} />
         </div>
     );
 }

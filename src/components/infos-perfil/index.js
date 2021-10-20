@@ -1,20 +1,21 @@
+import ViewerAnimal from '../viewer-animal/'
 import ViewerIMG from '../viewer-img/';
-import { Button, Icon, Modal, TextInput, Preloader} from 'react-materialize';
-import { MdEdit  } from 'react-icons/md';
-import React, { useState } from "react";
-import { useEffect } from 'react';
+import { Button, Icon, Modal, TextInput, Preloader } from 'react-materialize';
+import React, { useState, useEffect} from "react";
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import FormData from 'form-data'
+import { ImCross } from 'react-icons/im';
 import API from '../../api/';
-import ViewerAnimal from '../viewer-animal/'
 import './style.css';
 
 
 function InfosPerfil (){
     const [user, setUser] = useState()
     const [animais, setAnimais] = useState()
+
     const { id } = useParams()
+
     const [nome, setNome] = useState('');
     const [cpf, setCpf] = useState('');
     const [nasc, setNasc] = useState('');
@@ -23,6 +24,7 @@ function InfosPerfil (){
     const [tel2, setTel2] = useState('');
     const [desc, setDesc] = useState('');
 
+    const [me, setMe] = useState('');
 
     useEffect(() => {
         API.post(`/user/read/`, {
@@ -34,6 +36,7 @@ function InfosPerfil (){
             console.log(res.data)
             setUser(res.data.user)
             setAnimais(res.data.animais)
+            setMe(res.data.me)
         })
         .catch(err => {
             console.log(err)
@@ -119,19 +122,18 @@ function InfosPerfil (){
     }
 
     return(
-    <>
+    <>  {me?
         <div id="infos-perfil">
-            <div id="upload-image">
-                {user &&  <ViewerIMG uploadUrl={user.imagem}/>}
-                {user &&
+            {user && 
+                <div id="upload-image">
+                    <ViewerIMG uploadUrl={user.imagem}/>
                     <label htmlFor="file-upload" className="custom-file-upload-perfil">
                         <Icon className="icon-file">download</Icon> 
                             Upload imagem
                     </label>
-                }
                     <input onChange={e => handleUpload (e)} id="file-upload" type="file" />  
-            </div>  
-
+                </div>  
+            }
             {user
             ?
                 user.tipo==='nrm' || user.tipo==='adm'
@@ -164,20 +166,21 @@ function InfosPerfil (){
             :
                 <div className="center">
                     <Preloader
+                        className="preloader"
                         active
-                        color="blue"
+                        color="green"
                         flashing={false}
-                        size="big"
                     />
                 </div>
             }
             <div className="center">
-            {user &&
+            {user 
+            ?
                 (user.tipo==='nrm' || user.tipo==='adm')
                 ?
                     <Modal
                         actions={[
-                            <Button flat modal="close" node="button" waves="green">Close</Button>
+                            <Button className="close-modal" flat modal="close" node="button"><ImCross /></Button>
                         ]}
                         bottomSheet={false}
                         fixedFooter={false}
@@ -198,10 +201,7 @@ function InfosPerfil (){
                         }}
                         trigger={
                             <Button className="btn-editar-infos" node="button">
-                                Editar
-                                <Icon right>
-                                    edit
-                                </Icon> 
+                               Editar
                             </Button>    
                         }
                         >
@@ -257,92 +257,101 @@ function InfosPerfil (){
                             </form>
                     </Modal>
                 :
-                <Modal
-                actions={[
-                    <Button flat modal="close" node="button" waves="green">Close</Button>
-                ]}
-                bottomSheet={false}
-                fixedFooter={false}
-                header="Editar suas informações"
-                open={false}
-                options={{
-                    dismissible: true,
-                    endingTop: '10%',
-                    inDuration: 250,
-                    onCloseEnd: null,
-                    onCloseStart: null,
-                    onOpenEnd: null,
-                    onOpenStart: null,
-                    opacity: 0.5,
-                    outDuration: 250,
-                    preventScrolling: true,
-                    startingTop: '4%'
-                }}
-                trigger={
-                    <Button className="btn-editar-infos" node="button">
-                        Editar
-                        <Icon right>
-                            edit
-                        </Icon> 
-                    </Button>    
-                }
-                >
-                    <form className="form-editar" onSubmit={handleSubmitONG}>
-                        <TextInput
-                            label="Nome completo" 
-                            type="text"
-                            onChange={e => setNome (e.target.value)}
-                        />
-                        <TextInput
-                            label="Endereço" 
-                            type="text"
-                            onChange={e => setEndereco (e.target.value)}
-                        />
-                        <TextInput
-                            label="Telefone 1" 
-                            type="number"
-                            onChange={e => setTel1 (e.target.value)}
-                        />
-                        <TextInput
-                            label="Telefone 2" 
-                            type="number"
-                            onChange={e => setTel2 (e.target.value)}
-                        />
-                        <TextInput
-                            label="Sobre mim..." 
-                            type="text"
-                            onChange={e => setDesc (e.target.value)}
-                        />
-                        <div className="center">
-                            <Button
-                                node="button"
-                                type="submit"
-                                waves="light"
-                                className="submmit-edit"
-                            >
-                                Enviar
-                                <Icon left>
-                                    send
-                                </Icon>
-                            </Button>
-                        </div>
-                    </form>
-                </Modal>
-                }  
+                    <Modal
+                        actions={[
+                            <Button className="close-modal" flat modal="close" node="button"><ImCross /></Button>
+                        ]}
+                        bottomSheet={false}
+                        fixedFooter={false}
+                        header="Editar suas informações"
+                        open={false}
+                        options={{
+                            dismissible: true,
+                            endingTop: '10%',
+                            inDuration: 250,
+                            onCloseEnd: null,
+                            onCloseStart: null,
+                            onOpenEnd: null,
+                            onOpenStart: null,
+                            opacity: 0.5,
+                            outDuration: 250,
+                            preventScrolling: true,
+                            startingTop: '4%'
+                        }}
+                        trigger={
+                            <Button className="btn-editar-infos" node="button">
+                               Editar
+                            </Button>    
+                        }
+                    >
+                        <form className="form-editar" onSubmit={handleSubmitONG}>
+                            <TextInput
+                                label="Nome completo" 
+                                type="text"
+                                onChange={e => setNome (e.target.value)}
+                            />
+                            <TextInput
+                                label="Endereço" 
+                                type="text"
+                                onChange={e => setEndereco (e.target.value)}
+                            />
+                            <TextInput
+                                label="Telefone 1" 
+                                type="number"
+                                onChange={e => setTel1 (e.target.value)}
+                            />
+                            <TextInput
+                                label="Telefone 2" 
+                                type="number"
+                                onChange={e => setTel2 (e.target.value)}
+                            />
+                            <TextInput
+                                label="Sobre mim..." 
+                                type="text"
+                                onChange={e => setDesc (e.target.value)}
+                            />
+                            <div className="center">
+                                <Button
+                                    node="button"
+                                    type="submit"
+                                    waves="light"
+                                    className="submmit-edit"
+                                >
+                                    <Icon left>
+                                        send
+                                    </Icon>
+                                    Enviar
+                                </Button>
+                            </div>
+                        </form>
+                    </Modal>
+            :<></>
+            }  
             </div>
         </div>
+        :
+        <div>
+            OI
+        </div>
+        }
         <div className="animais-area">
             <h3 className="title-animais">Animais para adoção:</h3>
                 <div className="animais-display">
                     {
-                        animais && animais.map(animal => (
-                            <Link className="unidade-animal" to='/'>
-                                <div className="edit-animal">
-                                    <MdEdit className="icon-edit-animal"/>
-                                </div>
+                        animais
+                        ?
+                            animais.map(animal => (
+                            <Link key={animal._id}to={'/animal/'+animal._id}>
                                 <ViewerAnimal  animal={animal}/>
                             </Link>
                         ))
+                        :
+                        <Preloader
+                            active
+                            color="green"
+                            flashing={false}
+                            size="big"
+                        />
                     }
                 </div>  
         </div>

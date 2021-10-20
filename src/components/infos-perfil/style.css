@@ -6,25 +6,7 @@
     text-align: center;
     margin-bottom: 2em;
 }
-.campo-info{
-    font-size: large;
-    padding: 0.8em;
-}
-.custom-file-upload-perfil{
-    color: white;
-    border-radius: 2em;
-    padding: 1.2em  2em  1em   1em;
-    cursor: pointer;
-    background-color: #56ca7d;
-}
 
-.custom-file-upload-perfil:hover{
-    background-color: #48a567;
-}
-.campos-info{
-    text-align: left;
-    margin-bottom: 2em;
-}
 .btn-editar-infos{
     background-color: #56ca7d;
     font-size: medium;
@@ -67,6 +49,25 @@
         color: white;
         padding: 1.5em 0em 1em 0em;
     }
+    .campo-info{
+        font-size: medium;
+        padding: 1em 0em 0em 0em;
+    }
+    .campos-info{
+        text-align: center;
+        margin-top: 3em;
+        margin-bottom: 2em;
+    }
+    .custom-file-upload-perfil{
+        color: white;
+        border-radius: 2em;
+        padding: 1.2em  2em  1em   1em;
+        cursor: pointer;
+        background-color: #56ca7d;
+    } 
+    .custom-file-upload-perfil:hover{
+        background-color: #48a567;
+    }
 }
 @media (max-width: 993px)
 {
@@ -75,4 +76,41 @@
         color: white;
         padding: 2em 0em 1em 0em;
     }
+    .campo-info{
+        text-align: center;
+        font-size: x-small;
+        padding: 1em 0em 0em 0em;
+    }
+    .campos-info{
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    .custom-file-upload-perfil{
+        font-size: x-small;
+        color: white;
+        border-radius: 2em;
+        padding: 1.2em  2em  1em   1em;
+        cursor: pointer;
+        background-color: #56ca7d;
+    }
+    
+    .custom-file-upload-perfil:hover{
+        background-color: #48a567;
+    }
+}
+
+.preloader{
+    font-size: xx-large;
+    margin-top: 10em;
+    margin-bottom: 50em;
+}
+.close-modal{
+    background-color: transparent;
+    color: rgb(255, 0, 0);
+    box-shadow: none;
+}
+.close-modal:hover{
+    background-color: transparent;
+    color: rgb(213, 1, 1);
+    box-shadow: none;
 }

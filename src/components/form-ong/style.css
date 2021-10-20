@@ -8,40 +8,32 @@
     background-color: #40965d;
 }
 
-.upload-area{
-    text-align: center;
-    display: flex;
-    margin-bottom: 4em;
-}
-.lbl-upload{
-    margin-right: 2em;
-    margin-top: 1em;
-    color: rgba(0, 0, 0, 0.522);
-}
-.icon-remove-file{
-    background-color: rgb(103, 95, 252);
-    margin-left: 1em;
-}
-.icon-remove-file:hover{
-    background-color: rgb(16, 22, 179)
+input[type="file"] {
+    display: none;
 }
 
-@media (min-width: 650px) {
-    input[type="file"] {
-        display: none;
+@media (min-width: 993px)
+{
+    .upload-area{
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 4em;
     }
-    .custom-file-upload {
+    .lbl-upload{
+        margin-right: 2em;
+        margin-top: 1em;
+        color: rgba(0, 0, 0, 0.522);
+        margin-bottom: 1em;
+        margin-left: 1em;
+    }
+    .custom-file-upload{
         color: white;
-        font-size: 1em;
         border-radius: 2em;
-        padding: 1em  2em  1em   1em;
+        padding: 1.2em  2em  1em   1em;
         cursor: pointer;
         background-color: #56ca7d;
     }
-    .custom-file-upload:hover {
-        background-color: #48a567;
-    }
-
     .icon-file{
         position: relative;
         top: 0.3em;
@@ -50,29 +42,49 @@
         margin-top: -1em;
         margin-bottom: -1em;
     }
-}
-@media (max-width: 650px) and (min-width: 200px) {
-    input[type="file"] {
-        display: none;
+    .icon-remove-file{
+        background-color: rgb(103, 95, 252);
+        margin-left: 1em;
     }
-    .custom-file-upload {
+    .icon-remove-file:hover{
+        background-color: rgb(16, 22, 179)
+    }
+}
+@media (max-width: 993px)
+{
+    .upload-area{
+        align-items: center;
+        margin-bottom: 2em;
+        display: flex;
+        flex-direction: column;
+    }
+    .lbl-upload{
+        text-align: center;
+        font-size: small;
+        color: rgba(0, 0, 0, 0.522);
+        margin-bottom: 1em;
+    }
+    .custom-file-upload{
+        margin-top: 1em;
+        margin-bottom: 1em;
+        font-size: small;
+        text-align: center;
         color: white;
-        font-size: 1em;
         border-radius: 2em;
-        padding: 1em  2em  1em   1em;
+        padding: 0.5em  1em 1em 1em ;
         cursor: pointer;
         background-color: #56ca7d;
     }
-    .custom-file-upload:hover {
-        background-color: #48a567;
-    }
-
     .icon-file{
+        font-size: 1.4em;
+        margin-right: 0.3em;
         position: relative;
-        top: 0.3em;
-        margin-right: 0.5em;
-        margin-left: 0.4em;
-        margin-top: -1em;
-        margin-bottom: -1em;
+        top: 0.25em;
+    }
+    .icon-remove-file{
+        background-color: rgb(103, 95, 252);
+    }
+    .icon-remove-file:hover{
+        background-color: rgb(16, 22, 179)
     }
 }
