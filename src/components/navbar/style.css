@@ -27,6 +27,14 @@
     padding-bottom: 0.1em;
     font-size: xx-large;
 }
+.nav-item-ong{
+    padding-top: 0.3em;
+    padding-bottom: 0.1em;
+    font-size: 1.8em;
+}
+.nav-icon-ong{
+    padding-top: 0.4em;
+}
 
 .btn-nav{
     font-family: 'Raleway', sans-serif;
@@ -62,24 +70,29 @@
 
 }
 .nav-nick-mobile{
-    font-size: xx-large;
+    font-size: large;
     padding: 1em 1em 1em 1em;
     color: black;
     text-align: center;
     font-family: 'Raleway', sans-serif;
 }
 
-.nav-nick-mobile:hover{
-    /*background-color: rgba(50, 70, 56, 0.179);*/
+.nav-item-mobile:hover{
+    background-color: #52c4788e;
+    color: white;
+}
+.nav-event-mobile{
+    font-size: 1.1em;
+    padding: 1em 1em 1em 2em;
+    color: black;
+    text-align:left;
+    font-family: 'Raleway', sans-serif;
+}
+.nav-event-mobile:hover{
     background-color: #52c4788e;
     color: white;
 }
 
-.nav-item-mobile:hover{
-    /*background-color: rgba(50, 70, 56, 0.179);*/
-    background-color: #52c4788e;
-    color: white;
-}
 .nav-icon-mobile{
     margin-right: 0.6em;
 }

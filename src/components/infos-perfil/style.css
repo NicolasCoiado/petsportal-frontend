@@ -8,6 +8,7 @@
 }
 
 .btn-editar-infos{
+    text-transform: none;
     background-color: #56ca7d;
     font-size: medium;
     border-radius: 2em;
@@ -15,7 +16,10 @@
 .btn-editar-infos:hover{
     background-color: #48a567;
 }
-
+.icon-editar{
+    margin-right: 1em;
+    transform: rotate(270deg);
+}
 
 .form-editar{
     padding: 2em 1em 1em 1em;

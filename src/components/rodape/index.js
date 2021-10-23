@@ -1,20 +1,22 @@
 import 'materialize-css';
-import { Footer } from 'react-materialize';
 import './style.css';
 
 function Rodape (){
     return(
-        <Footer
-            className="rodape"
-            copyrights="PetsPortal 2021 Copyright"
-            links={<ul><li><a className="grey-text text-lighten-3" href="#!">Lucas Lima de Saint Ana</a></li><li><a className="grey-text text-lighten-3" href="#!">Kauan Gallati </a></li><li><a className="grey-text text-lighten-3" href="#!">Nicolas Mauricio Martins Coiado</a></li><li><a className="grey-text text-lighten-3" href="#!">Théo Kabir Novais de Carvalho</a></li></ul>}
-            moreLinks={<a className="grey-text text-lighten-4 right" href="#!">Saiba mais...</a>}
-        >
-        <h5 className="white-text">
-            PetsPortal
-        </h5>
-       
-    </Footer>
+        <div className="rodape">
+            <h5 className="footer-title"> PetsPortal</h5> 
+            <div className="footer-names">
+                <p className="p-names">Lucas Lima Saint Ana</p>
+                <p className="p-names">Kauan Gallati Viera Queiroz</p>
+                <p className="p-names">Nicolas Mauricio Martins Coiado</p>
+                <p className="p-names">Théo Kabir Novais de Carvalho</p>
+            </div>
+            <div className="footer-infos">
+                <p className="p-infos">Saiba mais...</p>
+                <p className="p-infos">Termos de uso</p>
+                <p className="p-infos">&copy 2021 Copyright PetsPortal</p>
+            </div>
+        </div>
     );
 }
 

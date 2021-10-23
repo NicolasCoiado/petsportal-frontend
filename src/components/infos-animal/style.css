@@ -14,28 +14,50 @@
     background-color: rgb(179, 0, 0);
 }
 
-.btn-editar-animais{
-    width: 8em;
-    font-size: medium;
-    font-weight: bold;
-    text-transform: none;
-    background-color: #56ca7d;
-    border-radius: 2em;
-    margin: 0em 1em 1em 1em;
-}
-
-.btn-editar-animais:hover{
-    background-color: #48a567;
-}
-
 .btn-animal-area{
     align-items: center;
     text-align: center;
     display: flex;
     flex-direction: column; 
-    margin-top: 3em;
+    margin-top: 1em;
     margin-bottom: 3em;
 }
-.icon-edit{
-    transform: rotate(-90deg);
+
+.infos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.edits-info{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3em;
+    margin-left: 2em;
+    margin-bottom: 2em;
+}
+.btn-edit-animais{
+    width: 2em;
+    height: 2em;
+    background-color: #56ca7d;
+    font-size: medium;
+    margin-top: 0.05em;
+}
+.btn-edit-animais:hover{
+    background-color: #40965d;
+}
+
+
+
+.campos-info-animal{
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+.campo-info-animal{
+    font-size: medium;
+    padding: 1em 0em 0em 0em;
+}
+.form-edit-animal{
+    text-align: center;
+    padding: 3em 1em 1em 1em;
 }

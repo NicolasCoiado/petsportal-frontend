@@ -1,8 +1,10 @@
 import 'materialize-css';
 import { TiThMenu } from 'react-icons/ti';
-import { BiDonateHeart } from 'react-icons/bi'
+import { FaHandHoldingHeart, FaUserCheck } from 'react-icons/fa'
 import { GiSittingDog } from 'react-icons/gi'
-import { RiLogoutBoxRLine } from 'react-icons/ri'
+import { RiLogoutBoxRLine, RiArrowDropDownLine } from 'react-icons/ri'
+import { IoIosPeople } from 'react-icons/io'
+import { HiPlusCircle, HiUserAdd } from 'react-icons/hi'
 import { Navbar, Button, Dropdown, Divider, Icon } from 'react-materialize';
 import { NavLink, Link, useHistory } from 'react-router-dom';
 import ViewerNavIMG from '../viewer-img-nav/'
@@ -65,7 +67,7 @@ function NavBar (){
           {(!user.tipo) //Se o usuário não estiver logado...
             ?(<>
               <NavLink className="nav-item-mobile" to='/cadastrar-animal'>
-                <BiDonateHeart className="nav-icon-mobile" />
+                <FaHandHoldingHeart className="nav-icon-mobile" />
                 DOAR
               </NavLink>
               <NavLink className="nav-item-mobile"  to='/'>
@@ -93,16 +95,55 @@ function NavBar (){
                 <span className="nickname">{user.nome}</span>
               </NavLink>
               <NavLink className="nav-item-mobile" to='/cadastrar-animal'>
-                <BiDonateHeart className="nav-icon-mobile" />
-                DOAR
+                <FaHandHoldingHeart className="nav-icon-mobile" />
+                Doar
               </NavLink>
               <NavLink className="nav-item-mobile"  to='/'>
                 <GiSittingDog className="nav-icon-mobile"/>
-                ADOTAR
+                Adotar
               </NavLink>
+
+              {(user.tipo==='adm')&&(
+                <>
+                  <Divider />
+                  <Link className="nav-event-mobile" to="/validar-eventos">
+                    <FaUserCheck className="nav-icon-mobile"/>
+                    Validar eventos
+                  </Link>
+                  <Link className="nav-event-mobile" to="/eventos">
+                    <IoIosPeople className="nav-icon-mobile"/>
+                    Eventos
+                  </Link>
+                  <Divider />
+                </>
+              )}
+
+              {(user.tipo==='ong')&&(
+                <>
+                  <Divider />
+                  <Link className="nav-event-mobile" to="/cadastrar-evento">
+                    <HiPlusCircle className="nav-icon-mobile"/>
+                    Criar evento
+                  </Link>
+                  <Link className="nav-event-mobile" to="/meus-eventos">
+                    <HiUserAdd className="nav-icon-mobile"/>
+                    Meus eventos
+                  </Link>
+                  <Link className="nav-event-mobile" to="/eventos">
+                    <IoIosPeople className="nav-icon-mobile"/>
+                    Outros eventos
+                  </Link>
+                  <Divider />
+                </>
+              )}
+              {(user.tipo==='nrm')&&(
+                <NavLink className="nav-item-mobile" to='/eventos'>
+                  <IoIosPeople className="nav-icon-mobile"/> Eventos
+                </NavLink>
+              )}
               <a className="nav-item-mobile" onClick={logoff}>
                 <RiLogoutBoxRLine className="nav-icon-mobile" />
-                LOGOUT
+                Logout
               </a>
           </>)
           }
@@ -111,10 +152,10 @@ function NavBar (){
       >
         <div className="navbar-edited">
           <NavLink className="nav-item" to='/cadastrar-animal'>
-            DOAR
+            Doar
           </NavLink>
           <NavLink className="nav-item"  to='/'>
-            ADOTAR
+            Adotar
           </NavLink>
           {(!user.tipo)//Se o usuário não estiver logado...
           ?(
@@ -132,11 +173,77 @@ function NavBar (){
           )
           ://Se o usuário ESTIVER logado...
           (<>
+            {(user.tipo==='nrm')&&(
+              <NavLink className="nav-item" to='/eventos'>
+                Eventos
+              </NavLink>
+            )}
+            {(user.tipo==='ong')&&(
+              <Dropdown
+                id="Dropdown_14"
+                options={{
+                  alignment: 'left',
+                  autoTrigger: true,
+                  closeOnClick: true,
+                  constrainWidth: true,
+                  container: null,
+                  coverTrigger: true,
+                  hover: false,
+                  inDuration: 150,
+                  onCloseEnd: null,
+                  onCloseStart: null,
+                  onOpenEnd: null,
+                  onOpenStart: null,
+                  outDuration: 250
+                }}
+                trigger={<Link to="#!" className="nav-item-ong">Eventos<RiArrowDropDownLine className="nav-icon-ong"/>{''}</Link>}
+              >
+                <Link to="/validar-evento">
+                  Validar eventos
+                </Link>
+                <Divider />
+                <Link to="/eventos">
+                  Eventos
+                </Link>
+              </Dropdown>
+            )}
+            {(user.tipo==='adm')&&(
+              <Dropdown
+                id="Dropdown_15"
+                options={{
+                  alignment: 'left',
+                  autoTrigger: true,
+                  closeOnClick: true,
+                  constrainWidth: true,
+                  container: null,
+                  coverTrigger: true,
+                  hover: false,
+                  inDuration: 150,
+                  onCloseEnd: null,
+                  onCloseStart: null,
+                  onOpenEnd: null,
+                  onOpenStart: null,
+                  outDuration: 250
+                }}
+                trigger={<Link to="#!" className="nav-item-ong">Eventos<RiArrowDropDownLine className="nav-icon-ong"/>{''}</Link>}
+              >
+                <Link to="/cadastrar-evento">
+                  Criar evento
+                </Link>
+                <Link to="/meus-eventos">
+                  Meus eventos
+                </Link>
+                <Divider />
+                <Link to="/eventos">
+                  Outros eventos
+                </Link>
+              </Dropdown>
+            )}
             <NavLink className="nav-item"  to={`/perfil/${user.id}`}>
               <ViewerNavIMG uploadUrl={user.img} />
             </NavLink>
             <Dropdown
-              id="Dropdown_14"
+              id="Dropdown_16"
               options={{
                 alignment: 'left',
                 autoTrigger: true,
@@ -152,22 +259,11 @@ function NavBar (){
                 onOpenStart: null,
                 outDuration: 250
               }}
-              trigger={<a href="#!">{' '}<Icon right>arrow_drop_down</Icon></a>}
+              trigger={<a href="#">{' '}<Icon right>arrow_drop_down</Icon></a>}
             >
-              <Link to={`/perfil/${user.id}`}>
+              <Link className="item-drop" to={`/perfil/${user.id}`}>
                 Meu perfil
               </Link>
-              <Divider />
-              {(user.tipo==='adm')&&(
-                <Link to='/'>
-                  ADM
-                </Link>
-              )}
-              {(user.tipo==='ong')&&(
-                <Link to='/'>
-                    +Evento
-                </Link>
-              )}
               <Divider />
               <a onClick={logoff}>
                   Logout

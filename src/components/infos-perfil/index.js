@@ -1,6 +1,7 @@
 import ViewerAnimal from '../viewer-animal/'
 import ViewerIMG from '../viewer-img/';
 import { Button, Icon, Modal, TextInput, Preloader } from 'react-materialize';
+import { MdEdit } from 'react-icons/md';
 import React, { useState, useEffect} from "react";
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -28,7 +29,7 @@ function InfosPerfil (){
 
     useEffect(() => {
         API.post(`/user/read/`, {
-            id : id
+            id
         }, {
             headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         })
@@ -41,7 +42,7 @@ function InfosPerfil (){
         .catch(err => {
             console.log(err)
         })
-    }, [])
+    }, [id])
 
     function handleUpload (e){
         let ImgPerfil = new FormData();
@@ -122,10 +123,11 @@ function InfosPerfil (){
     }
 
     return(
-    <>  {me?
-        <div id="infos-perfil">
-            {user && 
-                <div id="upload-image">
+    <>  {me
+        ? //Se o usuário for o dono do perfil...
+        <div id="infos-perfil"> {/* DIV QUE ENGLOBA INFORMAÇÕES E EDIÇÃO DELAS*/ }
+            {user && //Somente se usuário carregar...
+                <div id="upload-image"> {/* DIV QUE ENGLOBA A ATUALIZAÇÃO DE IMAGENS*/}
                     <ViewerIMG uploadUrl={user.imagem}/>
                     <label htmlFor="file-upload" className="custom-file-upload-perfil">
                         <Icon className="icon-file">download</Icon> 
@@ -134,9 +136,9 @@ function InfosPerfil (){
                     <input onChange={e => handleUpload (e)} id="file-upload" type="file" />  
                 </div>  
             }
-            {user
+            {user //Quando usuário carregar...
             ?
-                user.tipo==='nrm' || user.tipo==='adm'
+                user.tipo==='nrm' || user.tipo==='adm' //Se o usuário for normal ou ADM
                     ?
                         <div className="campos-info">
                             <p className="campo-info">Nome: {user.nome}</p>
@@ -148,7 +150,7 @@ function InfosPerfil (){
                             <p className="campo-info">Telefone 2: ({user.ddd2}) {user.tel2}</p>
                             <p className="campo-info">Sobre você: {user.fisico.desc}</p>
                         </div>
-                    :
+                    : //Se o usuário for uma ong...
                     <div className="campos-info">
                         <p className="campo-info">Nome: {user.nome}</p>
                         <p className="campo-info">Email: {user.email}</p>
@@ -157,13 +159,13 @@ function InfosPerfil (){
                         <p className="campo-info">Telefone 2: ({user.ddd2}) {user.tel2}</p>
                         <p className="campo-info">Sobre você: {user.ong.desc}</p>
                         {user.ong.desc==='true'
-                        ?
+                        ? //Se a ong for verificada
                             <p className="campo-info">Verificado: SIM </p>
-                        :
+                        : //Se a ong não for verificada
                             <p className="campo-info">Verificado: NÃO</p>
                         }
                     </div>
-            :
+            : //Enquanto o usuário não carregar...
                 <div className="center">
                     <Preloader
                         className="preloader"
@@ -174,11 +176,11 @@ function InfosPerfil (){
                 </div>
             }
             <div className="center">
-            {user 
+            {user  //Quando usuário carregar...
             ?
-                (user.tipo==='nrm' || user.tipo==='adm')
+                (user.tipo==='nrm' || user.tipo==='adm') //Se o usuário for normal ou ADM
                 ?
-                    <Modal
+                    <Modal // Modal responsável pela edição de usuários normais e adms
                         actions={[
                             <Button className="close-modal" flat modal="close" node="button"><ImCross /></Button>
                         ]}
@@ -201,7 +203,7 @@ function InfosPerfil (){
                         }}
                         trigger={
                             <Button className="btn-editar-infos" node="button">
-                               Editar
+                               <MdEdit className="icon-editar"/>Editar
                             </Button>    
                         }
                         >
@@ -256,8 +258,8 @@ function InfosPerfil (){
                                 </div>
                             </form>
                     </Modal>
-                :
-                    <Modal
+                : //Se o usuário for ONG
+                    <Modal // Modal responsável pela edição de ONGs
                         actions={[
                             <Button className="close-modal" flat modal="close" node="button"><ImCross /></Button>
                         ]}
@@ -280,8 +282,8 @@ function InfosPerfil (){
                         }}
                         trigger={
                             <Button className="btn-editar-infos" node="button">
-                               Editar
-                            </Button>    
+                               <MdEdit className="icon-editar"/>Editar
+                            </Button>         
                         }
                     >
                         <form className="form-editar" onSubmit={handleSubmitONG}>
@@ -325,27 +327,35 @@ function InfosPerfil (){
                             </div>
                         </form>
                     </Modal>
-            :<></>
+            ://Enquanto a ONG não carrega
+            <div className="center">
+                <Preloader
+                    className="preloader"
+                    active
+                    color="green"
+                    flashing={false}
+                />
+            </div>
             }  
             </div>
         </div>
-        :
+        ://Se o usuário não for o dono do perfil
         <div>
-            OI
+
         </div>
         }
-        <div className="animais-area">
+        <div className="animais-area"> {/* Div que engloba os animais cadastrados, para adoção pelo usuário*/}
             <h3 className="title-animais">Animais para adoção:</h3>
                 <div className="animais-display">
                     {
-                        animais
+                        animais //Quando animais carregarem
                         ?
                             animais.map(animal => (
                             <Link key={animal._id}to={'/animal/'+animal._id}>
                                 <ViewerAnimal  animal={animal}/>
                             </Link>
                         ))
-                        :
+                        : //Enquanto os animais não carregam
                         <Preloader
                             active
                             color="green"
