@@ -1,0 +1,15 @@
+.upload-area-banner{
+    margin-bottom: 2.5em;
+}
+.custom-file-upload-banner {
+    font-size: small;
+    color: white;
+    border-radius: 2em;
+    padding: 1em  2em  1em   2em;
+    cursor: pointer;
+    background-color: #56ca7d;
+    margin-right: 1em;
+}
+.custom-file-upload-banner:hover {
+    background-color: #48a567;
+}
