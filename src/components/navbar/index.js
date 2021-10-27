@@ -198,13 +198,17 @@ function NavBar (){
                 }}
                 trigger={<Link to="#!" className="nav-item-ong">Eventos<RiArrowDropDownLine className="nav-icon-ong"/>{''}</Link>}
               >
-                <Link to="/validar-evento">
-                  Validar eventos
-                </Link>
-                <Divider />
-                <Link to="/eventos">
-                  Eventos
-                </Link>
+                  <Divider />
+                  <Link to="/cadastrar-evento">
+                    Criar evento
+                  </Link>
+                  <Link to="/meus-eventos">
+                    Meus eventos
+                  </Link>
+                  <Link to="/eventos">
+                    Outros eventos
+                  </Link>
+                  <Divider />
               </Dropdown>
             )}
             {(user.tipo==='adm')&&(
