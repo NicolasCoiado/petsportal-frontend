@@ -13,3 +13,16 @@
 .custom-file-upload-banner:hover {
     background-color: #48a567;
 }
+
+.btn-submit-form-Evento{
+    font-family: 'Raleway', sans-serif;
+    background-color: #56ca7d;
+    width: 17em;
+    border-radius: 2em;
+}
+.btn-submit-form-Evento:hover{
+    background-color: #40965d;
+}
+.btn-area-cadEvento{
+    text-align: center;
+}

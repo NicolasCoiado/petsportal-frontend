@@ -5,7 +5,7 @@ import CadastroPessoa from '../pages/cad-pessoa/';
 import CadastroOng from '../pages/cad-ong/';
 import CadastroAnimal from "../pages/cad-animal/";
 import CadastroEvento from "../pages/cad-evento";
-import Animal from "../pages/animal";
+import Animal from "../pages/animal/";
 import Perfil from "../pages/perfil/";
 import EditarSenha from "../pages/edit-senha/"
 import UndefinedPage from "../pages/undefined-page";

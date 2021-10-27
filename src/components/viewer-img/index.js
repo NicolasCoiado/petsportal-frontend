@@ -1,12 +1,23 @@
+import React, {useEffect, useState} from 'react';
 import 'materialize-css';
 import defaultImage from '../../images/default.png'
 import './style.css';
 const config =  require('../../api/config.json')
 
 function ViewerIMG({uploadUrl}){
+    const [imagem, setImagem] = useState()
+
+    useEffect(()=>{
+        if(uploadUrl){
+            setImagem(config.url+uploadUrl)
+        }else{
+            imagem(defaultImage)
+        }
+    })
+    
     return(
         <div>
-            <img className="img-viewer" src={(uploadUrl)? config.url + uploadUrl : defaultImage} alt="YourImage" />
+            <img className="img-viewer" src={imagem} alt="YourImage" />
         </div>
     );
 }

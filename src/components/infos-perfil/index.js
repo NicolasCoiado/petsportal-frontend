@@ -1,5 +1,6 @@
 import ViewerAnimal from '../viewer-animal/'
 import ViewerIMG from '../viewer-img/';
+import EventosONG from '../eventos-ong';
 import { Button, Icon, Modal, TextInput, Preloader } from 'react-materialize';
 import { MdEdit } from 'react-icons/md';
 import React, { useState, useEffect} from "react";
@@ -14,6 +15,7 @@ import './style.css';
 function InfosPerfil (){
     const [user, setUser] = useState()
     const [animais, setAnimais] = useState()
+    const [eventos, setEventos] = useState();
 
     const { id } = useParams()
 
@@ -38,6 +40,7 @@ function InfosPerfil (){
             setUser(res.data.user)
             setAnimais(res.data.animais)
             setMe(res.data.me)
+            if(res.data.eventos) setEventos(res.data.eventos)
         })
         .catch(err => {
             console.log(err)
@@ -343,6 +346,9 @@ function InfosPerfil (){
         <div>
 
         </div>
+        }
+        {eventos &&
+             <EventosONG eventos={eventos}/> 
         }
         <div className="animais-area"> {/* Div que engloba os animais cadastrados, para adoção pelo usuário*/}
             <h3 className="title-animais">Animais para adoção:</h3>
