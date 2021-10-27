@@ -7,6 +7,7 @@ import CadastroAnimal from "../pages/cad-animal/";
 import Animal from "../pages/animal";
 import Perfil from "../pages/perfil/";
 import EditarSenha from "../pages/edit-senha/"
+import UndefinedPage from "../pages/undefined-page";
 
 const Rotas = () => (
     <BrowserRouter>
@@ -20,7 +21,7 @@ const Rotas = () => (
             <Route path='/perfil/:id' component={ Perfil } /> 
             <Route path='/animal/:id' component={ Animal } /> 
             <Route path='/editar' component={ EditarSenha } /> 
-            <Route path='/' component={ Perfil } />
+            <Route path='/' component={ UndefinedPage } />
         </Switch>
     </BrowserRouter>
 );
