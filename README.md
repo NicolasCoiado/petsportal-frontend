@@ -16,7 +16,7 @@
   <p>Bom, todos os responsáveis pelo desenvolvimento do PetsPortal, cursaram Desenvolvimento de Sistemas em uma escola chamada Etec da Zona Leste, e por isso, precisavam apresentar um trabalho de conclusão de curso (TCC), e foi por isso que a idéia de criar esse projeto surgiu, assim poderíamos ajudar os animais, e concluir nosso curso técnico. </p>
   
   # Quem são os responsáveis pelo PetsPortal?
-   * [@Kauan Gallati](https://www.instagram.com/_gallati_/)
+   * [@Kauan Gallati](https://github.com/kauan-gvq)
    * [@Lucas Lima](https://github.com/LucasAna2)
    * [@Nicolas Coiado](https://github.com/NicolasCoiado)
    * [@Théo Kabir](https://github.com/theokabir)
