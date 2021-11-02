@@ -47,7 +47,7 @@ function NavBar (){
         </NavLink>}
         id="mobile-nav"
         menuIcon={
-          <TiThMenu className="nav-menu-mobile" fontSize="x-large" />
+          <TiThMenu fontSize="x-large" />
         }
         options={{
           draggable: true,

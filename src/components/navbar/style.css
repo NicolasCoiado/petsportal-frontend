@@ -17,25 +17,23 @@
 @media (min-width: 993px)
 {
     .brand-logo{
-        width: 1.5em;
         margin-left: 1em;
     }
 }
 
 .nav-item{
-    padding-top: 0.5em;
-    padding-bottom: 0.3em;
+    padding-top: 11px;
+    padding-bottom: 13px;
     font-size: xx-large;
 }
 .nav-item-ong{
-    padding-top: 0.3em;
-    padding-bottom: 0.1em;
-    font-size: 1.8em;
+    padding-top: 11px;
+    padding-bottom: 1px;
+    font-size: 35px;
 }
 .nav-icon-ong{
-    padding-top: 0.4em;
+    padding-top: 10px;
 }
-
 .btn-nav{
     font-family: 'Raleway', sans-serif;
     font-size: x-large;
@@ -98,11 +96,11 @@
 }
 @media (min-width: 600px) {
     .brand-logo{
-        width: 1.5em;
+        width: 65px;
     }    
 }
 @media (max-width: 600px) {
     .brand-logo{
-        width: 1.2em;
+        width: 55px;
     }    
 }

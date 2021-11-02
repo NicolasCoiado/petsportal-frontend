@@ -6,7 +6,7 @@
     background-color: #1D452A;
 }
 
-@media (min-width: 990px)
+@media (min-width: 1000px)
 {
     .footer-title{
         color: white;
@@ -20,8 +20,8 @@
         flex-direction: row;
     }
     .p-names{
-        margin-left: 5%;
-        margin-right: 5%;
+        margin-left: 100px;
+        margin-right: 100px;
         color: rgba(255, 255, 255, 0.761);
     }
 
@@ -39,12 +39,12 @@
     }
 }
 
-@media (max-width: 990px)
+@media (max-width: 1000px)
 {
     .footer-title{
-        text-align: center;
+       
         color: white;
-        padding: 2em 1em 1em 1em;
+        padding: 50px 40px 40px 50px;
         font-size: medium;
     }
     .footer-names{
@@ -52,15 +52,15 @@
     }
     .p-names{
         font-size: xx-small;
-        text-align: center;
-        margin-bottom: 1em;
+        margin-left: 50px;
+        margin-bottom: 20px;
         color: rgba(255, 255, 255, 0.761);
     }
 
     .footer-infos{
         background-color: #163320;
-        margin-top: 1.5em;
-        padding: 1em 0em 1em 0em;
+        margin-top: 40px;
+        padding: 30px 0px 20px 0px;
         display: flex;
         flex-direction: column;
     }

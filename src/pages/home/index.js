@@ -1,9 +1,9 @@
 import NavBar from '../../components/navbar/';
 import Carrossel from '../../components/carousel/';
 import Filter from '../../components/filters/'
-import Cards from '../../components/cards/'
 import Rodape from '../../components/rodape'
 import { Fragment } from 'react';
+import Animais from '../../components/animais';
 
 function Home (){
     return(
@@ -14,7 +14,7 @@ function Home (){
         <main>
             <Carrossel />
             <Filter />
-            <Cards />
+            <Animais/>
         </main>
         <footer>
             <Rodape />

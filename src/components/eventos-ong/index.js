@@ -1,29 +1,19 @@
 import React from "react";
 import {Row, Col, Card , Icon, CardTitle} from 'react-materialize';
 import {Link} from "react-router-dom";
-const config =  require('../../api/config.json')
+import './style.css'
 
 function EventosONG ({eventos}){
     return(
-        <Row>
-            <Col
-                m={6}
-                s={12}
-            >
-                
-                {eventos.map((evento)=>(
-                    <Card
-                        closeIcon={<Icon>close</Icon>}
-                        header={<CardTitle image={config.url+evento.banner}></CardTitle>}
-                        revealIcon={<Icon>more_vert</Icon>}
-                        key={evento._id}
-                        >
-                        <Link to='/'>{evento.nome}</Link>
-                    </Card>
-                ))}
-                
-            </Col>
-        </Row>
+        <div className="cards-eventos">
+            {eventos.map((evento)=>(
+                <div className="card-eventos" key={evento._id}>
+                    <img className="img-evento" src={evento.banner} alt="BannerEvento"/>
+                    <h1 className="title-evento">{evento.nome}</h1>
+                    <p className="p-evento">{evento.observacao} </p>
+                </div>
+            ))}
+        </div>
     );
 }
 

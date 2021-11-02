@@ -347,9 +347,6 @@ function InfosPerfil (){
 
         </div>
         }
-        {eventos &&
-             <EventosONG eventos={eventos}/> 
-        }
         <div className="animais-area"> {/* Div que engloba os animais cadastrados, para adoção pelo usuário*/}
             <h3 className="title-animais">Animais para adoção:</h3>
                 <div className="animais-display">
@@ -371,6 +368,9 @@ function InfosPerfil (){
                     }
                 </div>  
         </div>
+        {eventos &&
+             <EventosONG eventos={eventos}/> 
+        }
     </>
     );
 }

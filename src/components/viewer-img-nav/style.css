@@ -3,7 +3,7 @@
     #img-viewer{
         width: 1em;
         height: 1em;
-
+        margin-top: 0.3em;
         border-radius: 100%;
         object-fit: cover;
     }

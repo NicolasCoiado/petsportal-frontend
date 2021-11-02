@@ -1,9 +1,0 @@
-.cards{
-    display: flex;
-    flex-direction: row;
-    margin-left: 25%;
-}
-.card{
-   width: 15em;
-   height: 17em;
-}

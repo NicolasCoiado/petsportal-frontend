@@ -9,9 +9,9 @@ function ViewerIMG({uploadUrl}){
 
     useEffect(()=>{
         if(uploadUrl){
-            setImagem(config.url+uploadUrl)
+            setImagem(uploadUrl)
         }else{
-            imagem(defaultImage)
+            setImagem(defaultImage)
         }
     })
     

@@ -1,0 +1,29 @@
+.cards-eventos{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.card-eventos{
+    width: 200px;
+    height: 230px;
+    padding: 25px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.412);
+}
+
+.img-evento{
+    width: 150px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.title-evento{
+    font-size: medium;
+    color: #000;
+    margin-bottom: 10px;
+}
+.p-evento{
+    font-size: x-small;
+    color: rgb(95, 95, 95);
+}
