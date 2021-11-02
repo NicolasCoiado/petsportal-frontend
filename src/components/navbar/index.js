@@ -243,7 +243,7 @@ function NavBar (){
                 </Link>
               </Dropdown>
             )}
-            <NavLink className="nav-item"  to={`/perfil/${user.id}`}>
+            <NavLink className="nav-pic-item"  to={`/perfil/${user.id}`}>
               <ViewerNavIMG uploadUrl={user.img} />
             </NavLink>
             <Dropdown

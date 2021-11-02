@@ -22,10 +22,17 @@
 }
 
 .nav-item{
-    padding-top: 11px;
-    padding-bottom: 13px;
+    padding-top: 13px;
+    padding-bottom: 0px;
     font-size: xx-large;
 }
+
+.nav-pic-item{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    font-size: xx-large;
+}
+
 .nav-item-ong{
     padding-top: 11px;
     padding-bottom: 1px;
