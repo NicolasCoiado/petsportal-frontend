@@ -1,8 +1,8 @@
 @media (min-width: 993px)
 {
     #img-viewer{
-        width: 1em;
-        height: 1em;
+        width: 40px;
+        height: 40px;
         margin-top: 0.3em;
         border-radius: 100%;
         object-fit: cover;
