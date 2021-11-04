@@ -1,0 +1,21 @@
+.campos-info-evento{
+    margin-top: 3em;
+    margin-bottom: 2em;
+}
+.campo-info-evento{
+    font-size: medium;
+    padding: 1em 4em 0em 4em;
+}
+
+.custom-file-upload-evento{
+    font-size: x-small;
+    color: white;
+    border-radius: 2em;
+    padding: 1.2em  2em  1em   1em;
+    cursor: pointer;
+    background-color: #56ca7d;
+}
+
+.custom-file-upload-evento:hover{
+    background-color: #48a567;
+}
