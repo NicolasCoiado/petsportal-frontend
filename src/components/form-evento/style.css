@@ -1,28 +1,51 @@
 .upload-area-banner{
+    text-align: center;
+    justify-content: center;
     margin-bottom: 2.5em;
 }
-.custom-file-upload-banner {
-    font-size: small;
-    color: white;
-    border-radius: 2em;
-    padding: 1em  2em  1em   2em;
-    cursor: pointer;
-    background-color: #56ca7d;
-    margin-right: 1em;
+
+@media (min-width: 993px){
+    .custom-file-upload-banner {
+        font-size: small;
+        color: white;
+        border-radius: 2em;
+        padding: 1em  2em  1em   1.5em;
+        cursor: pointer;
+        background-color: #56ca7d;
+        margin-right: 1em;
+    }
+    .btn-submit-form-Evento{
+        font-family: 'Raleway', sans-serif;
+        font-size: 90%;
+        background-color: #56ca7d;
+        width: 17em;
+        border-radius: 2em;
+    }
+}
+@media (max-width: 993px){
+    .custom-file-upload-banner {
+        font-size: xx-small;
+        color: white;
+        border-radius: 2em;
+        padding: 1em  2em  1em   2em;
+        cursor: pointer;
+        background-color: #56ca7d;
+        margin-right: 1em;
+    }
+    .btn-submit-form-Evento{
+        font-family: 'Raleway', sans-serif;
+        font-size: 50%;
+        background-color: #56ca7d;
+        width: 20em;
+        border-radius: 2em;
+    }
 }
 .custom-file-upload-banner:hover {
     background-color: #48a567;
-}
-
-.btn-submit-form-Evento{
-    font-family: 'Raleway', sans-serif;
-    background-color: #56ca7d;
-    width: 17em;
-    border-radius: 2em;
 }
 .btn-submit-form-Evento:hover{
     background-color: #40965d;
 }
 .btn-area-cadEvento{
-    text-align: center;
+   text-align: center;
 }

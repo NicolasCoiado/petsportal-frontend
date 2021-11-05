@@ -8,6 +8,8 @@
 }
 
 .custom-file-upload-evento{
+    position: relative;
+    top: 35px;
     font-size: x-small;
     color: white;
     border-radius: 2em;
@@ -17,5 +19,16 @@
 }
 
 .custom-file-upload-evento:hover{
+    background-color: #48a567;
+}
+
+.btn-editar-infos-evento{
+    text-transform: none;
+    background-color: #56ca7d;
+    font-size: medium;
+    border-radius: 2em;
+    margin-top: 50px;
+}
+.btn-editar-infos-evento:hover{
     background-color: #48a567;
 }

@@ -114,7 +114,7 @@ function FormEvento (){
                     </option>
                 </Select>
                 <p className="paragraph-cadastrar">A arte de divulgação deve possuir as dimenções de 1920px (largura) X 300px (altura).</p>
-                <div className="center upload-area-banner">
+                <div className="upload-area-banner">
                     <label htmlFor="file-upload" className="custom-file-upload-banner">
                         <Icon className="icon-file">download</Icon> 
                             Banner de divulgação

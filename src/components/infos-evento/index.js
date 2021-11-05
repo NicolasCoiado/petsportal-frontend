@@ -143,8 +143,8 @@ function InfosEvento(){
                                     startingTop: '4%'
                                 }}
                                 trigger={
-                                    <Button className="btn-editar-infos" node="button">
-                                    <MdEdit className="icon-editar"/>Editar
+                                    <Button className="btn-editar-infos-evento" node="button">
+                                        <MdEdit className="icon-editar"/>Editar
                                     </Button>    
                                 }
                                 >
