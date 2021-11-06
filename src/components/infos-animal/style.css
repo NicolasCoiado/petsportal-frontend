@@ -61,3 +61,105 @@
     text-align: center;
     padding: 3em 1em 1em 1em;
 }
+
+.responsavel{
+    text-align: center;
+}
+.viewer-responsavel{
+    margin: 200px;
+}
+.title-responsavel{
+    font-size: 150%;
+    color: black;
+    margin-bottom: 10px;
+}
+.campos-info-animal-3°{
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: -80px;
+}
+.nome-animal{
+    font-weight: bold;
+    font-size: 150%;
+    margin-bottom: 10px;
+}
+
+.btns-animal{
+    text-align: center;
+    margin-bottom: 45px;
+}
+@media (min-width: 1000px){
+    .btn-adotar{
+        border-radius: 200px;
+        background-color: #56ca7d;
+        font-size: 100%;
+        font-weight: bold;
+        width: 20%;
+        height: 50px;
+    }
+    .btn-adotar:hover{
+        background-color: #40965d;
+    }
+}
+
+@media (max-width: 1000px){
+    .btn-adotar{
+        border-radius: 200px;
+        background-color: #56ca7d;
+        font-weight: bold;
+    }
+    .btn-adotar:hover{
+        background-color: #40965d;
+    }
+}
+
+@media(min-width: 1000px){
+    .area-txt-adocao{
+        padding: 50px 50px 0px 50px;
+    }
+    .title-adocao{
+        text-align: center;
+        font-weight: bolder;
+        font-size: 130%;
+        margin-bottom: 40px;
+    }
+    .p-adocao{
+        font-size: 80%;
+        color: rgba(0, 0, 0, 0.33);
+    }
+
+    .btn-submit-adocao{
+        background-color: #56ca7d;
+        width: 12em;
+        border-radius: 2em;
+        margin-top: 20px;
+    }
+    .btn-submit-adocao:hover{
+        background-color: #40965d;
+    }
+}
+@media(max-width: 1000px){
+    .area-txt-adocao{
+        padding: 10px 10px 0px 10px;
+    }
+    .title-adocao{
+        text-align: center;
+        font-weight: bolder;
+        font-size: 100%;
+        margin-bottom: 30px;
+    }
+    .p-adocao{
+        font-size: 50%;
+        color: rgba(0, 0, 0, 0.33);
+    }
+
+    .btn-submit-adocao{
+        background-color: #56ca7d;
+        width: 12em;
+        border-radius: 2em;
+        margin-top: 20px;
+    }
+    .btn-submit-adocao:hover{
+        background-color: #40965d;
+    }
+}

@@ -62,6 +62,14 @@
         margin-top: 3em;
         margin-bottom: 2em;
     }
+    .campos-info{
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+    .campos-info-3°{
+        margin-top: 0px;
+        margin-bottom: 60px;
+    }
     .custom-file-upload-perfil{
         color: white;
         border-radius: 2em;
@@ -88,6 +96,10 @@
     .campos-info{
         margin-top: 2em;
         margin-bottom: 2em;
+    }
+    .campos-info-3°{
+        margin-top: 0px;
+        margin-bottom: 60px;
     }
     .custom-file-upload-perfil{
         font-size: x-small;
@@ -117,4 +129,8 @@
     background-color: transparent;
     color: rgb(213, 1, 1);
     box-shadow: none;
+}
+.perfil-3°{
+    margin-top: 50px;
+    text-align: center;
 }

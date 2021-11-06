@@ -39,6 +39,7 @@ function InfosEvento(){
             setEspecies(res.data.evento.especies)
 
             setMe(res.data.me)
+            console.log(res.data.me)
         })
         .catch(err => {
             console.log(err)
@@ -102,138 +103,156 @@ function InfosEvento(){
         <div className="Eventos-Component">
             {evento
             ?
-            <>
-                <div className="center">
-                    <ViewerEvento uploadUrl={evento.banner}/>
-                    <label htmlFor="file-upload" className="custom-file-upload-evento">
-                        <Icon className="icon-file">download</Icon> 
-                            Upload imagem
-                    </label>
-                    <input onChange={e => handleUploadEvento(e)} id="file-upload" type="file" />  
-                </div>
-                <div className="infos">
-                    <div className="campos-info-evento">
-                        <p className="campo-info-evento"> Nome:  {evento.nome}</p>
-                        <p className="campo-info-evento"> Data:  {evento.data.slice(0,-8)}</p>
-                        <p className="campo-info-evento"> Espécies:  {evento.especies}</p>
-                        <p className="campo-info-evento"> Local:  {evento.local}</p>
-                        <p className="campo-info-evento"> Observacao:  {evento.observacao}</p>
-                        <p className="campo-info-evento"> Editado:  {evento.editado}</p>
-                        <p className="campo-info-evento"> Contato da ONG:  {evento.contato}</p>
-                        <div className="center">
-                            <Modal 
-                                actions={[
-                                    <Button className="close-modal" flat modal="close" node="button"> <ImCross /> </Button>
-                                ]}
-                                bottomSheet={false}
-                                fixedFooter={false}
-                                header="Editar informações do evento:"
-                                open={false}
-                                options={{
-                                    dismissible: true,
-                                    endingTop: '10%',
-                                    inDuration: 250,
-                                    onCloseEnd: null,
-                                    onCloseStart: null,
-                                    onOpenEnd: null,
-                                    onOpenStart: null,
-                                    opacity: 0.5,
-                                    outDuration: 250,
-                                    preventScrolling: true,
-                                    startingTop: '4%'
-                                }}
-                                trigger={
-                                    <Button className="btn-editar-infos-evento" node="button">
-                                        <MdEdit className="icon-editar"/>Editar
-                                    </Button>    
-                                }
-                                >
-                                    <form onSubmit={handleSubmitEvento} className="form-editar">
-                                        <TextInput
-                                            label="Nome do evento" 
-                                            type="text"
-                                            defaultValue={evento.nome}
-                                            onChange={e => setNome (e.target.value)}
-                                        />
-                                        <TextInput            
-                                            label="Local do evento"
-                                            defaultValue={evento.local}
-                                            onChange={e => setLocal (e.target.value)}
-                                        />
-                                        <h1>
-                                            Data e Horário do Evento
-                                        </h1>
-                                        <TextInput               
-                                            type="datetime-local"
-                                            defaultValue={evento.data.slice(0, -8)}
-                                            onChange={e => setData (e.target.value)}
-                                        />
-                                        <Textarea
-                                            data-length={120}
-                                            label="Observações"
-                                            defaultValue={evento.observacao}
-                                            onChange={e => setObservacao(e.target.value)}
-                                        />
-                                        <Select
-                                            className="campo-form-pessoa"
-                                            multiple={false}
-                                            onChange={e => setEspecies (e.target.value)}
-                                            options={{
-                                                classes: '',
-                                                dropdownOptions: {
-                                                alignment: 'left',
-                                                autoTrigger: true,
-                                                closeOnClick: true,
-                                                constrainWidth: true,
-                                                coverTrigger: true,
-                                                hover: false,
-                                                inDuration: 150,
-                                                onCloseEnd: null,
-                                                onCloseStart: null,
-                                                onOpenEnd: null,
-                                                onOpenStart: null,
-                                                outDuration: 250
-                                                }
-                                            }}
-                                            defaultValue={evento.especies}
-                                        >
-                                            <option
-                                                value="geral"
+                me 
+                ?
+                <>
+                    <div className="center">
+                        <ViewerEvento uploadUrl={evento.banner}/>
+                        <label htmlFor="file-upload" className="custom-file-upload-evento">
+                            <Icon className="icon-file">download</Icon> 
+                                Upload imagem
+                        </label>
+                        <input onChange={e => handleUploadEvento(e)} id="file-upload" type="file" />  
+                    </div>
+                    <div className="infos">
+                        <div className="campos-info-evento">
+                            <p className="campo-info-evento"> Nome:  {evento.nome}</p>
+                            <p className="campo-info-evento"> Data:  {evento.data.slice(0,-8)}</p>
+                            <p className="campo-info-evento"> Espécies:  {evento.especies}</p>
+                            <p className="campo-info-evento"> Local:  {evento.local}</p>
+                            <p className="campo-info-evento"> Observacao:  {evento.observacao}</p>
+                            <p className="campo-info-evento"> Editado:  {evento.editado}</p>
+                            <p className="campo-info-evento"> Contato da ONG:  {evento.contato}</p>
+                            <div className="center">
+                                <Modal 
+                                    actions={[
+                                        <Button className="close-modal" flat modal="close" node="button"> <ImCross /> </Button>
+                                    ]}
+                                    bottomSheet={false}
+                                    fixedFooter={false}
+                                    header="Editar informações do evento:"
+                                    open={false}
+                                    options={{
+                                        dismissible: true,
+                                        endingTop: '10%',
+                                        inDuration: 250,
+                                        onCloseEnd: null,
+                                        onCloseStart: null,
+                                        onOpenEnd: null,
+                                        onOpenStart: null,
+                                        opacity: 0.5,
+                                        outDuration: 250,
+                                        preventScrolling: true,
+                                        startingTop: '4%'
+                                    }}
+                                    trigger={
+                                        <Button className="btn-editar-infos-evento" node="button">
+                                            <MdEdit className="icon-editar"/>Editar
+                                        </Button>    
+                                    }
+                                    >
+                                        <form onSubmit={handleSubmitEvento} className="form-editar">
+                                            <TextInput
+                                                label="Nome do evento" 
+                                                type="text"
+                                                defaultValue={evento.nome}
+                                                onChange={e => setNome (e.target.value)}
+                                            />
+                                            <TextInput            
+                                                label="Local do evento"
+                                                defaultValue={evento.local}
+                                                onChange={e => setLocal (e.target.value)}
+                                            />
+                                            <h1>
+                                                Data e Horário do Evento
+                                            </h1>
+                                            <TextInput               
+                                                type="datetime-local"
+                                                defaultValue={evento.data.slice(0, -8)}
+                                                onChange={e => setData (e.target.value)}
+                                            />
+                                            <Textarea
+                                                data-length={120}
+                                                label="Observações"
+                                                defaultValue={evento.observacao}
+                                                onChange={e => setObservacao(e.target.value)}
+                                            />
+                                            <Select
+                                                className="campo-form-pessoa"
+                                                multiple={false}
+                                                onChange={e => setEspecies (e.target.value)}
+                                                options={{
+                                                    classes: '',
+                                                    dropdownOptions: {
+                                                    alignment: 'left',
+                                                    autoTrigger: true,
+                                                    closeOnClick: true,
+                                                    constrainWidth: true,
+                                                    coverTrigger: true,
+                                                    hover: false,
+                                                    inDuration: 150,
+                                                    onCloseEnd: null,
+                                                    onCloseStart: null,
+                                                    onOpenEnd: null,
+                                                    onOpenStart: null,
+                                                    outDuration: 250
+                                                    }
+                                                }}
+                                                defaultValue={evento.especies}
                                             >
-                                                Geral
-                                            </option>
-                                            <option
-                                                value="cg"
-                                            >
-                                                Cães e Gatos
-                                            </option>
-                                            <option value="c">
-                                                Somente cães
-                                            </option>
-                                            <option value="g">
-                                                Somente gatos
-                                            </option>
-                                        </Select>
-                                        <div className="center">
-                                            <Button
-                                                node="button"
-                                                type="submit"
-                                                waves="light"
-                                                className="submmit-edit"
-                                            >
-                                                Enviar
-                                                <Icon left>
-                                                    send
-                                                </Icon>
-                                            </Button>
-                                        </div>
-                                    </form>
-                            </Modal>
+                                                <option
+                                                    value="geral"
+                                                >
+                                                    Geral
+                                                </option>
+                                                <option
+                                                    value="cg"
+                                                >
+                                                    Cães e Gatos
+                                                </option>
+                                                <option value="c">
+                                                    Somente cães
+                                                </option>
+                                                <option value="g">
+                                                    Somente gatos
+                                                </option>
+                                            </Select>
+                                            <div className="center">
+                                                <Button
+                                                    node="button"
+                                                    type="submit"
+                                                    waves="light"
+                                                    className="submmit-edit"
+                                                >
+                                                    Enviar
+                                                    <Icon left>
+                                                        send
+                                                    </Icon>
+                                                </Button>
+                                            </div>
+                                        </form>
+                                </Modal>
+                            </div>
                         </div>
                     </div>
-                </div>
-                
-            </>
+                    </>
+                :
+                <>
+                    <div className="center">
+                        <ViewerEvento uploadUrl={evento.banner}/>  
+                    </div>
+                    <div className="infos">
+                        <div className="campos-info-evento">
+                            <p className="campo-info-evento"> Nome:  {evento.nome}</p>
+                            <p className="campo-info-evento"> Data:  {evento.data.slice(0,-8)}</p>
+                            <p className="campo-info-evento"> Espécies:  {evento.especies}</p>
+                            <p className="campo-info-evento"> Local:  {evento.local}</p>
+                            <p className="campo-info-evento"> Observacao:  {evento.observacao}</p>
+                            <p className="campo-info-evento"> Editado:  {evento.editado}</p>
+                            <p className="campo-info-evento"> Contato da ONG:  {evento.contato}</p>
+                        </div>
+                    </div>
+                </>
             :
                 <div className="center">
                     <Preloader

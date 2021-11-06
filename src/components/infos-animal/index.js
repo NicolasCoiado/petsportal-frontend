@@ -769,8 +769,9 @@ function InfosAnimal (){
                     </div>
                 </>    
                 :
-                    <div className="campos-info">
-                        <p className="campo-info"> Nome: {animal.nome}</p>
+                <>
+                    <div className="campos-info-animal-3°">
+                        <p className="campo-info"> <h1 className="nome-animal">{animal.nome}</h1></p>
                         <p className="campo-info"> Espécie: {especieSwitch(animal.especie)}</p>
                         <p className="campo-info"> Pelagem: {animal.pelagem}</p>
                         <p className="campo-info"> Porte: {porteSwitch(animal.porte)}</p>
@@ -780,10 +781,64 @@ function InfosAnimal (){
                         <p className="campo-info"> Doenças: {animal.doencas || 'Nenhuma.'}</p>
                         <p className="campo-info"> Alergias: {animal.alergias || 'Nenhuma.'}</p>
                         <p className="campo-info"> Deficiências: {animal.deficiencias || 'Nenhuma.'}</p>
-                        <Link to={'/perfil/'+animal.responsavel._id}>
+                    </div>
+
+                    <div className="btns-animal">
+                        <Modal
+                            actions={[
+                                <Button className="close-modal" flat modal="close" node="button"><ImCross /></Button>
+                            ]}
+                            bottomSheet={false}
+                            fixedFooter={false}
+                            open={false}
+                            options={{
+                                dismissible: true,
+                                endingTop: '10%',
+                                inDuration: 250,
+                                onCloseEnd: null,
+                                onCloseStart: null,
+                                onOpenEnd: null,
+                                onOpenStart: null,
+                                opacity: 0.5,
+                                outDuration: 250,
+                                preventScrolling: true,
+                                startingTop: '4%'
+                            }}
+                            trigger={<Button className="btn-adotar" node="button">DESEJO ADOTAR!</Button>}
+                            >
+                                <div className="area-txt-adocao">
+                                    <h1 className="title-adocao">Convença o doador do animal!</h1>
+                                    <p className="p-adocao">Explique abaixo, porque você é um bom adotante, como pretende manter o animal e porque deseja adota-lo, não existe um texto certo, apenas diga a verdade!</p>
+                                    <form>
+                                        <TextInput
+                                            placeholder="Sou um bom adotante pois..."
+                                            data-length={200}
+                                        />
+                                        <div className="center">
+                                            <Button
+                                                className="btn-submit-adocao"
+                                                node="button"
+                                                type="submit"
+                                                waves="light"
+                                            >
+                                                Enviar
+                                                <Icon left>
+                                                    send
+                                                </Icon>
+                                            </Button>
+                                        </div>
+                                    </form>
+                                </div>
+                        </Modal>
+                    </div>
+
+                    <div className="responsavel">
+                        <p className="title-responsavel"> Responsável: </p>
+                        <Link className="viewer-responsavel" to={'/perfil/'+animal.responsavel._id}>
                             <ViewerIMG uploadUrl={animal.responsavel.imagem}/>
                         </Link>
                     </div>
+                </>
             :
             <div className="center">
                 <Preloader

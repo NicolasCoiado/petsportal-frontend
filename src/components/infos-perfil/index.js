@@ -343,9 +343,18 @@ function InfosPerfil (){
             </div>
         </div>
         ://Se o usuário não for o dono do perfil
-        <div>
-
-        </div>
+            user && (
+                <div className="perfil-3°">
+                    <ViewerIMG uploadUrl={user.imagem}/>
+                    <div className="campos-info-3°">
+                        <p className="campo-info">Nome: {user.nome}</p>
+                        <p className="campo-info">Email: {user.email}</p>
+                        <p className="campo-info">Endereço: {user.endereco}</p>
+                        <p className="campo-info">Telefone 1: ({user.ddd1}) {user.tel1}</p>
+                        <p className="campo-info">Telefone 2: ({user.ddd2}) {user.tel2}</p>
+                    </div>
+                </div>
+            )
         }
         <div className="animais-area"> {/* Div que engloba os animais cadastrados, para adoção pelo usuário*/}
             <h3 className="title-animais">Animais para adoção:</h3>
