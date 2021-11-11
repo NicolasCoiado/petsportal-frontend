@@ -243,11 +243,11 @@ function InfosEvento(){
                     </div>
                     <div className="infos">
                         <div className="campos-info-evento">
-                            <p className="campo-info-evento"> Nome:  {evento.nome}</p>
+                            <p className="campo-info-evento"> <h1 className="nome-animal">{evento.nome}</h1></p>
                             <p className="campo-info-evento"> Data:  {evento.data.slice(0,-8)}</p>
-                            <p className="campo-info-evento"> Espécies:  {evento.especies}</p>
+                            <p className="campo-info-evento"> Espécies disponíveis:  {evento.especies}</p>
                             <p className="campo-info-evento"> Local:  {evento.local}</p>
-                            <p className="campo-info-evento"> Observacao:  {evento.observacao}</p>
+                            <p className="campo-info-evento"> Observação:  {evento.observacao}</p>
                             <p className="campo-info-evento"> Editado:  {evento.editado}</p>
                             <p className="campo-info-evento"> Contato da ONG:  {evento.contato}</p>
                         </div>

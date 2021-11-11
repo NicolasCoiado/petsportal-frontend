@@ -3,7 +3,7 @@ import Carrossel from '../../components/carousel/';
 import Filter from '../../components/filters/'
 import Rodape from '../../components/rodape'
 import { Fragment } from 'react';
-import Animais from '../../components/animais';
+import CarrosselCards from '../../components/carrossel-cards';
 
 function Home (){
     return(
@@ -14,7 +14,7 @@ function Home (){
         <main>
             <Carrossel />
             <Filter />
-            <Animais/>
+            <CarrosselCards/>
         </main>
         <footer>
             <Rodape />

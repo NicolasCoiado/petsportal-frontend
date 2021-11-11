@@ -348,13 +348,47 @@ function InfosPerfil (){
                     <ViewerIMG uploadUrl={user.imagem}/>
                     <div className="campos-info-3°">
                         <p className="campo-info">Nome: {user.nome}</p>
-                        <p className="campo-info">Email: {user.email}</p>
-                        <p className="campo-info">Endereço: {user.endereco}</p>
-                        <p className="campo-info">Telefone 1: ({user.ddd1}) {user.tel1}</p>
-                        <p className="campo-info">Telefone 2: ({user.ddd2}) {user.tel2}</p>
+                        {user.tipo==="ong"
+                        ?
+                            <p className="campo-info">Sobre: {user.ong.desc}</p>
+                        :
+                            <p className="campo-info">Sobre: {user.fisico.desc}</p>
+                        }
                     </div>
                 </div>
             )
+        }
+        {me
+        ?
+            <div className="btns-propostas">
+                <Link to='/propostas/'>
+                    <Button
+                        className="btn-propostas"
+                        node="button"
+                        waves="light"
+                        //TODO: COLOQUE UM íCONE AQUI
+                    >
+                        Propostas de adoções
+                        
+                        <Icon left>
+                        </Icon>
+                    </Button>
+                </Link>
+                <Link to='/confirmados'>
+                    <Button
+                        className="btn-propostas"
+                        node="button"
+                        waves="light"
+                    >
+                        Propostas de adoções confirmadas
+                        <Icon left>
+                          
+                        </Icon>
+                    </Button>
+                </Link>
+            </div>
+        :
+            <></>
         }
         <div className="animais-area"> {/* Div que engloba os animais cadastrados, para adoção pelo usuário*/}
             <h3 className="title-animais">Animais para adoção:</h3>
@@ -377,8 +411,14 @@ function InfosPerfil (){
                     }
                 </div>  
         </div>
-        {eventos &&
-             <EventosONG eventos={eventos}/> 
+
+        {user &&
+            user.tipo==='ong' 
+            ?
+                eventos &&
+                    <EventosONG eventos={eventos}/> 
+            :
+                <></>
         }
     </>
     );

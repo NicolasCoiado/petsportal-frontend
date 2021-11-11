@@ -1,0 +1,66 @@
+.cc{
+    margin-top: 70px;
+    margin-bottom: 50px;
+    width: 100%;
+    justify-content: center;
+}
+.carrossel{
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow-x:hidden;
+}
+.icon-animal{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    font-size: 65px;
+    background-color: rgba(0, 0, 0, 0.453);
+    border-radius: 2em;
+    color: #ffffffbd;
+}
+.icons-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    top: -250px;
+}
+.card{
+    margin: 10px;
+    padding: 10px;
+    width: 280px;
+}
+.img-animal{
+    width: 260px;
+    height: 260px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    object-fit: cover;
+}
+.info{
+    text-align: center;
+}
+.animal-name{
+    margin: 20px;
+}
+.btn-animal{
+    border-radius: 2em;
+    background-color: #56ca7d;
+    margin-bottom: 15px;
+}
+.btn-animal:hover{
+    background-color: #40965d;
+}
+
+.btn-ver{
+    background-color: #56ca7d;
+    margin-bottom: 15px;
+}
+
+.btn-ver:hover{
+    background-color: #40965d;
+}

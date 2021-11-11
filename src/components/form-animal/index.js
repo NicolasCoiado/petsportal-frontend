@@ -265,7 +265,7 @@ function FormPessoa (){
             <div className="center upload-area-animal">
                 <label htmlFor="file-upload" className="custom-file-upload-animal">
                     <Icon className="icon-file">download</Icon> 
-                        Foto Animal 1
+                        Foto Animal 
                 </label>
                 <input id="file-upload" type="file" onChange={handleUpload} />    
             </div>

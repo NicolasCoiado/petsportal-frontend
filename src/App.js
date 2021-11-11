@@ -3,9 +3,7 @@ import Rotas from './rotes/'
 
 function App() {
   return (
-    <div className="App">
       <Rotas />
-    </div>
   );
 }
 

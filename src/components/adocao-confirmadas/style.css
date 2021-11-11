@@ -1,0 +1,10 @@
+.btn-modal-ctt{
+    background-color: #56ca7d;
+    border-radius: 2em;
+    margin-top: 4px;
+    margin-left: 50px;
+}
+
+.btn-modal-ctt:hover{
+    background-color: #40965d;
+}

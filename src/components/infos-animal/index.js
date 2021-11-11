@@ -21,6 +21,7 @@ function InfosAnimal (){
     const [doencas, setDoencas] = useState('');
     const [alergias, setAlergias] = useState('');
     const [deficiencias, setDeficiencias] = useState('');
+    const [obsAdocao, setobsAdocao] = useState('');
 
     const { id } = useParams()
 
@@ -155,6 +156,34 @@ function InfosAnimal (){
         })
         .catch(err =>{
             console.log(err)
+        })
+    }
+
+    const requisitarAdocao = (e) =>{
+        e.preventDefault();
+
+        let adocao = {
+            doador : animal.responsavel,
+            animal : animal._id,
+            observacao :obsAdocao,
+        }
+
+        API.post("/animals/adocao/pedido", adocao, 
+            { headers: 
+                { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
+            } 
+        )
+        
+        .then(res => {
+            console.log("Deu bom")
+            //console.log(user);
+            console.log(res);
+            //TODO: Fazer mensagem de adoção mamaco
+            history.push("/");
+        })
+        .catch(err =>{
+            console.log(err)
+            //console.log(user)
         })
     }
 
@@ -809,10 +838,11 @@ function InfosAnimal (){
                                 <div className="area-txt-adocao">
                                     <h1 className="title-adocao">Convença o doador do animal!</h1>
                                     <p className="p-adocao">Explique abaixo, porque você é um bom adotante, como pretende manter o animal e porque deseja adota-lo, não existe um texto certo, apenas diga a verdade!</p>
-                                    <form>
+                                    <form onSubmit={e => requisitarAdocao(e) }>
                                         <TextInput
                                             placeholder="Sou um bom adotante pois..."
                                             data-length={200}
+                                            onChange={e => setobsAdocao(e.target.value)}
                                         />
                                         <div className="center">
                                             <Button

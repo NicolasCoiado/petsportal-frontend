@@ -1,0 +1,157 @@
+.reqs-component{
+    margin: 5% 5% 200px 5%;
+}
+
+@media (min-width: 1000px){
+    .cltni-reqs{
+        display: flex;
+        flex-direction: row;
+    }
+    .cltn-reqs{
+        margin-bottom: 100px;
+    }
+    .itens-cltn{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        margin-left: 50px;
+    }
+
+    .name-cltn{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .animal-name{
+        text-align: center;
+        margin-top: -10px;
+    }
+
+    .title-cltn{
+        color: rgb(181, 180, 180);
+        font-size: 10px;
+        margin-bottom: -10px;
+    }
+
+    .p-obs{
+        text-align: center;
+        padding: 50px 0px 0px 0px;
+    }
+    .title-cltn{
+        color: rgb(181, 180, 180);
+        font-size: 10px;
+        margin-bottom: -10px;
+    }
+    
+    .btn-modal-motivos{
+        background-color: #5684ca;
+        border-radius: 2em;
+        margin-top: 4px;
+        margin-left: 50px;
+    }
+    .btn-modal-motivos:hover{
+        background-color: rgb(93, 64, 150);
+    }
+    
+    .btn-group{
+        display: flex;
+        flex-direction: row;
+        margin-top: 24px;
+        margin-left: 100px;
+    }
+    .btn-aceitar{
+        background-color: #56ca7d;
+        margin-right: 30px;
+        border-radius: 2em;
+    }
+    .btn-aceitar:hover{
+        background-color: #40965d;
+    }
+    
+    .btn-recusar{
+        background-color: rgb(255, 84, 84);
+        margin-right: 30px;
+        border-radius: 2em;
+    }   
+    
+    .btn-recusar:hover{
+        background-color: rgb(216, 82, 82);
+        margin-right: 30px;
+        border-radius: 2em;
+    }
+
+    .icon-btn{
+        margin-top: 10px;
+        margin-left: 15px;
+    }
+}
+
+@media (max-width: 1000px){
+    .cltni-reqs{
+        text-align: center;
+    }
+    .itens-cltn{
+
+    }
+
+    .name-cltn{
+    }
+
+    .animal-name{
+        text-align: center;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+
+    .title-cltn{
+        color: rgb(181, 180, 180);
+        font-size: 10px;
+        margin-bottom: -13px;
+    }
+
+    .p-obs{
+        text-align: center;
+        padding: 50px 0px 20px 0px;
+    }
+    .title-cltn{
+        color: rgb(181, 180, 180);
+    }
+    
+    .btn-modal-motivos{
+        background-color: #5684ca;
+        border-radius: 2em;
+        margin-top: 10px;
+        margin-bottom: 25px;
+    }
+    .btn-modal-motivos:hover{
+        background-color: rgb(93, 64, 150);
+    }
+    
+    .btn-group{
+        margin-bottom: 25px;
+    }
+    .btn-aceitar{
+        background-color: #56ca7d;
+        border-radius: 2em;
+        margin-right: 20px;
+    }
+    .btn-aceitar:hover{
+        background-color: #40965d;
+    }
+    
+    .btn-recusar{
+        background-color: rgb(255, 84, 84);
+        border-radius: 2em;
+    }
+    
+    .btn-recusar:hover{
+        background-color: rgb(216, 82, 82);
+    }
+
+    .icon-btn{
+        margin-top: 10px;
+        margin-left: 7px;
+    }
+}
+
+

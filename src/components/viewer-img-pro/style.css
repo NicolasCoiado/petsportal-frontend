@@ -1,0 +1,22 @@
+@media (min-width: 993px)
+{
+    #img-viewer-pro{
+        width: 70px;
+        height: 70px;
+        margin-top: 0.3em;
+        margin-left: 50px;
+        border-radius: 100%;
+        object-fit: cover;
+    }
+}
+@media (max-width: 993px)
+{
+    #img-viewer-pro{
+        width: 3em;
+        height: 3em;
+        margin-top: 0.3em;
+        margin-bottom: 10px;
+        border-radius: 100%;
+        object-fit: cover;
+    }
+}
