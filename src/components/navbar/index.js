@@ -106,7 +106,7 @@ function NavBar (){
               {(user.tipo==='adm')&&(
                 <>
                   <Divider />
-                  <Link className="nav-event-mobile" to="/validar-eventos">
+                  <Link className="nav-event-mobile" to="/adm/eventos">
                     <FaUserCheck className="nav-icon-mobile"/>
                     Validar eventos
                   </Link>

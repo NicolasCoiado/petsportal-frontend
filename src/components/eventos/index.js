@@ -11,14 +11,13 @@ import API from '../../api';
 import './style.css';
 
 
-function Filter (){
+function Eventos (){
 
+    const [nome, setNome] = useState();
+    const [local, setLocal] = useState();
     const [especie, setEspecie] = useState();
-    const [porte, setPorte] = useState();
-    const [minIdade, setMinIdade] = useState();
-    const [maxIdade, setMaxIdade] = useState();
 
-    const [animais, setAnimais] = useState([]);
+    const [eventos, setEventos] = useState([]);
 
     useEffect(() => {
         
@@ -28,17 +27,17 @@ function Filter (){
             tokens.headers= {Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         }
 
-        API.post(`/search/animais`, {limit: 10}, tokens)
+        API.post(`/search/eventos`, {limit: 10}, tokens)
         .then(res => {
             console.log(res.data)
-            setAnimais(res.data.animais)
+            setEventos(res.data.eventos)
         })
         .catch(err => {
             console.log(err)
         })
     }, [])
 
-    const filtrarAnimais = (e) =>{
+    const filtrarEventos = (e) =>{
         e.preventDefault();
         let tokens = {}
         if(window.localStorage.getItem('token'))
@@ -46,16 +45,15 @@ function Filter (){
             tokens.headers= {Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         }
         let filtro = {
-            especie,
-            porte, 
-            minIdade,
-            maxIdade
+            nome, 
+            local,
+            especie
         }
-        API.post("/search/animais", filtro, tokens )
+        API.post("/search/eventos", filtro, tokens )
         .then(res => {
             console.log("Deu bom")
-            console.log(res.data.animais);
-            setAnimais(res.data.animais)
+            console.log(res.data.eventos);
+            setEventos(res.data.eventos)
         })
         .catch(err =>{
             console.log(err)
@@ -89,117 +87,19 @@ function Filter (){
                 trigger={<Button className="btn-filtros" node="button"><FaFilter className="icon-btn-filter" />Aplicar</Button>}
                 >
                 <div className="area-filter">
-                    <h1 className="title-filter">FILTRO PARA ANIMAIS:</h1>
-                    <form onSubmit={e => filtrarAnimais(e)}>
-                        <Select
-                            multiple={false}
-                            onChange={e => setEspecie (e.target.value)}
-                            options={{
-                                classes: '',
-                                dropdownOptions: {
-                                alignment: 'left',
-                                autoTrigger: true,
-                                closeOnClick: true,
-                                constrainWidth: true,
-                                coverTrigger: true,
-                                hover: false,
-                                inDuration: 150,
-                                onCloseEnd: null,
-                                onCloseStart: null,
-                                onOpenEnd: null,
-                                onOpenStart: null,
-                                outDuration: 250
-                                }
-                            }}
-                            value=""
-                            >
-                            <option
-                                disabled
-                                value=""
-                            >
-                                Especie desejada
-                            </option>
-                            <option value="cao">
-                                Cão
-                            </option>
-                            <option value="gato">
-                                Gato
-                            </option>
-                        </Select>
-                        <Select
-                            multiple={false}
-                            onChange={e => setPorte (e.target.value)}
-                            options={{
-                                classes: '',
-                                dropdownOptions: {
-                                alignment: 'left',
-                                autoTrigger: true,
-                                closeOnClick: true,
-                                constrainWidth: true,
-                                coverTrigger: true,
-                                hover: false,
-                                inDuration: 150,
-                                onCloseEnd: null,
-                                onCloseStart: null,
-                                onOpenEnd: null,
-                                onOpenStart: null,
-                                outDuration: 250
-                                }
-                            }}
-                            value=""
-                            >
-                            <option
-                                disabled
-                                value=""
-                            >
-                                Porte desejado
-                            </option>
-                            <option value="p">
-                                Pequeno
-                            </option>
-                            <option value="pm">
-                                Pequeno-Médio
-                            </option>
-                            <option value="m">
-                                Médio
-                            </option>
-                            <option value="mg">
-                                Médio-Grande
-                            </option>
-                            <option value="g">
-                                Grande
-                            </option>
-                        </Select>
-                        <div className="config-inputs-filter">
-                            <TextInput
-                                label="Idade Mínima"
-                                id="input-filter1"
-                                type="number"
-                                onChange={e => setMinIdade (e.target.value)}
-                            />
-                            <TextInput
-                                label="Idade Máxima"
-                                id="input-filter2"
-                                type="number"
-                                onChange={e => setMaxIdade (e.target.value)}
-                            />
-                        </div>
-                        <Button className="subbmit-filtros" type="submmit"><GiSittingDog className="icon-btn-filter" />Aplicar filtro</Button>
-                    </form>
-                </div>
-
-                <div className="area-filter">
                     <h1 className="title-filter">FILTRO EVENTOS:</h1>
-                    <form>
+                    <form onSubmit={filtrarEventos}>
                         <TextInput
                             label="Nome específico de evento"
+                            onChange={e => setNome(e.target.value)}
                         />
                         <TextInput
                             label="Local de evento"
+                            onChange={e => setLocal(e.target.value)}
                         />
                         <Select
                             multiple={false}
-                            onChange={function noRefCheck(){}}
+                            onChange={e => setEspecie(e.target.value)}
                             options={{
                                 classes: '',
                                 dropdownOptions: {
@@ -249,24 +149,24 @@ function Filter (){
         </div>
         <div className="reqs-component">
             <Collection className="cltn-reqs">
-                {animais &&
+                {eventos &&
                     /* TODO: Colocar load enquanto os animais não carregarem */
-                    animais.map(animal => (
+                    eventos.map(evento => (
                         <CollectionItem className="cltni-reqs">
-                            <Link to={animal}>
-                                <ViewerImgPro uploadUrl={animal.foto} />
+                            <Link to={evento}>
+                                <ViewerImgPro /*uploadUrl={}*/ />
                             </Link>
                             <div className="itens-cltn">
                                 <div className="animal-name">
                                     <h3 className="title-cltn"> Nome do animal: </h3>
-                                    <h1 className="name-cltn">{animal.nome}</h1>
+                                    <h1 className="name-cltn">{evento.nome}</h1>
                                 </div>
                                 <div className="itens-cltn-obs">
                                     <h1 className="title-cltn-obs"> Observacao: </h1>
-                                    <h1 className="name-cltn-obs">{animal.observacao || 'Nenhuma'}</h1>
+                                    <h1 className="name-cltn-obs">{evento.observacao || 'Nenhuma'}</h1>
                                 </div>
                             </div>
-                            <Link to={'/animal/'+animal._id}>
+                            <Link to={'/evento/'+evento._id}>
                                 <Button>
                                     Ver animal
                                 </Button>
@@ -280,4 +180,4 @@ function Filter (){
     );
 }
 
-export default Filter;
+export default Eventos;

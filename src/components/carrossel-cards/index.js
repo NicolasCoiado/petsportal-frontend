@@ -7,9 +7,11 @@ import './style.css';
 function CarrosselCards(){
 
     const [animais, setAnimais] = useState('');
+    const [carouselCount, setCarouselCount] = useState(10);
+    const [quantAdd, setQuantAdd] = useState(10);
 
     useEffect(() => {
-        API.post("/home/carousel", {}, {
+        API.post("/home/carousel", { carouselCount }, {
           headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
           })
           .then(res => {
@@ -22,6 +24,24 @@ function CarrosselCards(){
       }, []);
 
     const carrossel = useRef(null);
+
+    const loadAnimals = () => {
+        API.post("/home/maisAnimais", 
+            { 
+                carouselCount,  
+                pag : Math.ceil((animais.length-carouselCount)/quantAdd),
+                quant : quantAdd
+            },
+            {headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}}
+        )
+            .then(res => {
+                setAnimais(animais.concat(res.data.animais))
+                console.log(res.data.animais)
+            })
+            .catch(err =>{
+                console.log(err);
+            })
+        }
 
     const handleLeftClick = (e) =>{
         e.preventDefault();
@@ -59,24 +79,37 @@ function CarrosselCards(){
                 }
             </div> 
             <div className="icons-group">
+
                 <Icon onClick={handleLeftClick} className="icon-animal">
                     navigate_before
                 </Icon>
+
                 <Icon onClick={handleRightClick} className="icon-animal">
                     navigate_next
                 </Icon>
+                
             </div> 
             <div className="center">
                 <Button
+                    onClick={loadAnimals}
                     className="btn-ver"
-                    node="button"
-                    style={{
-                    marginRight: '5px'
-                    }}
-                    waves="light"
+                    //TODO: Msg: Mais animais adicionados ao carrossel acima
+                    //TODO: Estilizar botão
                 >
                     Desejo ver mais animais!
                 </Button>   
+            </div>
+            <div className="center">
+                <Link to='/animais/filtrados'>
+                    <Button
+                        onClick={loadAnimals}
+                        className="btn-ver"
+                        //TODO: Msg: Mais animais adicionados ao carrossel acima
+                        //TODO: Estilizar botão
+                    >
+                        Buscar tipo específico de animal
+                    </Button>  
+                </Link>
             </div>
         </div>
     );

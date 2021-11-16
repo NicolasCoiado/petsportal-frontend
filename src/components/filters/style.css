@@ -10,7 +10,102 @@
     padding-top: 0.8em;
     padding-bottom: 1em;
 }
-.chip{
+.btn-filtros{
     background-color: white;
+    color: #52C478;
+    font-weight: bold;
+    border-radius: 2em;
+    box-shadow: none;
+    margin-bottom: 20px;
 }
 
+.btn-filtros:hover{
+    background-color: #48a567;
+    color: white;
+    font-weight: bold;
+    border-radius: 2em;
+    box-shadow: none;
+}
+.icon-btn-filter{
+    padding-top: 4px;
+    margin-right: 5px;
+}
+@media (min-width: 800px){
+    .area-filter{
+        padding: 50px;
+        border-width: 1px;
+        border-style: solid;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .title-filter{
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .itens-cltn-obs{
+        margin-top: -9px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    .title-cltn-obs{
+        color: rgb(181, 180, 180);
+        font-size: 15px;
+        margin-bottom: -9px;
+    }
+    .name-cltn-obs{
+        font-size: 16px;
+    }
+    .config-inputs-filter{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    #input-filter1{
+        width: 180px;
+        margin-right: 100px;
+    }
+    #input-filter2{
+        width: 180px;
+    }
+    .subbmit-filtros{
+        text-transform: none;
+        font-size: 20px;
+        text-align: center;
+        background-color: #52C478;
+        border-radius: 2em;
+        font-weight: bold;
+    }
+    .subbmit-filtros:hover{
+        background-color: #48a567;
+    }
+}
+@media (max-width: 800px){
+    .area-filter{
+        padding: 10px;
+        border-width: 1px;
+        border-style: solid;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .title-filter{
+        text-align: center;
+    }
+    .config-inputs-filter{
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+    }
+    .subbmit-filtros{
+        text-transform: none;
+        text-align: center;
+        background-color: #52C478;
+        border-radius: 2em;
+        font-weight: bold;
+    }
+    .subbmit-filtros:hover{
+        background-color: #48a567;
+    }
+}
