@@ -38,7 +38,7 @@ function Filter (){
         })
     }, [])
 
-    const filtrarAnimais = (e) =>{
+    const filtrarAnimais = (e, skip) =>{
         e.preventDefault();
         let tokens = {}
         if(window.localStorage.getItem('token'))
@@ -49,13 +49,18 @@ function Filter (){
             especie,
             porte, 
             minIdade,
-            maxIdade
+            maxIdade,
+            skip,
+            limit : 5
         }
         API.post("/search/animais", filtro, tokens )
         .then(res => {
             console.log("Deu bom")
             console.log(res.data.animais);
-            setAnimais(res.data.animais)
+            if(skip==0)
+                setAnimais(res.data.animais)
+            else    
+                setAnimais(animais.concat(res.data.animais))
         })
         .catch(err =>{
             console.log(err)
@@ -90,7 +95,7 @@ function Filter (){
                 >
                 <div className="area-filter">
                     <h1 className="title-filter">FILTRO PARA ANIMAIS:</h1>
-                    <form onSubmit={e => filtrarAnimais(e)}>
+                    <form onSubmit={e => filtrarAnimais(e, 0)}>
                         <Select
                             multiple={false}
                             onChange={e => setEspecie (e.target.value)}
@@ -187,64 +192,6 @@ function Filter (){
                         <Button className="subbmit-filtros" type="submmit"><GiSittingDog className="icon-btn-filter" />Aplicar filtro</Button>
                     </form>
                 </div>
-
-                <div className="area-filter">
-                    <h1 className="title-filter">FILTRO EVENTOS:</h1>
-                    <form>
-                        <TextInput
-                            label="Nome específico de evento"
-                        />
-                        <TextInput
-                            label="Local de evento"
-                        />
-                        <Select
-                            multiple={false}
-                            onChange={function noRefCheck(){}}
-                            options={{
-                                classes: '',
-                                dropdownOptions: {
-                                alignment: 'left',
-                                autoTrigger: true,
-                                closeOnClick: true,
-                                constrainWidth: true,
-                                coverTrigger: true,
-                                hover: false,
-                                inDuration: 150,
-                                onCloseEnd: null,
-                                onCloseStart: null,
-                                onOpenEnd: null,
-                                onOpenStart: null,
-                                outDuration: 250
-                                }
-                            }}
-                            value=""
-                            >
-                                <option
-                                    value="geral"
-                                    disabled
-                                >
-                                    Espécies disponíveis
-                                </option>
-                                <option
-                                    value="geral"
-                                >
-                                    Geral
-                                </option>
-                                <option
-                                    value="cg"
-                                >
-                                    Cães e Gatos
-                                </option>
-                                <option value="c">
-                                    Somente cães
-                                </option>
-                                <option value="g">
-                                    Somente gatos
-                                </option>
-                        </Select>
-                        <Button className="subbmit-filtros" type="submmit"><IoIosPeople  className="icon-btn-filter" />Aplicar filtro</Button>
-                    </form>
-                </div>
             </Modal>
         </div>
         <div className="reqs-component">
@@ -275,6 +222,11 @@ function Filter (){
                     ))
                 }
             </Collection>
+            <Button
+                onClick={e => filtrarAnimais(e, animais.length)}
+            >
+                button
+            </Button>
         </div>
     </>
     );

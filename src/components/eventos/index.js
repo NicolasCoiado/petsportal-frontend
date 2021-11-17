@@ -37,7 +37,7 @@ function Eventos (){
         })
     }, [])
 
-    const filtrarEventos = (e) =>{
+    const filtrarEventos = (e , skip) =>{
         e.preventDefault();
         let tokens = {}
         if(window.localStorage.getItem('token'))
@@ -47,13 +47,18 @@ function Eventos (){
         let filtro = {
             nome, 
             local,
-            especie
+            especie,
+            limit : 5,
+            skip
         }
         API.post("/search/eventos", filtro, tokens )
         .then(res => {
             console.log("Deu bom")
             console.log(res.data.eventos);
-            setEventos(res.data.eventos)
+            if(skip==0)
+                setEventos(res.data.eventos)
+            else    
+                setEventos(eventos.concat(res.data.eventos))
         })
         .catch(err =>{
             console.log(err)
@@ -88,7 +93,7 @@ function Eventos (){
                 >
                 <div className="area-filter">
                     <h1 className="title-filter">FILTRO EVENTOS:</h1>
-                    <form onSubmit={filtrarEventos}>
+                    <form onSubmit={e=>filtrarEventos(e, 0)}>
                         <TextInput
                             label="Nome específico de evento"
                             onChange={e => setNome(e.target.value)}
@@ -175,6 +180,11 @@ function Eventos (){
                     ))
                 }
             </Collection>
+            <Button
+                onClick={e => filtrarEventos(e, eventos.length)}
+            >
+                button
+            </Button>
         </div>
     </>
     );

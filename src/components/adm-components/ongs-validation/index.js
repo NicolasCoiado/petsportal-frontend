@@ -1,7 +1,7 @@
 import React from "react";
 import { Collection, CollectionItem, Modal, Button } from 'react-materialize';
 
-function EventsValidation (){
+function OngsValidation (){
     return(
         <div className="reqs-component">
             <Collection className="cltn-reqs">
@@ -22,4 +22,4 @@ function EventsValidation (){
     );
 }
 
-export default EventsValidation;
+export default OngsValidation;

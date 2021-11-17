@@ -162,7 +162,7 @@ function RequisicoesAdocao (){
                                 className="btn-aceitar"
                                 node="button"                         
                                 waves="light"
-                                //onClick={() => aceitar(adocao._id)}
+                                onClick={() => aceitar(adocao._id)}
                                 //TODO: seus meios de contatos serão enviados, o adotante entrará em contato com você.
                             >
                                 Aceitar

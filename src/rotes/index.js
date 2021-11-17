@@ -12,7 +12,10 @@ import Evento from "../pages/evento/";
 import EventosFiltrados from "../pages/eventos-filtrados/"
 import PropostasAdocao from '../pages/propostas-adocao/';
 import ConfirmadasAdocao from "../pages/confirmadas-adocao/";
-import ValidarEventos from "../pages/ADM/validar-eventos/"
+import ValidarEventos from "../pages/ADM/validar-eventos/";
+import ValidarOngs from "../pages/ADM/validar-ongs/";
+import ListarAdocoes  from "../pages/ADM/listar-adocoes/";
+import Reportes  from "../pages/ADM/reportes/"
 import EditarSenha from "../pages/edit-senha/";
 import UndefinedPage from "../pages/undefined-page";
 
@@ -33,6 +36,8 @@ const Rotas = () => (
             <Route path='/propostas' component={ PropostasAdocao } /> 
             <Route path='/confirmados' component={ ConfirmadasAdocao } />
             <Route path='/adm/eventos' component={ ValidarEventos } /> 
+            <Route path='/adm/ongs' component={ ValidarOngs } /> 
+            <Route path='/adm/adocoes' component={ ListarAdocoes } /> 
             <Route path='/editar' component={ EditarSenha } /> 
             <Route path='/' component={ UndefinedPage } />
         </Switch>
