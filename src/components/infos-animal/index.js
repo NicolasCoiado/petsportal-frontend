@@ -89,7 +89,7 @@ function InfosAnimal (){
             headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         })
         .then(res => {
-            console.log(res.data)
+            console.log(res.data.animal)
             setAnimal(res.data.animal)
             setMe(res.data.me)
         })

@@ -4,7 +4,7 @@ import { FaHandHoldingHeart, FaUserCheck } from 'react-icons/fa'
 import { GiSittingDog } from 'react-icons/gi'
 import { RiLogoutBoxRLine, RiArrowDropDownLine } from 'react-icons/ri'
 import { IoIosPeople } from 'react-icons/io'
-import { HiPlusCircle, HiUserAdd } from 'react-icons/hi'
+import { HiPlusCircle, HiUserAdd, HiViewList } from 'react-icons/hi'
 import { Navbar, Button, Dropdown, Divider, Icon } from 'react-materialize';
 import { NavLink, Link, useHistory } from 'react-router-dom';
 import ViewerNavIMG from '../viewer-img-nav/'
@@ -105,14 +105,27 @@ function NavBar (){
 
               {(user.tipo==='adm')&&(
                 <>
+                  <Link className="nav-event-mobile" to="/eventos">
+                    <IoIosPeople className="nav-icon-mobile"/>
+                    Eventos
+                  </Link>
                   <Divider />
+                  <Link className="nav-event-mobile" to="/adm/adocoes">
+                    <HiViewList className="nav-icon-mobile"/> 
+                    Lista de adoções
+                  </Link>
+                  <Divider />
+                  <Link className="nav-event-mobile" to="/adm/ongs">
+                    <FaUserCheck className="nav-icon-mobile"/>
+                    Validar ONGs
+                  </Link>
                   <Link className="nav-event-mobile" to="/adm/eventos">
                     <FaUserCheck className="nav-icon-mobile"/>
                     Validar eventos
                   </Link>
-                  <Link className="nav-event-mobile" to="/eventos">
-                    <IoIosPeople className="nav-icon-mobile"/>
-                    Eventos
+                  <Divider />
+                  <Link className="nav-event-mobile" to="/adm/reports">
+                    Ver reports
                   </Link>
                   <Divider />
                 </>
@@ -212,6 +225,10 @@ function NavBar (){
               </Dropdown>
             )}
             {(user.tipo==='adm')&&(
+            <>
+              <NavLink className="nav-item" to='/eventos'>
+                Eventos
+              </NavLink>
               <Dropdown
                 id="Dropdown_15"
                 options={{
@@ -229,7 +246,7 @@ function NavBar (){
                   onOpenStart: null,
                   outDuration: 250
                 }}
-                trigger={<Link to="#!" className="nav-item-ong">Eventos<RiArrowDropDownLine className="nav-icon-ong"/>{''}</Link>}
+                trigger={<Link to="#!" className="nav-item-ong">Administrar<RiArrowDropDownLine className="nav-icon-ong"/>{''}</Link>}
               >
                 <Link to="/adm/adocoes">
                   Lista de adoções
@@ -246,6 +263,7 @@ function NavBar (){
                   Ver reports
                 </Link>
               </Dropdown>
+            </>
             )}
             <NavLink className="nav-pic-item"  to={`/perfil/${user.id}`}>
               <ViewerNavIMG uploadUrl={user.img} />
