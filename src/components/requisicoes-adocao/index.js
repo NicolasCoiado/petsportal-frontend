@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Collection, CollectionItem, Modal, Button } from 'react-materialize';
 import ViewerImgPro from '../viewer-img-pro';
 import { GiCheckMark } from "react-icons/gi";

@@ -1,6 +1,6 @@
-import React, {useRef, useEffect, useState} from "react";
-import {Link} from "react-router-dom";
-import { Button, Icon } from "react-materialize";
+import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Button, Icon, Preloader } from "react-materialize";
 import API from "../../api";
 import './style.css';
 
@@ -9,6 +9,7 @@ function CarrosselCards(){
     const [animais, setAnimais] = useState('');
     const [carouselCount, setCarouselCount] = useState(10);
     const [quantAdd, setQuantAdd] = useState(10);
+    const [logado, setLogado] = useState();
 
     useEffect(() => {
         API.post("/home/carousel", { carouselCount }, {
@@ -16,7 +17,9 @@ function CarrosselCards(){
           })
           .then(res => {
               setAnimais(res.data.animais)
-              console.log(res.data.animais)
+              setLogado(res.data.logado)
+              //console.log(res.data.animais)
+              console.log( res.data )
           })
           .catch(err =>{
              console.log(err);
@@ -25,7 +28,14 @@ function CarrosselCards(){
 
     const carrossel = useRef(null);
 
-    const loadAnimals = () => {
+    const handleLeftClick = (e) =>{
+        e.preventDefault();
+        carrossel.current.scrollLeft -= carrossel.current.offsetWidth;
+    }
+
+    const handleRightClick = (e) =>{
+        e.preventDefault();
+        carrossel.current.scrollLeft += carrossel.current.offsetWidth;
         API.post("/home/maisAnimais", 
             { 
                 carouselCount,  
@@ -36,27 +46,18 @@ function CarrosselCards(){
         )
             .then(res => {
                 setAnimais(animais.concat(res.data.animais))
-                console.log(res.data.animais)
+                //console.log(res.data.animais)
             })
             .catch(err =>{
                 console.log(err);
             })
-        }
-
-    const handleLeftClick = (e) =>{
-        e.preventDefault();
-        carrossel.current.scrollLeft -= carrossel.current.offsetWidth;
-    }
-
-    const handleRightClick = (e) =>{
-        e.preventDefault();
-        carrossel.current.scrollLeft += carrossel.current.offsetWidth;
     }
 
     return(
         <div className="cc">
             <div className="carrossel" ref={carrossel}>
-                {animais &&
+                {animais 
+                ?
                     animais.map(animal => (
                         <div className="card" key={animal._id}>
                             <div className="center">
@@ -64,18 +65,41 @@ function CarrosselCards(){
                             </div>  
                             <div className="info">
                                 <h1 className="animal-name">{animal.nome}</h1>
-                                <Link to={'animal/'+animal._id}>
-                                    <Button
-                                        className="btn-animal"
-                                        node="button"
-                                        waves="light"
-                                    >
-                                        Ver mais
-                                    </Button>
-                                </Link>
+                                {logado
+                                ? 
+                                    <Link to={ 'animal/'+animal._id}>
+                                        <Button
+                                            className="btn-animal"
+                                            node="button"
+                                            waves="light"
+                                        >
+                                            Ver mais
+                                        </Button>
+                                    </Link>
+                                :
+                                    <Link to="/login">
+                                        <Button
+                                            className="btn-animal"
+                                            node="button"
+                                            waves="light"
+                                        >
+                                            Ver mais
+                                        </Button>
+                                    </Link>
+                                }
                             </div>
                         </div>
                     ))
+                :
+                  //TODO: ARRUME ISSO AQUI
+                    <div className="center">
+                        <Preloader
+                            className="preloader"
+                            active
+                            color="green"
+                            flashing={false}
+                        />
+                    </div>
                 }
             </div> 
             <div className="icons-group">
@@ -89,20 +113,10 @@ function CarrosselCards(){
                 </Icon>
                 
             </div> 
-            <div className="center">
-                <Button
-                    onClick={loadAnimals}
-                    className="btn-ver"
-                    //TODO: Msg: Mais animais adicionados ao carrossel acima
-                    //TODO: Estilizar botão
-                >
-                    Desejo ver mais animais!
-                </Button>   
-            </div>
+
             <div className="center">
                 <Link to='/animais/filtrados'>
                     <Button
-                        onClick={loadAnimals}
                         className="btn-ver"
                         //TODO: Msg: Mais animais adicionados ao carrossel acima
                         //TODO: Estilizar botão

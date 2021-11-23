@@ -1,0 +1,17 @@
+.btn-mais{
+    background-color:#56ca7d;
+    border-radius: 2em;
+}
+.btn-mais:hover{
+    background-color: #40965d;
+}
+
+.btn-banir{
+    background-color:#fc6262;
+    border-radius: 2em;
+}
+.btn-banir:hover{
+    background-color:#311111;
+    border-radius: 2em;
+}
+

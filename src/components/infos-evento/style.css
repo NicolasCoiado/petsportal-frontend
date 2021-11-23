@@ -32,3 +32,13 @@
 .btn-editar-infos-evento:hover{
     background-color: #48a567;
 }
+
+.btn-excluir-evento{
+    margin-left: 50px;
+    margin-top: 50px;
+    background-color:#fc6262;
+    border-radius: 2em;
+}
+.btn-excluir-evento:hover{
+    background-color:#311111;
+}

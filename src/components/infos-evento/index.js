@@ -29,7 +29,7 @@ function InfosEvento(){
             headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         })
         .then(res => {
-            console.log(res.data)
+            //console.log(res.data)
             setEvento(res.data.evento)
 
             setNome(res.data.evento.nome)
@@ -39,7 +39,7 @@ function InfosEvento(){
             setEspecies(res.data.evento.especies)
 
             setMe(res.data.me)
-            console.log(res.data.me)
+            console.log(res.data.evento)
         })
         .catch(err => {
             console.log(err)
@@ -98,6 +98,23 @@ function InfosEvento(){
                 console.log(err)       
             })
         }
+
+    const ExcluirEvento = () =>{
+        API.post("admin/validate/eventos/excluir", {evento: evento._id}, {
+            headers: {
+                'Authorization' : 'Bearer ' + window.localStorage.getItem('token'),
+            }
+          })
+          
+            .then(res => {
+                console.log("Deu bom")
+                history.push("/")
+            })
+            .catch(err =>{
+                console.log(err)       
+                history.push(-1)
+            })
+    }
 
     return(
         <div className="Eventos-Component">
@@ -230,8 +247,13 @@ function InfosEvento(){
                                                     </Icon>
                                                 </Button>
                                             </div>
+                                            
                                         </form>
                                 </Modal>
+                                <Button className="btn-excluir-evento" onClick={ExcluirEvento} node="button">
+                                    <Icon left>delete</Icon>
+                                    Excluir
+                                </Button>   
                             </div>
                         </div>
                     </div>

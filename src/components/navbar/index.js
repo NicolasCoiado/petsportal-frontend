@@ -18,9 +18,13 @@ function NavBar (){
   const history = useHistory();
 
   function logoff(){
-    localStorage.setItem('token', null)
-    history.push('/login')
-}
+    var r = window.confirm('Tem certeza que deseja fazer logoff')
+
+    if(r == true){
+      localStorage.setItem('token', null)
+      history.push('/login')
+    }
+  }
 
   useEffect(() => {
     API.post("/navValidation", {}, {
@@ -28,7 +32,7 @@ function NavBar (){
       
       })
       .then(res => {
-         console.log(res);
+         console.log(res.data.user)
          setUser(res.data.user);
       })
       .catch(err =>{
@@ -65,28 +69,55 @@ function NavBar (){
         sidenav={
         <div id="sidenav">
           {(!user.tipo) //Se o usuário não estiver logado...
-            ?(<>
-              <NavLink className="nav-item-mobile" to='/cadastrar-animal'>
-                <FaHandHoldingHeart className="nav-icon-mobile" />
-                DOAR
-              </NavLink>
-              <NavLink className="nav-item-mobile"  to='/'>
-                <GiSittingDog className="nav-icon-mobile"/>
-                ADOTAR
-              </NavLink>
-              <NavLink className="nav-item-mobile"  to='/login'>
-                <Button 
-                  className="btn-nav"
-                  node="button"
-                  style={{
-                  marginRight: '5px'
-                }}
-                  waves="light"
-                >
-                  LOGIN
-                </Button>
-              </NavLink>
-            </>)://Se o usuário ESTIVER logado...
+            ?(
+              user
+              ?
+                <>
+                  <NavLink className="nav-item-mobile" to='/login'>
+                    <FaHandHoldingHeart className="nav-icon-mobile" />
+                    DOAR
+                  </NavLink>
+                  <NavLink className="nav-item-mobile"  to='/'>
+                    <GiSittingDog className="nav-icon-mobile"/>
+                    ADOTAR
+                  </NavLink>
+                  <NavLink className="nav-item-mobile"  to='/login'>
+                    <Button 
+                      className="btn-nav-mobile"
+                      node="button"
+                      style={{
+                      marginRight: '5px'
+                    }}
+                      waves="light"
+                    >
+                      LOGIN
+                    </Button>
+                  </NavLink>
+                </>
+              :
+                <>
+                  <NavLink className="nav-item-mobile" to='/cadastrar-animal'>
+                    <FaHandHoldingHeart className="nav-icon-mobile" />
+                    DOAR
+                  </NavLink>
+                  <NavLink className="nav-item-mobile"  to='/'>
+                    <GiSittingDog className="nav-icon-mobile"/>
+                    ADOTAR
+                  </NavLink>
+                  <NavLink className="nav-item-mobile"  to='/login'>
+                    <Button 
+                      className="btn-nav"
+                      node="button"
+                      style={{
+                      marginRight: '5px'
+                    }}
+                      waves="light"
+                    >
+                      LOGIN
+                    </Button>
+                  </NavLink>
+                </>
+            )://Se o usuário ESTIVER logado...
             (<> 
               <NavLink className="nav-pic-mobile" to={`/perfil/${user.id}`}>
                 <ViewerNavIMG uploadUrl={user.img} />
@@ -105,7 +136,7 @@ function NavBar (){
 
               {(user.tipo==='adm')&&(
                 <>
-                  <Link className="nav-event-mobile" to="/eventos">
+                  <Link className="nav-item-mobile"  to="/eventos">
                     <IoIosPeople className="nav-icon-mobile"/>
                     Eventos
                   </Link>
@@ -131,16 +162,12 @@ function NavBar (){
                 </>
               )}
 
-              {(user.tipo==='ong')&&(
+              {(user.verificado)&&(
                 <>
                   <Divider />
                   <Link className="nav-event-mobile" to="/cadastrar-evento">
                     <HiPlusCircle className="nav-icon-mobile"/>
                     Criar evento
-                  </Link>
-                  <Link className="nav-event-mobile" to="/meus-eventos">
-                    <HiUserAdd className="nav-icon-mobile"/>
-                    Meus eventos
                   </Link>
                   <Link className="nav-event-mobile" to="/eventos">
                     <IoIosPeople className="nav-icon-mobile"/>
@@ -215,9 +242,6 @@ function NavBar (){
                   <Link to="/cadastrar-evento">
                     Criar evento
                   </Link>
-                  <Link to="/meus-eventos">
-                    Meus eventos
-                  </Link>
                   <Link to="/eventos">
                     Outros eventos
                   </Link>
@@ -230,7 +254,6 @@ function NavBar (){
                 Eventos
               </NavLink>
               <Dropdown
-                id="Dropdown_15"
                 options={{
                   alignment: 'left',
                   autoTrigger: true,
@@ -269,7 +292,6 @@ function NavBar (){
               <ViewerNavIMG uploadUrl={user.img} />
             </NavLink>
             <Dropdown
-              id="Dropdown_16"
               options={{
                 alignment: 'left',
                 autoTrigger: true,

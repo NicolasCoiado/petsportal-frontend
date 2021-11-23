@@ -17,6 +17,7 @@ import ValidarOngs from "../pages/ADM/validar-ongs/";
 import ListarAdocoes  from "../pages/ADM/listar-adocoes/";
 import Reportes  from "../pages/ADM/reportes/"
 import EditarSenha from "../pages/edit-senha/";
+import SaibaMais from "../pages/saiba-mais/";
 import UndefinedPage from "../pages/undefined-page";
 
 const Rotas = () => (
@@ -38,7 +39,9 @@ const Rotas = () => (
             <Route path='/adm/eventos' component={ ValidarEventos } /> 
             <Route path='/adm/ongs' component={ ValidarOngs } /> 
             <Route path='/adm/adocoes' component={ ListarAdocoes } /> 
+            <Route path='/adm/reports' component={ Reportes } /> 
             <Route path='/editar' component={ EditarSenha } /> 
+            <Route path='/saiba-mais' component={ SaibaMais } /> 
             <Route path='/' component={ UndefinedPage } />
         </Switch>
     </BrowserRouter>

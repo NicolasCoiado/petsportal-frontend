@@ -1,8 +1,19 @@
-.btn-modal-ctt{
-    background-color: #56ca7d;
-    border-radius: 2em;
-    margin-top: 4px;
-    margin-left: 50px;
+@media (min-width:993px) {
+    .btn-modal-ctt{
+        background-color: #56ca7d;
+        border-radius: 2em;
+        margin-top: 4px;
+        margin-left: 50px;
+    }
+        
+}
+@media (max-width:993px) {
+    .btn-modal-ctt{
+        background-color: #56ca7d;
+        border-radius: 2em;
+        margin-top: 4px;
+    }
+        
 }
 
 .btn-modal-ctt:hover{

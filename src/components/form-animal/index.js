@@ -68,7 +68,6 @@ function FormPessoa (){
             .catch(err =>{
                 console.log(err)
                 //console.log(user)
-            
             })
         
     }
@@ -184,6 +183,8 @@ function FormPessoa (){
             <TextInput             
                 label="Idade"
                 type="number"
+                min="1"
+                max="30"
                 className="campo-form-pessoa"
                 onChange={e => setIdade (e.target.value)}
             />

@@ -23,6 +23,8 @@ function InfosAnimal (){
     const [deficiencias, setDeficiencias] = useState('');
     const [obsAdocao, setobsAdocao] = useState('');
 
+    const [texto, setTexto] = useState('');
+
     const { id } = useParams()
 
     const history = useHistory();
@@ -89,12 +91,14 @@ function InfosAnimal (){
             headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         })
         .then(res => {
-            console.log(res.data.animal)
+            console.log(res.data)
             setAnimal(res.data.animal)
             setMe(res.data.me)
         })
         .catch(err => {
             console.log(err)
+            window.alert('Você precisa estar logado para acessar um animal')
+            history.push("/login")
         })
     }, [])
 
@@ -184,6 +188,29 @@ function InfosAnimal (){
         .catch(err =>{
             console.log(err)
             //console.log(user)
+        })
+    }
+
+    const Reportar = (e) =>{
+        e.preventDefault();
+        API.post("/reports/criar",{
+            usuario: animal.responsavel._id,
+            animal: animal._id,
+            texto
+        }, {
+            headers: {
+                Authorization : 'Bearer ' + window.localStorage.getItem('token')
+
+            }
+          })
+          
+        .then(res => {
+            console.log("Deu bom")
+            window.location.reload();
+    
+        })
+        .catch(err =>{
+            console.log(err)
         })
     }
 
@@ -868,6 +895,40 @@ function InfosAnimal (){
                             <ViewerIMG uploadUrl={animal.responsavel.imagem}/>
                         </Link>
                     </div>
+                    <Modal
+                            actions={[
+                                <Button flat modal="close" node="button" waves="green">Close</Button>
+                            ]}
+                            bottomSheet={false}
+                            fixedFooter={false}
+                            open={false}
+                            options={{
+                                dismissible: true,
+                                endingTop: '10%',
+                                inDuration: 250,
+                                onCloseEnd: null,
+                                onCloseStart: null,
+                                onOpenEnd: null,
+                                onOpenStart: null,
+                                opacity: 0.5,
+                                outDuration: 250,
+                                preventScrolling: true,
+                                startingTop: '4%'
+                            }}
+                            trigger={<Button node="button">MODAL</Button>}
+                            >
+                            <form onSubmit={Reportar}>
+                                <Textarea
+                                    label="Motivo do reporte"
+                                    onChange={e => setTexto (e.target.value)}
+                                />
+                                <Button
+                                    type="submit"
+                                >
+                                    Enviar
+                                </Button>
+                            </form>
+                        </Modal>
                 </>
             :
             <div className="center">

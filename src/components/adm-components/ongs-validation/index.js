@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Collection, CollectionItem, Modal, Button, TextInput } from 'react-materialize';
+import { Link } from 'react-router-dom';
+import ViewerImgPro from '../../viewer-img-pro';
 import { ImCross } from 'react-icons/im';
 import { FaFilter } from 'react-icons/fa';
 import API from '../../../api';
@@ -18,7 +20,7 @@ function OngsValidation (){
             tokens.headers= {Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         }
 
-        API.post(`admin/validate/ong`, {limit: 1}, tokens)
+        API.post(`admin/validate/ong`, {limit: 10}, tokens)
         .then(res => {
             console.log(res.data)
             setOngs(res.data.ongs)
@@ -118,23 +120,19 @@ function OngsValidation (){
                     ongs.map(ong => 
                     ( 
                         <CollectionItem key={ong._id} className="cltni-reqs">
-                            {ong.nome}
-                            <Button
-                                //TODO: Descomente linha abaixo para funfar
-                                //Lembre de avisar o Théo, para mandar somente as infos que tu quer
-                                //onClick={e=>verificar(e, ong._id)}
-                            >
-                                button
-                            </Button>
+                           <Link to={'/animal/'+ong._id}>
+                                    <ViewerImgPro uploadUrl={ong.foto} />
+                                </Link>
+                                <div className="itens-cltn">
+                                    <div className="animal-name">
+                                        <h3 className="title-cltn"> Nome do animal: </h3>
+                                        <h1 className="name-cltn">{ong.nome}</h1>
+                                    </div>
+                                </div>
                         </CollectionItem>
                     ))
                 }
             </Collection>
-            <Button
-                onClick={e => filtrarOngs (e, ongs.length)}
-            >
-                button
-            </Button>
         </div>
     </>
     );

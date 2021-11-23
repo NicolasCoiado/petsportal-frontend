@@ -1,5 +1,6 @@
 import 'materialize-css';
 import { TextInput, Textarea, Button, Icon } from 'react-materialize';
+import InputMask from "react-input-mask";
 import { useHistory } from 'react-router-dom';
 import React, {useState} from "react";
 import './style.css';
@@ -17,7 +18,11 @@ function FormPessoa (){
     const [nasc, setNasc] = useState('');
     const [cpf, setCpf] = useState('');
     const [desc, setDesc] = useState('');
+    const [pergunta, setPergunta] = useState('');
+    const [resposta, setResposta] = useState('');
     const history = useHistory();
+
+    var data = new Date();
 
     const handleSubmit = (e) =>{
         e.preventDefault();
@@ -32,19 +37,28 @@ function FormPessoa (){
             tel2,
             nasc,
             cpf,
-            desc
+            desc,
+            pergunta, 
+            resposta
         }
-        API.post("/user/cadastrar/pessoaFisica", user )
-        .then(res => {
-            console.log("Deu bom")
-            //console.log(user);
-            console.log(res);
-            history.push("/login");
-        })
-        .catch(err =>{
-            console.log(err)
-            //console.log(user)
-        })
+
+        if(senha == senha2){
+            API.post("/user/cadastrar/pessoaFisica", user )
+            .then(res => {
+                // console.log("Deu bom")
+                // console.log(user);
+                // console.log(res);
+                history.push("/login");
+                window.alert('Usuário cadastrado')
+            })
+            .catch(err =>{
+                // console.log(err)
+                // console.log(user)
+                window.alert('O formulário possui um erro, ou o usuário já exite!')  
+            })
+        }else{
+            window.alert('As senhas não são iguais');
+        }
     }
     return(
     <div id="form-areas">
@@ -66,6 +80,7 @@ function FormPessoa (){
             />
             <TextInput
                 label="CPF *"
+                placeholder="xxx.xxx.xx-xx"
                 onChange={e => setCpf(e.target.value)}
                 className="campo-form-pessoa"
             />
@@ -74,6 +89,8 @@ function FormPessoa (){
                 onChange={e => setNasc (e.target.value)}
                 className="campo-form-pessoa"
                 type="date"
+                min="1901-01-01"
+                max={data.getFullYear() + '-' + data.getMonth() + '-' + data.getDate()}
             />
             <TextInput             
                 label="Senha *"
@@ -93,12 +110,14 @@ function FormPessoa (){
                 className="campo-form-pessoa"
             />
             <TextInput
-                label="Telefone 1 *"
+                label="Telefone 1* "
+                placeholder="(DDD) xxxxx-xxxx"
                 onChange={e => setTel1 (e.target.value)}
                 className="campo-form-pessoa"
             />
             <TextInput
                 label="Telefone 2"
+                placeholder="(DDD) xxxxx-xxxx"
                 onChange={e => setTel2 (e.target.value)}
                 className="campo-form-pessoa"
             />
@@ -106,6 +125,16 @@ function FormPessoa (){
                 data-length={120}
                 label="Descrição"
                 onChange={e => setDesc (e.target.value)}
+                className="campo-form-pessoa"
+            />
+            <TextInput
+                label="Pergunta para recuperar sua conta*"
+                onChange={e => setPergunta (e.target.value)}
+                className="campo-form-pessoa"
+            />
+            <TextInput
+                label="Resposta da pergunta acima*"
+                onChange={e => setResposta (e.target.value)}
                 className="campo-form-pessoa"
             />
             <div className="btn-area-cadPessoa">

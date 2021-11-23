@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Collection, CollectionItem, Modal, Button, TextInput } from 'react-materialize';
+import ViewerBanner from '../viewer-banner/';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
 import { ImCross } from 'react-icons/im';
 import { FaFilter } from 'react-icons/fa';
 import API from '../../../api';
@@ -38,6 +41,24 @@ function EventsValidation (){
         }
 
         API.post("/admin/validate/eventos/validate", {evento : id}, tokens)
+        .then(res => {
+            window.location.reload();
+            console.log("Deu bom")
+        })
+        .catch(err =>{
+            console.log(err)
+        })
+    }
+
+    const recusar = (e, id) => {
+        e.preventDefault();
+        let tokens = {}
+        if(window.localStorage.getItem('token'))
+        {
+            tokens.headers= {Authorization : 'Bearer ' + window.localStorage.getItem('token')}
+        }
+
+        API.post("/admin/validate/eventos/excluir", {evento : id}, tokens)
         .then(res => {
             window.location.reload();
             console.log("Deu bom")
@@ -124,23 +145,52 @@ function EventsValidation (){
                     eventos.map(evento => 
                     ( 
                         <CollectionItem key={evento._id} className="cltni-reqs">
-                            {evento.nome}
-                            <Button
-                                //TODO: Descomente linha abaixo para funfar
-                                //Lembre de avisar o Théo, para mandar somente as infos que tu quer
-                                //onClick={e=>verificar(e, evento._id)}
-                            >
-                                button
-                            </Button>
+                            <a href={evento.banner} className="a-banner">
+                                <ViewerBanner uploadUrl={evento.banner} />
+                            </a>
+                            <Link to={'/evento/'+evento._id} className="itens-cltn">
+                                    <div className="animal-name">
+                                        <h3 className="title-cltn"> Nome do evento: </h3>
+                                        <h1 className="name-cltn">{evento.nome}</h1>
+                                    </div>
+                                    <div className="animal-name">
+                                        <h3 className="title-cltn"> Data do evento: </h3>
+                                        <h1 className="name-cltn">{ moment(evento.data).format('D/MM/YYYY h:mm') }</h1>
+                                    </div>
+                                    <div className="animal-name">
+                                        <h3 className="title-cltn"> Local: </h3>
+                                        <h1 className="name-cltn">{ evento.local }</h1>
+                                    </div>
+                                    <Button
+                                        //TODO: Descomente linha abaixo para funfar
+                                        //Lembre de avisar o Théo, para mandar somente as infos que tu quer
+                                        //onClick={e=>verificar(e, evento._id)}
+                                        className="btn-aceitar"
+                                    >
+                                        Verificar evento
+                                    </Button>
+                                    <Button
+                                        //TODO: Descomente linha abaixo para funfar
+                                        //Lembre de avisar o Théo, para mandar somente as infos que tu quer
+                                        onClick={e=>recusar(e, evento._id)}
+                                        className="btn-aceitar"
+                                    >
+                                        Excluir evento
+                                    </Button>
+                            </Link>
+                            
                         </CollectionItem>
                     ))
                 }
             </Collection>
-            <Button
-                onClick={e => filtrarEventos(e, eventos.length)}
-            >
-                button
-            </Button>
+            <div className="center">
+                <Button
+                    onClick={e => filtrarEventos(e, eventos.length)}
+                    className="btn-mais"
+                >
+                    Mostrar mais eventos
+                </Button>
+            </div>
         </div>
     </>
     );

@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import 'materialize-css';
-import defaultImage from '../../images/default.png'
+import Default from '../../images/Default.svg'
 import './style.css';
-const config =  require('../../api/config.json')
 
 function ViewerIMG({uploadUrl}){
     const [imagem, setImagem] = useState()
@@ -11,7 +10,7 @@ function ViewerIMG({uploadUrl}){
         if(uploadUrl){
             setImagem(uploadUrl)
         }else{
-            setImagem(defaultImage)
+            setImagem(Default)
         }
     })
     

@@ -1,16 +1,16 @@
-import NavBar from '../../components/navbar/';
-import EsqueciSenha from '../../components/esqueci-senha';
-import Rodape from '../../components/rodape';
 import { Fragment } from 'react';
+import NavBar from '../../components/navbar';
+import MoreInfos from '../../components/more-infos/';
+import Rodape from '../../components/rodape';
 
-function EditarSenha (){
+function SaibaMais(){
     return(
     <Fragment>
         <header>
             <NavBar />
         </header>
         <main>
-            <EsqueciSenha />
+            <MoreInfos />
         </main>
         <footer>
             <Rodape />
@@ -19,4 +19,4 @@ function EditarSenha (){
     );
 }
 
-export default EditarSenha;
+export default SaibaMais;

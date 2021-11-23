@@ -1,0 +1,11 @@
+@media (min-width: 1000px) {
+    .img-banner{
+        width: 340px;
+    }
+}
+@media (max-width: 1000px) {
+    .img-banner{
+        width: 240px;
+        margin-bottom: 20px;
+    }
+}

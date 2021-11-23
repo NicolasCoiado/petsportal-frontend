@@ -73,7 +73,7 @@ function AdocaoConfirmadas (){
                                     </Modal>
                                     <Modal
                                         actions={[
-                                            <Button className="close-modal" flat modal="close" node="button"><ImCross /></Button>
+                                            <div className="center"> <Button className="close-modal" flat modal="close" node="button"><ImCross /></Button> </div>
                                         ]}
                                         bottomSheet={false}
                                         fixedFooter={false}

@@ -13,6 +13,8 @@ function FormEvento (){
     const [especies, setEspecies] = useState('geral');
     const [banner, setBanner] = useState('');
 
+    var today = new Date();
+
     const history = useHistory();
 
     const handleSubmitEvento = (e) =>{
@@ -65,7 +67,7 @@ function FormEvento (){
                     Data e Horário do Evento
                 </h1>
                 <TextInput               
-                    type="datetime-local"
+                    type="datetime-local"  
                     onChange={e => setData (e.target.value)}
                 />
                 <Textarea
@@ -113,7 +115,7 @@ function FormEvento (){
                         Somente gatos
                     </option>
                 </Select>
-                <p className="paragraph-cadastrar">A arte de divulgação deve possuir as dimenções de 1920px (largura) X 300px (altura).</p>
+                <p className="paragraph-cadastrar">A arte de divulgação deve possuir as dimenções de 1920px (largura) X 400px (altura).</p>
                 <div className="upload-area-banner">
                     <label htmlFor="file-upload" className="custom-file-upload-banner">
                         <Icon className="icon-file">download</Icon> 

@@ -20,6 +20,7 @@
     .name-cltn{
         margin-left: 50px;
         margin-right: 50px;
+        color: rgb(34, 34, 34);
     }
 
     .animal-name{
@@ -91,10 +92,14 @@
         text-align: center;
     }
     .itens-cltn{
-
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
 
     .name-cltn{
+        color: rgb(34, 34, 34);
+        margin-bottom: 20px;
     }
 
     .animal-name{
@@ -133,7 +138,7 @@
     .btn-aceitar{
         background-color: #56ca7d;
         border-radius: 2em;
-        margin-right: 20px;
+        margin-bottom: 10px;
     }
     .btn-aceitar:hover{
         background-color: #40965d;

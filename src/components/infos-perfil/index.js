@@ -1,7 +1,7 @@
 import ViewerAnimal from '../viewer-animal/'
 import ViewerIMG from '../viewer-img/';
 import EventosONG from '../eventos-ong';
-import { Button, Icon, Modal, TextInput, Preloader } from 'react-materialize';
+import { Button, Icon, Modal, TextInput, Preloader, Textarea } from 'react-materialize';
 import { MdEdit } from 'react-icons/md';
 import React, { useState, useEffect} from "react";
 import { useParams } from 'react-router';
@@ -13,9 +13,13 @@ import './style.css';
 
 
 function InfosPerfil (){
-    const [user, setUser] = useState()
-    const [animais, setAnimais] = useState()
+    
+    const [user, setUser] = useState();
+    const [animais, setAnimais] = useState();
     const [eventos, setEventos] = useState();
+
+    const [usuario, setUsuario] = useState();
+    const [texto, setTexto] = useState();
 
     const { id } = useParams()
 
@@ -36,9 +40,10 @@ function InfosPerfil (){
             headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         })
         .then(res => {
-            console.log(res.data)
+            //console.log(res.data)
             setUser(res.data.user)
             setAnimais(res.data.animais)
+            setUsuario(res.data.user._id)
             setMe(res.data.me)
             if(res.data.eventos) setEventos(res.data.eventos)
         })
@@ -96,6 +101,39 @@ function InfosPerfil (){
         .catch(err =>{
             console.log(err)
         })
+    }
+
+    const Reportar = (e) =>{
+        e.preventDefault();
+
+        if(texto){
+
+            var r = window.confirm('Tem certeza que deseja fazer logoff')
+
+            if(r == true){
+                API.post("/reports/criar",{
+                    usuario,
+                    texto
+                }, {
+                    headers: {
+                        Authorization : 'Bearer ' + window.localStorage.getItem('token')
+
+                    }
+                })
+                
+                .then(res => {
+                    console.log("Deu bom")
+                    window.location.reload();
+            
+                })
+                .catch(err =>{
+                    console.log(err)
+                })
+            }
+            
+        }else{
+            window.alert('ERRO! O formulário de reporte não pode ser vazio!')
+        }
     }
 
     const handleSubmitONG= (e) =>{
@@ -354,6 +392,44 @@ function InfosPerfil (){
                         :
                             <p className="campo-info">Sobre: {user.fisico.desc}</p>
                         }
+                        <Modal
+                            actions={[
+                                <Button className="close-modal" flat modal="close" node="button"><ImCross /></Button>
+                            ]}
+                            bottomSheet={false}
+                            fixedFooter={false}
+                            open={false}
+                            options={{
+                                dismissible: true,
+                                endingTop: '10%',
+                                inDuration: 250,
+                                onCloseEnd: null,
+                                onCloseStart: null,
+                                onOpenEnd: null,
+                                onOpenStart: null,
+                                opacity: 0.5,
+                                outDuration: 250,
+                                preventScrolling: true,
+                                startingTop: '4%'
+                            }}
+                            trigger={<Button className="btn-reportar" node="button"> <Icon left>report</Icon> Reportar</Button>}
+                            >
+                            <form className="form-report" onSubmit={Reportar}>
+                                <Textarea
+                                    label="Motivo do reporte"
+                                    onChange={e => setTexto (e.target.value)}
+                                />
+                                <div className="center">
+                                    <Button
+                                        type="submit"
+                                        className="btn-mais"
+                                    >
+                                        <Icon left>send</Icon>
+                                        Enviar reporte
+                                    </Button>
+                                </div>
+                            </form>
+                        </Modal>
                     </div>
                 </div>
             )

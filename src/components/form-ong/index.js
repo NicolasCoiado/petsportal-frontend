@@ -16,7 +16,9 @@ function FormOng(){
     const [tel1, setTel1] = useState('');
     const [tel2, setTel2] = useState('');
     const [desc, setDesc] = useState('');
-    const [social, setSocial] = useState('');
+    const [social, setSocial] = useState();
+    const [pergunta, setPergunta] = useState('');
+    const [resposta, setResposta] = useState('');
 
     const [upload, setUpload] = useState('vazio');
 
@@ -24,6 +26,7 @@ function FormOng(){
 
     const handleSubmit = (e) =>{
         e.preventDefault();
+
         let user = new FormData();
         user.append('nome', nome)
         user.append('email', email)
@@ -33,27 +36,32 @@ function FormOng(){
         user.append('tel1', tel1)
         user.append('tel2', tel2)
         user.append('desc', desc)
-        user.append('social', social , social.name)
-
+        user.append('pergunta', pergunta)
+        user.append('resposta', resposta)
+        if(social)
+            user.append('social', social , social.name)
+        
         API.post("/user/cadastrar/ong", user, {
             headers: {
-              'accept': 'application/json',
-              'Content-Type': `multipart/form-data; boundary=${user._boundary}`,
+            'accept': 'application/json',
+            'Content-Type': `multipart/form-data; boundary=${user._boundary}`,
             }
-          })
-          
+        })
             .then(res => {
-                console.log("Deu bom")
+                //console.log("Deu bom")
                 //console.log(user);
                 //console.log(res);
                 history.push("/login");
+                window.alert('Ong cadastrada!')
             })
             .catch(err =>{
-                console.log(err)
+                //console.log(err)
                 //console.log(user)
+                window.alert('O formulário possui erro(s), ou a ONG já exite!')
             
             })
         }
+        
 
     const handleUpload= (e) => {
         e.preventDefault()
@@ -98,16 +106,28 @@ function FormOng(){
             />
             <TextInput
                 label="Telefone 1 *"
+                placeholder="(DDD) xxxxx-xxxx"
                 onChange={e => setTel1 (e.target.value)}
             />
             <TextInput
                 label="Telefone 2"
+                placeholder="(DDD) xxxxx-xxxx"
                 onChange={e => setTel2 (e.target.value)}
             />
             <Textarea
                 data-length={120}
                 label="Descrição"
                 onChange={e => setDesc (e.target.value)}
+            />
+            <TextInput
+                label="Pergunta para recuperar sua conta*"
+                onChange={e => setPergunta (e.target.value)}
+                className="campo-form-pessoa"
+            />
+            <TextInput
+                label="Resposta da pergunta acima*"
+                onChange={e => setResposta (e.target.value)}
+                className="campo-form-pessoa"
             />
             <div className="upload-area">
                 {(upload !== "uploded")

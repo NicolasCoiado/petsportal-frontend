@@ -1,0 +1,25 @@
+.area-senha{
+    padding: 5% 10% 10% 10%;
+}
+.area-email{
+    text-align: center;
+    margin-top: 50px;
+}
+.area-pergunta{
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+.area-new-senha{
+    text-align: center;
+    margin-bottom: 80px;
+}
+.input-campo{
+    text-align: center;
+}
+.btn-email{
+    background-color: #56ca7d;
+}
+.btn-email:hover{
+    background-color: #40965d;
+}

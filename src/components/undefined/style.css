@@ -1,0 +1,23 @@
+.undefined-area{
+    text-align: center;
+    padding: 9%  10%  15%  10%;
+}
+.undefined-img{
+    width: 5%;
+    margin-bottom: 3%;
+}
+
+.undefined-poxa{
+    color: rgb(255, 143, 143);
+    margin-bottom: 1%;
+}
+.undefined-title{
+    font-weight: 1000;
+    font-size: 200%;
+    margin-bottom: 3%;
+}
+.style-link{
+    font-weight: 1000;
+    text-decoration: underline;
+    color: #41a262;
+}

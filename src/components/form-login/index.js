@@ -28,9 +28,8 @@ function FormLogin (){
         })
         .catch(err =>{
             console.log(err)
-            console.log(user)
             window.localStorage.setItem('token', null)
-            window.alert('O formulário possui um erro!');
+            window.alert('O formulário possui um erro, ou a conta não existe!');
         })
     }
 
