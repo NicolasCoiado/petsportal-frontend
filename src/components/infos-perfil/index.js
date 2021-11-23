@@ -40,7 +40,6 @@ function InfosPerfil (){
             headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         })
         .then(res => {
-            //console.log(res.data)
             setUser(res.data.user)
             setAnimais(res.data.animais)
             setUsuario(res.data.user._id)

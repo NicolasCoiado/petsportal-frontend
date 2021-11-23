@@ -180,7 +180,9 @@ function Eventos (){
                     ))
                 }
             </Collection>
+            
             <Button
+                //TODO: TERMINE AQUI!
                 onClick={e => filtrarEventos(e, eventos.length)}
             >
                 button

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Collection, CollectionItem, Modal, Button, TextInput } from 'react-materialize';
 import { Link } from 'react-router-dom';
 import ViewerImgPro from '../../viewer-img-pro';
-import { ImCross } from 'react-icons/im';
+import { ImCross, ImTable2 } from 'react-icons/im';
 import { FaFilter } from 'react-icons/fa';
 import API from '../../../api';
 
@@ -41,7 +41,6 @@ function OngsValidation (){
         API.post("/admin/validate/ong/validate", {ong : id}, tokens)
         .then(res => {
             window.location.reload();
-            console.log("Deu bom")
         })
         .catch(err =>{
             console.log(err)
@@ -64,7 +63,6 @@ function OngsValidation (){
         API.post("/admin/validate/ong", filtro, tokens )
         .then(res => {
             console.log("Deu bom")
-            console.log(res.data.ongs);
             if(skip==0)
                 setOngs(res.data.ongs)
             else    
@@ -120,7 +118,7 @@ function OngsValidation (){
                     ongs.map(ong => 
                     ( 
                         <CollectionItem key={ong._id} className="cltni-reqs">
-                           <Link to={'/animal/'+ong._id}>
+                           <Link to={'/perfil/'+ong._id}>
                                     <ViewerImgPro uploadUrl={ong.foto} />
                                 </Link>
                                 <div className="itens-cltn">
@@ -128,6 +126,48 @@ function OngsValidation (){
                                         <h3 className="title-cltn"> Nome do animal: </h3>
                                         <h1 className="name-cltn">{ong.nome}</h1>
                                     </div>
+                                    <Modal
+                                        actions={[
+                                            <Button className="close-modal" flat modal="close" node="button"><ImCross /></Button>
+                                        ]}
+                                        bottomSheet={false}
+                                        fixedFooter={false}
+                                        header="Informações sobre a ONG:"
+                                        open={false}
+                                        options={{
+                                            dismissible: true,
+                                            endingTop: '10%',
+                                            inDuration: 250,
+                                            onCloseEnd: null,
+                                            onCloseStart: null,
+                                            onOpenEnd: null,
+                                            onOpenStart: null,
+                                            opacity: 0.5,
+                                            outDuration: 250,
+                                            preventScrolling: true,
+                                            startingTop: '4%'
+                                        }}
+                                        trigger={<Button node="button" className="btnmais">Informações da ONG</Button>}
+                                        >
+                                        <div className="infos-adm-ong">
+                                           <p><b className="b">Telefone1: </b>{' ('+ong.ddd1+') '+ong.tel1}</p>
+                                           {ong.tel2
+                                           ?
+                                                <p><b className="b">Telefone2: </b>{' ('+ong.ddd2+') '+ong.tel2}</p>
+                                            : <></>
+                                           }
+                                           <p><b className="b">Endereço: </b>{ong.endereco}</p>
+                                           <div className="center-estado">
+                                                <a href={/*TODO: Aruumar aqui*/ ong.ong.estadoSocial} className="btn-estadoSocial">Estado Social</a>
+                                            </div>
+                                        </div>
+                                    </Modal>
+                                    <Button
+                                    onClick={verificar}
+                                    className="btn-mais"
+                                    >
+                                        Validar ONG
+                                    </Button>
                                 </div>
                         </CollectionItem>
                     ))

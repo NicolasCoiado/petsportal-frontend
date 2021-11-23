@@ -49,7 +49,8 @@ function FormPessoa (){
         animal.append('doencas', doencas)
         animal.append('alergias', alergias)
         animal.append('deficiencias', deficiencias)
-        animal.append('img', foto , foto.name)
+        if(foto)
+            animal.append('img', foto , foto.name)
 
         API.post("/animals/cadastro", animal, {
             headers: {
@@ -60,14 +61,11 @@ function FormPessoa (){
           })
           
             .then(res => {
-                console.log("Deu bom")
-                //console.log(user);
-                //console.log(res);
                 history.push(`/perfil/${id}`);
             })
             .catch(err =>{
                 console.log(err)
-                //console.log(user)
+                window.alert('O formulário possui erro(s)!')
             })
         
     }

@@ -25,7 +25,8 @@ function FormEvento (){
         evento.append('data', data)
         evento.append('especies',especies)
         evento.append('observacao',observacao)
-        evento.append('banner', banner , banner.name)
+        if(banner)
+            evento.append('banner', banner , banner.name)
 
         API.post("/events/cadastro", evento, {
             headers: {
@@ -36,19 +37,17 @@ function FormEvento (){
           })
           
             .then(res => {
-                console.log("Deu bom")
                 history.push("/");
             })
             .catch(err =>{
-                console.log(err)       
+                console.log(err)    
+                window.alert('O formulário possui erro(s)!')   
             })
         }
     
     const handleUpload= (e) => {
         e.preventDefault()
         setBanner (e.target.files[0])
-        console.log(e.target.files[0])
-        console.log("e::::::::::::")
     };
 
     return(

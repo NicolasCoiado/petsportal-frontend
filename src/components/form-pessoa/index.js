@@ -1,6 +1,5 @@
 import 'materialize-css';
 import { TextInput, Textarea, Button, Icon } from 'react-materialize';
-import InputMask from "react-input-mask";
 import { useHistory } from 'react-router-dom';
 import React, {useState} from "react";
 import './style.css';

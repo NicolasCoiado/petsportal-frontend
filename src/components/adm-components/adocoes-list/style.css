@@ -15,3 +15,58 @@
     border-radius: 2em;
 }
 
+@media (min-width: 1000px){
+    .btnmais{
+        background-color:#5688ca;
+        border-radius: 2em;
+        margin-right: 30px;
+    }
+    .btnmais:hover{
+        background-color: #284872;
+    }
+}
+@media (max-width: 1000px){
+    .btnmais{
+        background-color:#5688ca;
+        border-radius: 2em;
+        margin-bottom: 30px;
+    }
+    .btnmais:hover{
+        background-color: #284872;
+    }
+}
+.center-estado{
+    text-align: center;
+    margin-top: 50px;
+}
+
+@media (min-width: 1000px){
+    .btn-estadoSocial{
+        background-color:#5688ca;
+        border-radius: 2em;
+        margin-bottom: 30px;
+        color: white;
+        padding: 10px;
+        margin-top: 50px;
+    }
+}
+@media (max-width: 1000px){
+    .btn-estadoSocial{
+        background-color:#5688ca;
+        border-radius: 2em;
+        margin-bottom: 30px;
+        color: white;
+        padding: 10px;
+        margin-top: 100px;
+    }
+}
+
+.infos-adm-ong{
+    font-size: 120%;
+    text-align: center;
+    padding: 30px;
+}
+
+.b{
+    font-weight: 900;
+}
