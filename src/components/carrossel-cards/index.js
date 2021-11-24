@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Icon, Preloader } from "react-materialize";
+import { MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
+import { Button } from "react-materialize";
 import API from "../../api";
 import './style.css';
 
@@ -92,25 +93,14 @@ function CarrosselCards(){
                     ))
                 :
                   //TODO: ARRUME ISSO AQUI
-                    <div className="center">
-                        <Preloader
-                            className="preloader"
-                            active
-                            color="green"
-                            flashing={false}
-                        />
-                    </div>
+                    <></>
                 }
             </div> 
             <div className="icons-group">
 
-                <Icon onClick={handleLeftClick} className="icon-animal">
-                    navigate_before
-                </Icon>
+                <MdNavigateBefore onClick={handleLeftClick} className="icon-animal" />
 
-                <Icon onClick={handleRightClick} className="icon-animal">
-                    navigate_next
-                </Icon>
+                <MdNavigateNext onClick={handleRightClick} className="icon-animal" />
                 
             </div> 
 

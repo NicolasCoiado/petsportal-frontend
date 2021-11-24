@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from "react";
 import {useParams, useHistory} from 'react-router-dom'
-import {Preloader, Icon, Modal, Button, TextInput, Textarea, Select } from 'react-materialize';
+import {Icon, Modal, Button, TextInput, Textarea, Select } from 'react-materialize';
 import moment from 'moment';
 import { ImCross } from 'react-icons/im';
 import { MdEdit } from 'react-icons/md';
@@ -305,14 +305,7 @@ function InfosEvento(){
                     </div>
                 </>
             :
-                <div className="center">
-                    <Preloader
-                        active
-                        color="green"
-                        flashing={false}
-                        size="big"
-                    />
-                </div>
+                <></>
             }
         </div>
     );

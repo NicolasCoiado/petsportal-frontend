@@ -3,7 +3,7 @@ import {useParams, Link, useHistory} from "react-router-dom";
 import ViewerIMG from "../viewer-img";
 import { ImCross } from 'react-icons/im';
 import { MdEdit } from 'react-icons/md';
-import { Button, Icon, Modal, TextInput, Preloader, Select, Textarea} from 'react-materialize';
+import { Button, Icon, Modal, TextInput, Select, Textarea} from 'react-materialize';
 import API from '../../api/'
 import './style.css'
 
@@ -941,14 +941,7 @@ function InfosAnimal (){
                         </div>
                 </>
             :
-            <div className="center">
-                <Preloader
-                    active
-                    color="green"
-                    flashing={false}
-                    size="big"
-                />
-             </div>
+            <> </>
             }
         </div>
     );

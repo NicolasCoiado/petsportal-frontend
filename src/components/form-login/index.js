@@ -1,6 +1,7 @@
 import { TextInput, Button} from 'react-materialize';
 import { Link } from 'react-router-dom';
 import { RiLockPasswordFill } from 'react-icons/ri';
+import { MdEmail } from 'react-icons/md';
 import { useHistory } from 'react-router-dom';
 import React, {useState} from "react";
 import API from '../../api/'
@@ -42,7 +43,7 @@ function FormLogin (){
                 <div id="inputs-login">
                     <TextInput
                         email
-                        icon="email"
+                        icon={<MdEmail />}
                         label="Email"
                         type="email"
                         onChange={e => setEmail (e.target.value)}

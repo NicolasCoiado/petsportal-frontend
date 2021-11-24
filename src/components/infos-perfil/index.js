@@ -1,7 +1,7 @@
 import ViewerAnimal from '../viewer-animal/'
 import ViewerIMG from '../viewer-img/';
 import EventosONG from '../eventos-ong';
-import { Button, Icon, Modal, TextInput, Preloader, Textarea } from 'react-materialize';
+import { Button, Icon, Modal, TextInput, Textarea } from 'react-materialize';
 import { MdEdit } from 'react-icons/md';
 import React, { useState, useEffect} from "react";
 import { useParams } from 'react-router';
@@ -206,14 +206,7 @@ function InfosPerfil (){
                         }
                     </div>
             : //Enquanto o usuário não carregar...
-                <div className="center">
-                    <Preloader
-                        className="preloader"
-                        active
-                        color="green"
-                        flashing={false}
-                    />
-                </div>
+                <></>
             }
             <div className="center">
             {user  //Quando usuário carregar...
@@ -368,14 +361,7 @@ function InfosPerfil (){
                         </form>
                     </Modal>
             ://Enquanto a ONG não carrega
-            <div className="center">
-                <Preloader
-                    className="preloader"
-                    active
-                    color="green"
-                    flashing={false}
-                />
-            </div>
+            <></>
             }  
             </div>
         </div>
@@ -477,12 +463,8 @@ function InfosPerfil (){
                             </Link>
                         ))
                         : //Enquanto os animais não carregam
-                        <Preloader
-                            active
-                            color="green"
-                            flashing={false}
-                            size="big"
-                        />
+                        <>
+                        </>
                     }
                 </div>  
         </div>

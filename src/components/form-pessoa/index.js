@@ -1,6 +1,7 @@
 import 'materialize-css';
 import { TextInput, Textarea, Button, Icon } from 'react-materialize';
 import { useHistory } from 'react-router-dom';
+import { MdSend } from 'react-icons/md';
 import React, {useState} from "react";
 import './style.css';
 import API from '../../api/'
@@ -92,7 +93,7 @@ function FormPessoa (){
                 max={data.getFullYear() + '-' + data.getMonth() + '-' + data.getDate()}
             />
             <TextInput             
-                label="Senha *"
+                label="Senha * (Deve conter maiúsculas, minúsculas e números)"
                 password
                 onChange={e => setSenha (e.target.value)}
                 className="campo-form-pessoa"
@@ -110,7 +111,8 @@ function FormPessoa (){
             />
             <TextInput
                 label="Telefone 1* "
-                placeholder="(DDD) xxxxx-xxxx"
+                placeholder="(DDD) xxxxx-xxxx ()"
+                type="number"
                 onChange={e => setTel1 (e.target.value)}
                 className="campo-form-pessoa"
             />

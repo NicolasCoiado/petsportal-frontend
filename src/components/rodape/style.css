@@ -48,10 +48,11 @@
         font-size: medium;
     }
     .footer-names{
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
     }
     .p-names{
-        font-size: xx-small;
+        font-size: 10px;
         margin-left: 50px;
         margin-bottom: 20px;
         color: rgba(255, 255, 255, 0.761);
