@@ -38,13 +38,17 @@ function OngsValidation (){
             tokens.headers= {Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         }
 
-        API.post("/admin/validate/ong/validate", {ong : id}, tokens)
-        .then(res => {
-            window.location.reload();
-        })
-        .catch(err =>{
-            console.log(err)
-        })
+        var r = window.confirm('Tem certeza que deseja validar esta ong?')
+
+        if(r == true){
+            (API.post("/admin/validate/ong/validate", {ong : id}, tokens)
+            .then(res => {
+                window.location.reload();
+            })
+            .catch(err =>{
+                console.log(err)
+            }))
+        }
     }
 
     const filtrarOngs = (e , skip) =>{
@@ -163,8 +167,8 @@ function OngsValidation (){
                                         </div>
                                     </Modal>
                                     <Button
-                                    onClick={verificar}
-                                    className="btn-mais"
+                                        onClick={verificar}
+                                        className="btn-mais"
                                     >
                                         Validar ONG
                                     </Button>

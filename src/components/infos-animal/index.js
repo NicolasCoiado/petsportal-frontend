@@ -22,7 +22,7 @@ function InfosAnimal (){
     const [alergias, setAlergias] = useState('');
     const [deficiencias, setDeficiencias] = useState('');
     const [obsAdocao, setobsAdocao] = useState('');
-
+    
     const [texto, setTexto] = useState('');
 
     const { id } = useParams()
@@ -148,19 +148,23 @@ function InfosAnimal (){
     }
     
     function deleteAnimal(){
-        API.post("/animals/delete", {'animal': id},{
-            headers: {
-            Authorization : 'Bearer ' + window.localStorage.getItem('token')
-        }
-    })
+        var r = window.confirm('Tem certeza que deseja excluir animal?')
 
-        .then(res => {
-            console.log("Deu bom")
-            history.push(`/perfil/${animal.responsavel._id}`);
-        })
-        .catch(err =>{
-            console.log(err)
-        })
+        if(r == true){
+            API.post("/animals/delete", {'animal': id},{
+                headers: {
+                    Authorization : 'Bearer ' + window.localStorage.getItem('token')
+                }
+            })
+
+            .then(res => {
+                console.log("Deu bom")
+                history.push(`/perfil/${animal.responsavel._id}`);
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+        }
     }
 
     const requisitarAdocao = (e) =>{
@@ -895,40 +899,46 @@ function InfosAnimal (){
                             <ViewerIMG uploadUrl={animal.responsavel.imagem}/>
                         </Link>
                     </div>
-                    <Modal
-                            actions={[
-                                <Button flat modal="close" node="button" waves="green">Close</Button>
-                            ]}
-                            bottomSheet={false}
-                            fixedFooter={false}
-                            open={false}
-                            options={{
-                                dismissible: true,
-                                endingTop: '10%',
-                                inDuration: 250,
-                                onCloseEnd: null,
-                                onCloseStart: null,
-                                onOpenEnd: null,
-                                onOpenStart: null,
-                                opacity: 0.5,
-                                outDuration: 250,
-                                preventScrolling: true,
-                                startingTop: '4%'
-                            }}
-                            trigger={<Button node="button">MODAL</Button>}
-                            >
-                            <form onSubmit={Reportar}>
-                                <Textarea
-                                    label="Motivo do reporte"
-                                    onChange={e => setTexto (e.target.value)}
-                                />
-                                <Button
-                                    type="submit"
+                    <div className="center">
+                        <Modal
+                                actions={[
+                                    <Button className="close-modal" flat modal="close" node="button"><ImCross /></Button>
+                                ]}
+                                bottomSheet={false}
+                                fixedFooter={false}
+                                open={false}
+                                options={{
+                                    dismissible: true,
+                                    endingTop: '10%',
+                                    inDuration: 250,
+                                    onCloseEnd: null,
+                                    onCloseStart: null,
+                                    onOpenEnd: null,
+                                    onOpenStart: null,
+                                    opacity: 0.5,
+                                    outDuration: 250,
+                                    preventScrolling: true,
+                                    startingTop: '4%'
+                                }}
+                                trigger={<Button className="btn-reportar-animal" node="button"> <Icon left>report</Icon> Reportar</Button>}
                                 >
-                                    Enviar
-                                </Button>
-                            </form>
-                        </Modal>
+                                <form onSubmit={Reportar}>
+                                    <Textarea
+                                        label="Motivo do reporte"
+                                        onChange={e => setTexto (e.target.value)}
+                                    />
+                                    <div className="center">
+                                        <Button
+                                            type="submit"
+                                            className="btn-mais"
+                                        >
+                                            <Icon left>send</Icon>
+                                            Enviar reporte
+                                        </Button>
+                                    </div>
+                                </form>
+                            </Modal>
+                        </div>
                 </>
             :
             <div className="center">

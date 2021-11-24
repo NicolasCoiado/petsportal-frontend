@@ -163,3 +163,14 @@
         background-color: #40965d;
     }
 }
+
+.btn-reportar-animal{
+    background-color:#fc6262;
+    margin-top: -50px;
+    margin-bottom: 100px;
+    border-radius: 2em;
+}
+
+.btn-reportar-animal:hover{
+    background-color:#311111;
+}

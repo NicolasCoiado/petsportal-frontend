@@ -218,7 +218,7 @@ function NavBar (){
                 Eventos
               </NavLink>
             )}
-            {(user.tipo==='ong')&&(
+            {(user.verificado)&&(
               <Dropdown
                 id="Dropdown_14"
                 options={{

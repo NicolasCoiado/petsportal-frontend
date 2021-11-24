@@ -49,3 +49,11 @@
 .btn-area-cadEvento{
    text-align: center;
 }
+
+.icon-file-upload-evento{
+    background-color: rgb(103, 95, 252);
+    margin-bottom: 30px;
+}
+.icon-file-upload-evento:hover{
+    background-color: rgb(16, 22, 179);
+}

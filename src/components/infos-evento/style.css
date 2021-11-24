@@ -7,6 +7,13 @@
     padding: 1em 4em 0em 4em;
 }
 
+.campo-info-editado{
+    font-size: small;
+    margin: 20px 90px 30px 0em;
+    text-align: right;
+    color: rgb(172, 172, 172);
+}
+
 .custom-file-upload-evento{
     position: relative;
     top: 35px;

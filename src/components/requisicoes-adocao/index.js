@@ -13,27 +13,35 @@ function RequisicoesAdocao (){
     const [adotados, setAdotados] = useState();
 
     function recusar (id){
-        API.post(`/animals/adocao/recusar`, {pedido:id}, {
-            headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
-        })
-        .then(res => {
-            window.location.reload();
-        })
-        .catch(err => {
-            console.log(err)
-        })
+        var r = window.confirm('Tem certeza que deseja fazer recusar a proposta?')
+
+        if(r == true){
+            API.post(`/animals/adocao/recusar`, {pedido:id}, {
+                headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
+            })
+            .then(res => {
+                window.location.reload();
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
     }
 
     function aceitar (id){
-        API.post(`/animals/adocao/aceitar`, {pedido:id}, {
-            headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
-        })
-        .then(res => {
-            window.location.reload();
-        })
-        .catch(err => {
-            console.log(err)
-        })
+        var r = window.confirm('Tem certeza que deseja fazer aceitar a proposta? Seu telefone será enviado, para que o adotante entre em contato com você!')
+
+        if(r == true){
+            API.post(`/animals/adocao/aceitar`, {pedido:id}, {
+                headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
+            })
+            .then(res => {
+                window.location.reload();
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
     }
 
     useEffect(() => {
@@ -116,7 +124,6 @@ function RequisicoesAdocao (){
                     <div className="itens-cltn">
                         <div className="animal-name">
                             <h3 className="title-cltn"> Nome do adotante: </h3> 
-                            {/* TODO: Delimite o numero de caracteres abaixo*/}
                             <h1 className="name-cltn">{adocao.adotante.nome}</h1>
                         </div>
                     </div>
@@ -126,7 +133,6 @@ function RequisicoesAdocao (){
                     <div className="itens-cltn">
                         <div className="animal-name">
                             <h3 className="title-cltn"> Nome do animal: </h3>
-                            {/* TODO: Delimite o numero de caracteres abaixo*/}
                             <h1 className="name-cltn">{adocao.animal.nome}</h1>
                         </div>
                         <Modal
@@ -163,7 +169,6 @@ function RequisicoesAdocao (){
                                 node="button"                         
                                 waves="light"
                                 onClick={() => aceitar(adocao._id)}
-                                //TODO: seus meios de contatos serão enviados, o adotante entrará em contato com você.
                             >
                                 Aceitar
                                 <GiCheckMark className="icon-btn"/>
@@ -172,7 +177,7 @@ function RequisicoesAdocao (){
                                 className="btn-recusar"
                                 node="button"
                                 waves="light"
-                                //onClick={() => recusar(adocao._id)}
+                                onClick={() => recusar(adocao._id)}
                             >
                                 Recusar
                                 <ImCross className="icon-btn" />

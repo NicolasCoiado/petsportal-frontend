@@ -1,9 +1,9 @@
 import 'materialize-css';
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Modal, Button, Select, TextInput, Collection, CollectionItem } from 'react-materialize';
 import { Link } from "react-router-dom";
 import { ImCross } from 'react-icons/im';
-import { GiSittingDog } from 'react-icons/gi'
+import moment from 'moment';
 import { IoIosPeople } from 'react-icons/io'
 import { FaFilter } from 'react-icons/fa';
 import ViewerImgPro from '../viewer-img-pro/'
@@ -93,7 +93,7 @@ function Eventos (){
                 >
                 <div className="area-filter">
                     <h1 className="title-filter">FILTRO EVENTOS:</h1>
-                    <form onSubmit={e=>filtrarEventos(e, 0)}>
+                    <form onSubmit={e=> filtrarEventos(e, 0)}>
                         <TextInput
                             label="Nome específico de evento"
                             onChange={e => setNome(e.target.value)}
@@ -158,35 +158,38 @@ function Eventos (){
                     /* TODO: Colocar load enquanto os animais não carregarem */
                     eventos.map(evento => (
                         <CollectionItem className="cltni-reqs">
-                            <Link to={evento}>
-                                <ViewerImgPro /*uploadUrl={}*/ />
-                            </Link>
+                            <a href={evento.banner}>
+                                <ViewerImgPro uploadUrl={evento.banner} />
+                            </a>
                             <div className="itens-cltn">
                                 <div className="animal-name">
-                                    <h3 className="title-cltn"> Nome do animal: </h3>
+                                    <h3 className="title-cltn"> Nome do evento: </h3>
                                     <h1 className="name-cltn">{evento.nome}</h1>
                                 </div>
                                 <div className="itens-cltn-obs">
-                                    <h1 className="title-cltn-obs"> Observacao: </h1>
-                                    <h1 className="name-cltn-obs">{evento.observacao || 'Nenhuma'}</h1>
+                                    <h1 className="title-cltn-obs"> Data do evento: </h1>
+                                    <h1 className="name-cltn-obs">{ moment(evento.data).format('D/MM/YYYY h:mm') || 'Nenhuma'}</h1>
                                 </div>
+
+                                <Link className="link-mais" to={'/evento/'+evento._id}>
+                                    <Button className="btn-mais">
+                                        Ver Evento
+                                    </Button>
+                                </Link>
                             </div>
-                            <Link to={'/evento/'+evento._id}>
-                                <Button>
-                                    Ver animal
-                                </Button>
-                            </Link>
                         </CollectionItem>
                     ))
                 }
             </Collection>
-            
-            <Button
-                //TODO: TERMINE AQUI!
-                onClick={e => filtrarEventos(e, eventos.length)}
-            >
-                button
-            </Button>
+            <div className="center">
+                <Button
+                    //TODO: TERMINE AQUI!
+                    onClick={e => filtrarEventos(e, eventos.length)}
+                    className="btn-mais"
+                >
+                    Ver mais eventos
+                </Button>
+            </div>
         </div>
     </>
     );

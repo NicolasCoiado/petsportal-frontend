@@ -1,0 +1,11 @@
+@media(min-width: 1000px){
+    .link-mais{
+        margin-left: 50px;
+    }
+}
+@media(max-width: 1000px){
+    .link-mais{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}

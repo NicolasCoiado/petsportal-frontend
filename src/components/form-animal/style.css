@@ -13,3 +13,34 @@
 .custom-file-upload-animal:hover {
     background-color: #48a567;
 }
+
+@media(min-width: 1000px){
+    .consert-file{
+        display: flex;
+        flex-direction: row;
+    }
+    .icon-file-upload{
+        background-color: rgb(103, 95, 252);
+        margin-top: -20px;
+    }
+    .icon-file-upload:hover{
+        background-color: rgb(16, 22, 179);
+    }
+}
+@media(max-width: 1000px){
+    .consert-file{
+        display: flex;
+        flex-direction: column;
+    }
+    .icon-file-upload{
+        background-color: rgb(103, 95, 252);
+        margin-bottom: 40px;
+    }
+    .icon-file-upload:hover{
+        background-color: rgb(16, 22, 179)
+    }
+    .corr{
+        text-align: center;
+    }
+}
+

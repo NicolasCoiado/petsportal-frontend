@@ -13,8 +13,8 @@ function FormEvento (){
     const [especies, setEspecies] = useState('geral');
     const [banner, setBanner] = useState('');
 
-    var today = new Date();
-
+    const [upload, setUpload] = useState('vazio');
+    
     const history = useHistory();
 
     const handleSubmitEvento = (e) =>{
@@ -48,6 +48,7 @@ function FormEvento (){
     const handleUpload= (e) => {
         e.preventDefault()
         setBanner (e.target.files[0])
+        setUpload ('uploded')
     };
 
     return(
@@ -115,6 +116,8 @@ function FormEvento (){
                     </option>
                 </Select>
                 <p className="paragraph-cadastrar">A arte de divulgação deve possuir as dimenções de 1920px (largura) X 400px (altura).</p>
+                {(upload !== "uploded")
+                ?(
                 <div className="upload-area-banner">
                     <label htmlFor="file-upload" className="custom-file-upload-banner">
                         <Icon className="icon-file">download</Icon> 
@@ -122,6 +125,26 @@ function FormEvento (){
                     </label>
                     <input id="file-upload" onChange={e => handleUpload(e)} type="file" />    
                 </div>
+                ):(
+                <>
+                    <div className="upload-area-banner">
+                        <label htmlFor="file-upload" className="custom-file-upload-banner">
+                            <Icon className="icon-file">download</Icon> 
+                                Banner de divulgação
+                        </label>
+                        <input id="file-upload" onChange={e => handleUpload(e)} type="file" />    
+                    </div>
+                    <div className="center">
+                        <Button
+                            className="icon-file-upload-evento"
+                            floating
+                            icon={<Icon>done</Icon>}
+                            large
+                            node="button"
+                        />
+                    </div>
+                </>
+                )}
                 <div className="btn-area-cadEvento">
                     <Button
                         className="btn-submit-form-Evento"

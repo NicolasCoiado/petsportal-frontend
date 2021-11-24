@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from "react";
 import {useParams, useHistory} from 'react-router-dom'
 import {Preloader, Icon, Modal, Button, TextInput, Textarea, Select } from 'react-materialize';
+import moment from 'moment';
 import { ImCross } from 'react-icons/im';
 import { MdEdit } from 'react-icons/md';
 import ViewerEvento from '../viewer-evento/'
@@ -100,20 +101,39 @@ function InfosEvento(){
         }
 
     const ExcluirEvento = () =>{
-        API.post("admin/validate/eventos/excluir", {evento: evento._id}, {
-            headers: {
-                'Authorization' : 'Bearer ' + window.localStorage.getItem('token'),
-            }
-          })
-          
-            .then(res => {
-                console.log("Deu bom")
-                history.push("/")
+        var r = window.confirm('Tem certeza que deseja excluir este evento?')
+
+        if(r == true){
+            API.post("admin/validate/eventos/excluir", {evento: evento._id}, {
+                headers: {
+                    'Authorization' : 'Bearer ' + window.localStorage.getItem('token'),
+                }
             })
-            .catch(err =>{
-                console.log(err)       
-                history.push(-1)
-            })
+            
+                .then(res => {
+                    console.log("Deu bom")
+                    history.push("/")
+                })
+                .catch(err =>{
+                    console.log(err)       
+                    history.push(-1)
+                })
+        }
+    }
+
+    const especiesSwitch = especie => {
+        switch (especie){
+            case 'geral':
+                return 'Geral'
+            case 'cg':
+                return 'Cães e Gatos'
+            case 'g':
+                return 'Gatos'
+            case 'c:':
+                return 'Cães'
+            default: 
+                return "Não especificado"
+        }
     }
 
     return(
@@ -134,12 +154,17 @@ function InfosEvento(){
                     <div className="infos">
                         <div className="campos-info-evento">
                             <p className="campo-info-evento"> Nome:  {evento.nome}</p>
-                            <p className="campo-info-evento"> Data:  {evento.data.slice(0,-8)}</p>
-                            <p className="campo-info-evento"> Espécies:  {evento.especies}</p>
+                            <p className="campo-info-evento"> Data:  { moment(evento.data).format('D/MM/YYYY h:mm')}</p>
+                            <p className="campo-info-evento"> Espécies: {especiesSwitch(evento.especies)}</p>
                             <p className="campo-info-evento"> Local:  {evento.local}</p>
                             <p className="campo-info-evento"> Observacao:  {evento.observacao}</p>
-                            <p className="campo-info-evento"> Editado:  {evento.editado}</p>
                             <p className="campo-info-evento"> Contato da ONG:  {evento.contato}</p>
+                            {evento.editado
+                            ?
+                                <p className="campo-info-editado"> Evento já foi editado! </p>
+                            : <></>
+                            }
+                            
                             <div className="center">
                                 <Modal 
                                     actions={[
@@ -266,12 +291,16 @@ function InfosEvento(){
                     <div className="infos">
                         <div className="campos-info-evento">
                             <p className="campo-info-evento"> <h1 className="nome-animal">{evento.nome}</h1></p>
-                            <p className="campo-info-evento"> Data:  {evento.data.slice(0,-8)}</p>
-                            <p className="campo-info-evento"> Espécies disponíveis:  {evento.especies}</p>
+                            <p className="campo-info-evento"> Data:  { moment(evento.data).format('D/MM/YYYY h:mm')}</p>
+                            <p className="campo-info-evento"> Espécies disponíveis:  {especiesSwitch(evento.especies)}</p>
                             <p className="campo-info-evento"> Local:  {evento.local}</p>
                             <p className="campo-info-evento"> Observação:  {evento.observacao}</p>
-                            <p className="campo-info-evento"> Editado:  {evento.editado}</p>
                             <p className="campo-info-evento"> Contato da ONG:  {evento.contato}</p>
+                            {evento.editado
+                            ?
+                                <p className="campo-info-editado"> Evento já foi editado! </p>
+                            : <></>
+                            }
                         </div>
                     </div>
                 </>

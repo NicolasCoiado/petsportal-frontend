@@ -40,14 +40,18 @@ function EventsValidation (){
             tokens.headers= {Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         }
 
-        API.post("/admin/validate/eventos/validate", {evento : id}, tokens)
-        .then(res => {
-            window.location.reload();
-            console.log("Deu bom")
-        })
-        .catch(err =>{
-            console.log(err)
-        })
+        var r = window.confirm('Tem certeza que deseja validar este evento?')
+
+        if(r == true){
+            API.post("/admin/validate/eventos/validate", {evento : id}, tokens)
+            .then(res => {
+                window.location.reload();
+                console.log("Deu bom")
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+        }
     }
 
     const recusar = (e, id) => {
@@ -58,14 +62,18 @@ function EventsValidation (){
             tokens.headers= {Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         }
 
-        API.post("/admin/validate/eventos/excluir", {evento : id}, tokens)
-        .then(res => {
-            window.location.reload();
-            console.log("Deu bom")
-        })
-        .catch(err =>{
-            console.log(err)
-        })
+        var r = window.confirm('Tem certeza que deseja excluir este evento?')
+
+        if(r == true){
+            API.post("/admin/validate/eventos/excluir", {evento : id}, tokens)
+            .then(res => {
+                window.location.reload();
+                console.log("Deu bom")
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+        }
     }
 
     const filtrarEventos = (e , skip) =>{
@@ -162,18 +170,14 @@ function EventsValidation (){
                                         <h1 className="name-cltn">{ evento.local }</h1>
                                     </div>
                                     <Button
-                                        //TODO: Descomente linha abaixo para funfar
-                                        //Lembre de avisar o Théo, para mandar somente as infos que tu quer
-                                        //onClick={e=>verificar(e, evento._id)}
+                                        onClick={e=>verificar(e, evento._id)}
                                         className="btn-aceitar"
                                     >
                                         Verificar evento
                                     </Button>
                                     <Button
-                                        //TODO: Descomente linha abaixo para funfar
-                                        //Lembre de avisar o Théo, para mandar somente as infos que tu quer
                                         onClick={e=>recusar(e, evento._id)}
-                                        className="btn-aceitar"
+                                        className="btn-banir"
                                     >
                                         Excluir evento
                                     </Button>

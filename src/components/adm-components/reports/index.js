@@ -17,7 +17,7 @@ function Reports (){
         {
             tokens.headers= {Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         }
-
+        
         API.post(`/admin/reports`, {limit: 10}, tokens)
         .then(res => {
             console.log(res.data)
@@ -26,6 +26,7 @@ function Reports (){
         .catch(err => {
             console.log(err)
         })
+
     }, [])
 
     const filtrarReportes = (e , skip) =>{
@@ -41,6 +42,7 @@ function Reports (){
             skip, 
             btn: true
         }
+
         API.post("/admin/reports", filtro, tokens )
         .then(res => {
             console.log("Deu bom")
@@ -62,15 +64,17 @@ function Reports (){
         {
             tokens.headers= {Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         }
-
-        API.post("/reports/banir", {usuario: id}, tokens)
-        .then(res => {
-            window.location.reload();
-            console.log("Deu bom")
-        })
-        .catch(err =>{
-            console.log(err)
-        })
+        var r = window.confirm('Tem certeza que deseja banir esta conta?')
+        if(r == true){
+            API.post("/reports/banir", {usuario: id}, tokens)
+            .then(res => {
+                window.location.reload();
+                console.log("Deu bom")
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+        }
     }
 
     return(
@@ -137,10 +141,8 @@ function Reports (){
                                     </div>
                                 }
                                 <Button
-                                //TODO: Descomente linha abaixo para funfar
-                                //Lembre de avisar o Théo, para mandar somente as infos que tu quer
-                                //onClick={e=>banir(e, report.usuario._id)}
-                                className="btn-banir"
+                                    onClick={e=>banir(e, report.usuario._id)}
+                                    className="btn-banir"
                                 >
                                     <Icon left>
                                         report

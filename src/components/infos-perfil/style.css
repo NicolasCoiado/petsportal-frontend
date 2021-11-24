@@ -138,11 +138,23 @@
     text-align: center;
 }
 
-.btn-propostas{
-    border-radius: 2em;
-    background-color: #56ca7d;
-    margin-top: 20px;
-    width: 300px;
+@media(min-width: 1000px){
+    .btn-propostas{
+        border-radius: 2em;
+        background-color: #56ca7d;
+        margin-top: 20px;
+        width: 400px;
+    }    
+}
+
+@media(max-width: 1000px){
+    .btn-propostas{
+        border-radius: 2em;
+        background-color: #56ca7d;
+        margin-top: 20px;
+        font-size: 60%;
+        width: 300px;
+    }    
 }
 
 .btn-propostas:hover{

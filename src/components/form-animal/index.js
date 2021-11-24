@@ -21,6 +21,8 @@ function FormPessoa (){
 
     const [id, setId] = useState('');
 
+    const [upload, setUpload] = useState('vazio');
+
     const history = useHistory();
 
     useEffect(() => {
@@ -72,12 +74,8 @@ function FormPessoa (){
     
     const handleUpload= (e) => {
         e.preventDefault()
-        // this.image = e.target.files[0]
-        //setSocial(JSON.stringify(e.target.files[0]))
         setFoto (e.target.files[0])
-        console.log(e.target.files[0])
-        console.log("e::::::::::::")
-        console.log(foto)
+        setUpload ('uploded')
     };
 
     return(
@@ -261,13 +259,36 @@ function FormPessoa (){
                 onChange={e => setObservacao (e.target.value)}
             />
 
-            <div className="center upload-area-animal">
-                <label htmlFor="file-upload" className="custom-file-upload-animal">
-                    <Icon className="icon-file">download</Icon> 
-                        Foto Animal 
-                </label>
-                <input id="file-upload" type="file" onChange={handleUpload} />    
-            </div>
+            {(upload !== "uploded")
+                ?(
+                    <div className="center upload-area-animal">
+                        <label htmlFor="file-upload" className="custom-file-upload-animal">
+                            <Icon className="icon-file">download</Icon> 
+                                Foto Animal 
+                        </label>
+                        <input id="file-upload" type="file" onChange={handleUpload} />    
+                    </div>
+                ):(
+                    <div className="consert-file">
+                        <div className="center upload-area-animal">
+                            <label htmlFor="file-upload" className="custom-file-upload-animal">
+                                <Icon className="icon-file">download</Icon> 
+                                    Foto Animal 
+                            </label>
+                            <input id="file-upload" type="file" onChange={handleUpload} />    
+                        </div>
+                        <div className="corr">
+                            <Button
+                                className="icon-file-upload"
+                                floating
+                                icon={<Icon>done</Icon>}
+                                large
+                                node="button"
+                            />
+                        </div>
+                    </div>
+                )
+            }
 
             <div className="btn-area-cadPessoa">
                 <Button
