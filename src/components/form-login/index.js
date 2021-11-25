@@ -10,10 +10,14 @@ import './style.css';
 function FormLogin (){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+
+    const [btn, setBtn] = useState('');
+
     const history = useHistory();
 
     const handleSubmit = (e) =>{
         e.preventDefault();
+        setBtn('clickado');
 
         let user = {
             email,
@@ -56,14 +60,27 @@ function FormLogin (){
                     />
                 </div>
                 <Link to="/editar" className="EsqueciSenha">Esqueceu sua senha?</Link><br/>
-                <Button
-                    id="btn-login"
-                    node="button"
-                    type="submit"
-                    waves="light"
-                >
-                    LOGIN
-                </Button>
+                {btn=='' 
+                ?
+                    <Button
+                        id="btn-login"
+                        node="button"
+                        type="submit"
+                        waves="light"
+                    >
+                        LOGIN
+                    </Button>
+                :
+                    <Button
+                        disabled
+                        id="btn-login"
+                        node="button"
+                        type="submit"
+                        waves="light"
+                    >
+                        LOGIN
+                    </Button>
+                }
 
             </form>
         </div>

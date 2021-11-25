@@ -21,12 +21,15 @@ function FormOng(){
     const [pergunta, setPergunta] = useState('');
     const [resposta, setResposta] = useState('');
 
+    const [btn, setBtn] = useState('');
+
     const [upload, setUpload] = useState('vazio');
 
     const history = useHistory();
 
     const handleSubmit = (e) =>{
         e.preventDefault();
+        setBtn('clickado');
 
         let user = new FormData();
         user.append('nome', nome)
@@ -155,15 +158,23 @@ function FormOng(){
             </div>
             
             <div className="btn-area-cadPessoa">
-                <Button
-                    className="btn-submit-form-ONG"
-                    node="button"
-                    type="submit"
-                    waves="light"
-                >
-                    <MdSend className="send-icon" />
-                    Cadastrar ONG
-                </Button>
+                {btn=='' 
+                    ?
+                    <Button
+                        className="btn-submit-form-ONG"
+                        node="button"
+                        type="submit"
+                        waves="light"
+                    >
+                        <MdSend className="send-icon" />
+                        Cadastrar ONG
+                    </Button>
+                    :
+                    <Button className="btn-submit-form" disabled>
+                        <MdSend className="send-icon" />
+                        Cadastrar  
+                    </Button>
+                }
             </div>
         </form>
     </div>

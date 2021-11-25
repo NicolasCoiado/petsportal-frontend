@@ -20,6 +20,8 @@ function FormPessoa (){
     const [deficiencias, setDeficiencias] = useState('');
     const [foto, setFoto] = useState('');
 
+    const [btn, setBtn] = useState('');
+
     const [id, setId] = useState('');
 
     const [upload, setUpload] = useState('vazio');
@@ -41,6 +43,7 @@ function FormPessoa (){
 
     const handleSubmit = (e) =>{
         e.preventDefault();
+        setBtn('clickado');
         let animal = new FormData();
         animal.append('nome', nome)
         animal.append('especie', especie)
@@ -290,15 +293,29 @@ function FormPessoa (){
             }
 
             <div className="btn-area-cadPessoa">
-                <Button
-                    className="btn-submit-form"
-                    node="button"
-                    type="submit"
-                    waves="light"
-                >
-                    <MdSend className="send-icon" />
-                    Cadastrar
-                </Button>
+                {btn=='' 
+                ?
+                    <Button
+                        className="btn-submit-form"
+                        node="button"
+                        type="submit"
+                        waves="light"
+                    >
+                        <MdSend className="send-icon" />
+                        Cadastrar
+                    </Button>
+                :
+                    <Button
+                        className="btn-submit-form"
+                        node="button"
+                        type="submit"
+                        waves="light"
+                        disabled
+                    >
+                        <MdSend className="send-icon" />
+                        Cadastrar
+                    </Button>
+                }
             </div>
         </form>
     </div>

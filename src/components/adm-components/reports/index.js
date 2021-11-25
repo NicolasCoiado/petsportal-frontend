@@ -120,13 +120,18 @@ function Reports (){
             <Collection className="cltn-reqs">
                 {reportes &&
                     reportes.map(report => 
-                    ( 
+                    {
+                        var style = {}
+
+                        if(report.contagem >=3) style.color='red'
+                        
+                        return( 
                         <CollectionItem key={report._id} className="cltni-reqs">
                             <div className="itens-cltn">
-                                <div className="animal-name">
-                                    <h3 className="title-cltn"> Quant. de reportes: </h3>
-                                    <h1 className="name-cltn">{report.contagem}</h1>
-                                </div>
+                                    <div className="animal-name">
+                                        <h3 className="title-cltn"> Quant. de reportes: </h3>
+                                        <h1 style={style} className="name-cltn">{report.contagem}</h1>
+                                    </div>
                                 <div className="animal-name">
                                     <h3 className="title-cltn"> Denunciado: </h3>
                                     <h1 className="name-cltn">{report.usuario.nome}</h1>
@@ -150,7 +155,7 @@ function Reports (){
                                 </Button>
                             </div>
                         </CollectionItem>
-                    ))
+                    )})
                 }
             </Collection>
         </div>

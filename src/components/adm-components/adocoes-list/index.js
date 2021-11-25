@@ -116,33 +116,37 @@ function AdocoesList (){
                 <Collection className="cltn-reqs">
                     {adocoes &&
                         adocoes.map(adocao => 
-                        ( 
-                            <CollectionItem key={adocao._id} className="cltni-reqs">
-
-                                <p>{JSON.stringify(adocao)}</p>
-                                {/* <Link to={'/animal/'+adocao.animal._id}>
-                                    <ViewerImgPro uploadUrl={adocao.animal.foto} />
-                                </Link>
-                                <div className="itens-cltn">
-                                    <div className="animal-name">
-                                        <h3 className="title-cltn"> Nome do animal: </h3>
-                                        <h1 className="name-cltn">{adocao.animal.nome}</h1>
-                                    </div>
-                                    <div className="animal-name">
-                                        <h3 className="title-cltn"> Nome do adotante: </h3>
-                                        <h1 className="name-cltn">{adocao.adotante.nome}</h1>
-                                    </div>
-                                    <div className="animal-name">
-                                        <h3 className="title-cltn"> Nome do doador: </h3>
-                                        <h1 className="name-cltn">{adocao.doador.nome}</h1>
-                                    </div>
-                                    <div className="animal-name">
-                                        <h3 className="title-cltn"> Data da adoção: </h3>
-                                        <h1 className="name-cltn">{ moment(adocao.data).format('D/MM/YYYY') }</h1>
-                                    </div>
-                                </div> */}
-                            </CollectionItem>
-                        ))
+                        {
+                            console.log('aaaaaaaa')
+                            if(!adocao.animal)
+                                return false
+                            else
+                                return( 
+                                <CollectionItem key={adocao._id} className="cltni-reqs">
+                                    <Link to={'/animal/'+adocao.animal._id}>
+                                        <ViewerImgPro uploadUrl={adocao.animal.foto} />
+                                    </Link>
+                                    
+                                    <div className="itens-cltn">
+                                        <div className="animal-name">
+                                            <h3 className="title-cltn"> Nome do animal: </h3>
+                                            <h1 className="name-cltn">{adocao.animal.nome}</h1>
+                                        </div>
+                                        <div className="animal-name">
+                                            <h3 className="title-cltn"> Nome do adotante: </h3>
+                                            <h1 className="name-cltn">{adocao.adotante.nome}</h1>
+                                        </div>
+                                        <div className="animal-name">
+                                            <h3 className="title-cltn"> Nome do doador: </h3>
+                                            <h1 className="name-cltn">{adocao.doador.nome}</h1>
+                                        </div>
+                                        <div className="animal-name">
+                                            <h3 className="title-cltn"> Data da adoção: </h3>
+                                            <h1 className="name-cltn">{ moment(adocao.data).format('D/MM/YYYY') }</h1>
+                                        </div>
+                                    </div> 
+                                </CollectionItem>
+                        )})
                     }
                 </Collection>
                 <div className="center">

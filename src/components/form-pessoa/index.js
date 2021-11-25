@@ -20,11 +20,15 @@ function FormPessoa (){
     const [desc, setDesc] = useState('');
     const [pergunta, setPergunta] = useState('');
     const [resposta, setResposta] = useState('');
+
+    const [btn, setBtn] = useState('');
+
     const history = useHistory();
 
     var data = new Date();
 
     const handleSubmit = (e) =>{
+        setBtn('clickado');
         e.preventDefault();
 
         let user = {
@@ -139,15 +143,23 @@ function FormPessoa (){
                 className="campo-form-pessoa"
             />
             <div className="btn-area-cadPessoa">
-                <Button
-                    className="btn-submit-form"
-                    node="button"
-                    type="submit"
-                    waves="light"
-                >
-                    <MdSend className="send-icon" />
-                    Cadastrar
-                </Button>
+                {btn=='' 
+                ?
+                    <Button
+                        className="btn-submit-form"
+                        node="button"
+                        type="submit"
+                        waves="light"
+                    >
+                        <MdSend className="send-icon" />
+                        Cadastrar
+                    </Button>
+                :
+                    <Button className="btn-submit-form" disabled>
+                        <MdSend className="send-icon" />
+                        Cadastrar
+                    </Button>
+                }
             </div>
         </form>
     </div>

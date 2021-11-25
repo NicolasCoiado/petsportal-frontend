@@ -14,12 +14,15 @@ function FormEvento (){
     const [especies, setEspecies] = useState('geral');
     const [banner, setBanner] = useState('');
 
+    const [btn, setBtn] = useState('');
+
     const [upload, setUpload] = useState('vazio');
     
     const history = useHistory();
 
     const handleSubmitEvento = (e) =>{
         e.preventDefault();
+        setBtn('clickado');
         let evento = new FormData();
         evento.append('nome', nome)
         evento.append('local', local)
@@ -145,15 +148,29 @@ function FormEvento (){
                 </>
                 )}
                 <div className="btn-area-cadEvento">
-                    <Button
-                        className="btn-submit-form-Evento"
-                        node="button"
-                        type="submit"
-                        waves="light"
-                    >
-                        <MdSend className="send-icon" />
-                        Cadastrar Evento
-                    </Button>
+                    {btn=='' 
+                    ?
+                        <Button
+                            className="btn-submit-form-Evento"
+                            node="button"
+                            type="submit"
+                            waves="light"
+                        >
+                            <MdSend className="send-icon" />
+                            Cadastrar Evento
+                        </Button>
+                    :
+                        <Button
+                            className="btn-submit-form-Evento"
+                            node="button"
+                            type="submit"
+                            waves="light"
+                            disabled
+                        >
+                            <MdSend className="send-icon" />
+                            Cadastrar Evento
+                        </Button>
+                    }
                 </div>
             </form>
         </div>
