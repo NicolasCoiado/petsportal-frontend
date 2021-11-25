@@ -1,5 +1,5 @@
 import 'materialize-css';
-import Default from '../../images/Default.svg' //TODO: Definir imagens melhores
+import Default from '../../images/Default.svg' 
 import './style.css';
 
 function ViewerImgPro({uploadUrl}){

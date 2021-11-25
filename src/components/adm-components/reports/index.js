@@ -21,7 +21,6 @@ function Reports (){
         
         API.post(`/admin/reports`, {limit: 10}, tokens)
         .then(res => {
-            console.log(res.data)
             setReportes(res.data.reports)
         })
         .catch(err => {
@@ -46,8 +45,6 @@ function Reports (){
 
         API.post("/admin/reports", filtro, tokens )
         .then(res => {
-            console.log("Deu bom")
-            console.log(res.data.reportes)
             if(skip==0)
                 setReportes(res.data.reportes)
             else    
@@ -70,7 +67,6 @@ function Reports (){
             API.post("/reports/banir", {usuario: id}, tokens)
             .then(res => {
                 window.location.reload();
-                console.log("Deu bom")
             })
             .catch(err =>{
                 console.log(err)
@@ -108,7 +104,7 @@ function Reports (){
                     <h1 className="title-filter">FILTRO DE REPORTES:</h1>
                     <form onSubmit={e=>filtrarReportes(e, 0)}>
                         <TextInput
-                            label="Nome do usuário banido"
+                            label="Nome do usuário reportado"
                             onChange={e => setNome(e.target.value)}
                         />
                         <Button className="subbmit-filtros" type="submmit">Aplicar filtro</Button>

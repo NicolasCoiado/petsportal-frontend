@@ -25,10 +25,8 @@ function EsqueciSenha (){
       
         API.post("/recover/get", {email})
         .then(res => {
-            console.log("Deu bom")
             setPergunta(res.data.pergunta)
             setId(res.data.usuario)
-            console.log(res.data.pergunta)
         })
         .catch(err =>{
             window.alert('ERRO! Email não cadastrado!')
@@ -41,8 +39,6 @@ function EsqueciSenha (){
       
         API.post("/recover/verify", {resposta, usuario: id})
         .then(res => {
-            console.log("Deu bom")
-            console.log(res.data)
             setOk(res.data.ok)
         })
         .catch(err =>{
@@ -57,7 +53,6 @@ function EsqueciSenha (){
         if(senha==senha2){
             API.post("/recover/redefinir", {senha, senha2, usuario: id, resposta})
             .then(res => {
-                console.log("Deu bom")
                 history.push("/login")
             })
             .catch(err =>{

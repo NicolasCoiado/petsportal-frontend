@@ -24,7 +24,6 @@ function EventsValidation (){
 
         API.post(`admin/validate/eventos`, {limit: 10}, tokens)
         .then(res => {
-            console.log(res.data)
             setEventos(res.data.eventos)
         })
         .catch(err => {
@@ -46,7 +45,6 @@ function EventsValidation (){
             API.post("/admin/validate/eventos/validate", {evento : id}, tokens)
             .then(res => {
                 window.location.reload();
-                console.log("Deu bom")
             })
             .catch(err =>{
                 console.log(err)
@@ -68,7 +66,6 @@ function EventsValidation (){
             API.post("/admin/validate/eventos/excluir", {evento : id}, tokens)
             .then(res => {
                 window.location.reload();
-                console.log("Deu bom")
             })
             .catch(err =>{
                 console.log(err)
@@ -92,8 +89,6 @@ function EventsValidation (){
         }
         API.post("/admin/validate/eventos", filtro, tokens )
         .then(res => {
-            console.log("Deu bom")
-            console.log(res.data.eventos);
             if(skip==0)
                 setEventos(res.data.eventos)
             else    

@@ -29,7 +29,6 @@ function Filter (){
 
         API.post(`/search/animais`, {limit: 10}, tokens)
         .then(res => {
-            console.log(res.data)
             setAnimais(res.data.animais)
         })
         .catch(err => {
@@ -54,8 +53,6 @@ function Filter (){
         }
         API.post("/search/animais", filtro, tokens )
         .then(res => {
-            console.log("Deu bom")
-            console.log(res.data.animais);
             if(skip==0)
                 setAnimais(res.data.animais)
             else    

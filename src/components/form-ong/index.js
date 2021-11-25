@@ -52,15 +52,10 @@ function FormOng(){
             }
         })
             .then(res => {
-                //console.log("Deu bom")
-                //console.log(user);
-                //console.log(res);
                 history.push("/login");
                 window.alert('Ong cadastrada!')
             })
             .catch(err =>{
-                //console.log(err)
-                //console.log(user)
                 window.alert('O formulário possui erro(s), ou a ONG já exite!')
             
             })

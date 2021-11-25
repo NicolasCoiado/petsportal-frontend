@@ -22,7 +22,6 @@ function OngsValidation (){
 
         API.post(`admin/validate/ong`, {limit: 10}, tokens)
         .then(res => {
-            console.log(res.data)
             setOngs(res.data.ongs)
         })
         .catch(err => {
@@ -39,7 +38,6 @@ function OngsValidation (){
         }
 
         var r = window.confirm('Tem certeza que deseja validar esta ong?')
-        console.log(id);
         if(r == true){
             (API.post("/admin/validate/ong/validate", {ong : id}, tokens)
             .then(res => {
@@ -66,7 +64,6 @@ function OngsValidation (){
         }
         API.post("/admin/validate/ong", filtro, tokens )
         .then(res => {
-            console.log("Deu bom")
             if(skip==0)
                 setOngs(res.data.ongs)
             else    

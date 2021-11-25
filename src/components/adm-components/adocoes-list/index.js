@@ -27,7 +27,6 @@ function AdocoesList (){
 
         API.post(`admin/adocoes`, {limit: 10}, tokens)
         .then(res => {
-            console.log(res.data)
             setAdocoes(res.data.adocoes)
         })
         .catch(err => {
@@ -53,8 +52,6 @@ function AdocoesList (){
 
         API.post("/admin/adocoes", filtro, tokens )
         .then(res => {
-            console.log("Deu bom")
-            console.log(res.data.adocoes);
             if(skip==0)
                 setAdocoes(res.data.adocoes)
             else    
@@ -117,7 +114,6 @@ function AdocoesList (){
                     {adocoes &&
                         adocoes.map(adocao => 
                         {
-                            console.log('aaaaaaaa')
                             if(!adocao.animal)
                                 return false
                             else

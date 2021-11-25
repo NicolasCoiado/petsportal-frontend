@@ -26,8 +26,6 @@ function FormLogin (){
         
         API.post("/user/login", user )
         .then(res => {
-            console.log("Deu bom")
-            console.log(res.data)
             window.localStorage.setItem('token', res.data.token);
             history.push('/');
         })

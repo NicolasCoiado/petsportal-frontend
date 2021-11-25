@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import { Collection, CollectionItem, Modal, Button } from 'react-materialize';
 import {Link} from 'react-router-dom';
 import ViewerImgPro from '../viewer-img-pro/';
-import { GiCheckMark } from "react-icons/gi";
 import { ImCross } from 'react-icons/im';
 import API from "../../api";
 import './style.css';
@@ -17,7 +16,6 @@ function AdocaoConfirmadas (){
             headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         })
         .then(res => {
-            console.log(res.data)
             setDoados(res.data.doados)
             setAdotados(res.data.adotados)
         })

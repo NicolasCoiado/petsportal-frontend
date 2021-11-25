@@ -29,7 +29,6 @@ function Eventos (){
 
         API.post(`/search/eventos`, {limit: 10}, tokens)
         .then(res => {
-            console.log(res.data)
             setEventos(res.data.eventos)
         })
         .catch(err => {
@@ -53,8 +52,6 @@ function Eventos (){
         }
         API.post("/search/eventos", filtro, tokens )
         .then(res => {
-            console.log("Deu bom")
-            console.log(res.data.eventos);
             if(skip==0)
                 setEventos(res.data.eventos)
             else    
@@ -182,7 +179,6 @@ function Eventos (){
             </Collection>
             <div className="center">
                 <Button
-                    //TODO: TERMINE AQUI!
                     onClick={e => filtrarEventos(e, eventos.length)}
                     className="btn-mais"
                 >

@@ -91,7 +91,6 @@ function InfosAnimal (){
             headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         })
         .then(res => {
-            console.log(res.data)
             setAnimal(res.data.animal)
             setMe(res.data.me)
         })
@@ -117,9 +116,7 @@ function InfosAnimal (){
           })
           
         .then(res => {
-            console.log("Deu bom")
             window.location.reload();
-    
         })
         .catch(err =>{
             console.log(err)
@@ -138,7 +135,6 @@ function InfosAnimal (){
           })
           
         .then(res => {
-            console.log("Deu bom");
             window.location.reload();
     
         })
@@ -158,7 +154,6 @@ function InfosAnimal (){
             })
 
             .then(res => {
-                console.log("Deu bom")
                 history.push(`/perfil/${animal.responsavel._id}`);
             })
             .catch(err =>{
@@ -183,15 +178,10 @@ function InfosAnimal (){
         )
         
         .then(res => {
-            console.log("Deu bom")
-            //console.log(user);
-            console.log(res);
-            //TODO: Fazer mensagem de adoção mamaco
             history.push("/");
         })
         .catch(err =>{
             console.log(err)
-            //console.log(user)
         })
     }
 

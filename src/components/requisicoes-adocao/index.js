@@ -49,7 +49,6 @@ function RequisicoesAdocao (){
             headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         })
         .then(res => {
-            console.log(res.data)
             setDoados(res.data.doados)
             setAdotados(res.data.adotados)
         })

@@ -49,15 +49,10 @@ function FormPessoa (){
         if(senha == senha2){
             API.post("/user/cadastrar/pessoaFisica", user )
             .then(res => {
-                // console.log("Deu bom")
-                // console.log(user);
-                // console.log(res);
                 history.push("/login");
                 window.alert('Usuário cadastrado')
             })
             .catch(err =>{
-                // console.log(err)
-                // console.log(user)
                 window.alert('O formulário possui um erro, ou o usuário já exite!')  
             })
         }else{

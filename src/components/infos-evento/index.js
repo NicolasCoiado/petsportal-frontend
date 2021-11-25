@@ -30,17 +30,13 @@ function InfosEvento(){
             headers: { Authorization : 'Bearer ' + window.localStorage.getItem('token')}
         })
         .then(res => {
-            //console.log(res.data)
             setEvento(res.data.evento)
-
             setNome(res.data.evento.nome)
             setLocal(res.data.evento.local)
             setData(res.data.evento.data)
             setObservacao(res.data.evento.observacao)
             setEspecies(res.data.evento.especies)
-
             setMe(res.data.me)
-            console.log(res.data.evento)
         })
         .catch(err => {
             console.log(err)
@@ -62,7 +58,6 @@ function InfosEvento(){
           })
           
         .then(res => {
-            console.log("Deu bom")
             window.location.reload();
     
         })
@@ -82,9 +77,6 @@ function InfosEvento(){
             especies,
             observacao
         }
-
-        console.log(evento)
-
         API.post("/events/edit", evento, {
             headers: {
                 'Authorization' : 'Bearer ' + window.localStorage.getItem('token'),
@@ -92,7 +84,6 @@ function InfosEvento(){
           })
           
             .then(res => {
-                console.log("Deu bom")
                 window.location.reload()
             })
             .catch(err =>{
@@ -111,7 +102,6 @@ function InfosEvento(){
             })
             
                 .then(res => {
-                    console.log("Deu bom")
                     history.push("/")
                 })
                 .catch(err =>{

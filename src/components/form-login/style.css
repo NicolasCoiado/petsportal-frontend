@@ -35,7 +35,7 @@
     }
     
     #btn-login{
-        font-size: large;
+        font-size: 25px;
         margin-top: 1.5em;
         margin-bottom: 3em;
         width: 8em;
@@ -75,15 +75,15 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-size: 0.9em;
-        width: 11em;
-        height: 2.5em;
+        font-size: 90%;
+        width: 190px;
+        height: 45px;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
-        border:solid 0.13em;
+        border:solid 2px;
         border-color: white;
-        margin-bottom: 0.7em;
+        margin-bottom: 7%;
     }
     .btn-cad:hover{
         background-color: #51c578;
@@ -115,15 +115,15 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-size: 0.9em;
-        width: 11em;
-        height: 2.5em;
+        font-size: 90%;
+        width: 190px;
+        height: 45px;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
-        border:solid 0.13em;
+        border:solid 2px;
         border-color: white;
-        margin-bottom: 0.7em;
+        margin-bottom: 7%;
     }
     .btn-cad:hover{
         background-color: #51c578;
@@ -155,15 +155,15 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-size: 0.9em;
-        width: 11em;
-        height: 2.5em;
+        font-size: 90%;
+        width: 190px;
+        height: 45px;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
-        border:solid 0.13em;
+        border:solid 2px;
         border-color: white;
-        margin-bottom: 0.7em;
+        margin-bottom: 7%;
     }
     .btn-cad:hover{
         background-color: #51c578;
@@ -196,14 +196,14 @@
     }
     .btn-cad{
         font-size: 75%;
-        width: 11em;
-        height: 2.5em;
+        width: 170px;
+        height: 45px;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
-        border:solid 0.14em;
+        border:solid 2px;
         border-color: white;
-        margin-bottom: 0.7em;
+        margin-bottom: 7%;
     }
     .btn-cad:hover{
         background-color: #51c578;
@@ -235,15 +235,15 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-size: 65%;
-        width: 11em;
-        height: 3em;
+        font-size: 60%;
+        width: 150px;
+        height: 45px;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
-        border:solid 0.15em;
+        border:solid 1px;
         border-color: white;
-        margin-bottom: 0.7em;
+        margin-bottom: 7%;
     }
     .btn-cad:hover{
         background-color: #51c578;
@@ -275,20 +275,21 @@
         flex-direction: column;
     }
     .btn-cad{
-        font-size: 65%;
-        width: 11em;
-        height: 3em;
+        font-size: 50%;
+        width: 130px;
+        height: 45px;
         border-radius: 3em;
         background-color: #319860;
         box-shadow: none;
-        border:solid 0.15em;
+        border:solid 1px;
         border-color: white;
-        margin-bottom: 0.7em;
+        margin-bottom: 7%;
     }
     .btn-cad:hover{
         background-color: #51c578;
     } 
 }
+/*======================================================================*/
 
 @media (max-width: 1000px) and (min-width:800px)
 {

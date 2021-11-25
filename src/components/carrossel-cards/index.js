@@ -19,8 +19,6 @@ function CarrosselCards(){
           .then(res => {
               setAnimais(res.data.animais)
               setLogado(res.data.logado)
-              //console.log(res.data.animais)
-              console.log( res.data )
           })
           .catch(err =>{
              console.log(err);
@@ -47,7 +45,6 @@ function CarrosselCards(){
         )
             .then(res => {
                 setAnimais(animais.concat(res.data.animais))
-                //console.log(res.data.animais)
             })
             .catch(err =>{
                 console.log(err);
@@ -106,9 +103,7 @@ function CarrosselCards(){
             <div className="center">
                 <Link to='/animais/filtrados'>
                     <Button
-                        className="btn-ver"
-                        //TODO: Msg: Mais animais adicionados ao carrossel acima
-                        //TODO: Estilizar botão
+                        className="btn-ver"       
                     >
                         Ver mais animais
                     </Button>  

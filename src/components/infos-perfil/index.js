@@ -65,7 +65,6 @@ function InfosPerfil (){
           })
           
         .then(res => {
-            console.log("Deu bom")
             window.location.reload();
     
         })
@@ -93,7 +92,6 @@ function InfosPerfil (){
           })
           
         .then(res => {
-            console.log("Deu bom")
             window.location.reload();
     
         })
@@ -121,7 +119,6 @@ function InfosPerfil (){
                 })
                 
                 .then(res => {
-                    console.log("Deu bom")
                     window.location.reload();
             
                 })
@@ -153,7 +150,6 @@ function InfosPerfil (){
           })
           
         .then(res => {
-            console.log("Deu bom")
             window.location.reload();
     
         })

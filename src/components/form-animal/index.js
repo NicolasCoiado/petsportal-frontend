@@ -34,7 +34,6 @@ function FormPessoa (){
           })
           .then(res => {
               setId(res.data.id)
-              console.log(res.data)
           })
           .catch(err =>{
              console.log(err);

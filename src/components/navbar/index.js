@@ -33,7 +33,6 @@ function NavBar (){
       
       })
       .then(res => {
-         console.log(res.data.user)
          setUser(res.data.user);
       })
       .catch(err =>{
