@@ -109,3 +109,25 @@
         background-color: #48a567;
     }
 }
+
+@media (min-width: 1000px) {
+    .btn-ver-animal{
+        background-color:#56ca7d;
+        border-radius: 2em;
+        margin-left: 100px;
+    }
+    .btn-ver-animal:hover{
+        background-color: #40965d;
+    }
+}
+@media (max-width: 1000px) {
+    .btn-ver-animal{
+        background-color:#56ca7d;
+        border-radius: 2em;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .btn-ver-animal:hover{
+        background-color: #40965d;
+    }
+}

@@ -1,9 +1,9 @@
 import React, { useEffect, useState} from "react";
 import {useParams, useHistory} from 'react-router-dom'
-import {Icon, Modal, Button, TextInput, Textarea, Select } from 'react-materialize';
+import { Modal, Button, TextInput, Textarea, Select } from 'react-materialize';
 import moment from 'moment';
 import { ImCross } from 'react-icons/im';
-import { MdEdit } from 'react-icons/md';
+import { MdEdit, MdSend, MdDelete } from 'react-icons/md';
 import ViewerEvento from '../viewer-evento/'
 import API from '../../api';
 import './style.css';
@@ -265,17 +265,15 @@ function InfosEvento(){
                                                     waves="light"
                                                     className="submmit-edit"
                                                 >
+                                                    <MdSend className="send-icon" />
                                                     Enviar
-                                                    <Icon left>
-                                                        send
-                                                    </Icon>
                                                 </Button>
                                             </div>
                                             
                                         </form>
                                 </Modal>
                                 <Button className="btn-excluir-evento" onClick={ExcluirEvento} node="button">
-                                    <Icon left>delete</Icon>
+                                    <MdDelete className="send-icon"/>
                                     Excluir
                                 </Button>   
                             </div>

@@ -197,24 +197,28 @@ function InfosAnimal (){
 
     const Reportar = (e) =>{
         e.preventDefault();
-        API.post("/reports/criar",{
-            usuario: animal.responsavel._id,
-            animal: animal._id,
-            texto
-        }, {
-            headers: {
-                Authorization : 'Bearer ' + window.localStorage.getItem('token')
+        var r = window.confirm('Tem certeza que deseja reportar esse animal?')
 
-            }
-          })
-          
-        .then(res => {
-            window.location.reload();
-    
-        })
-        .catch(err =>{
-            console.log(err)
-        })
+        if(r == true){
+            API.post("/reports/criar",{
+                usuario: animal.responsavel._id,
+                animal: animal._id,
+                texto
+            }, {
+                headers: {
+                    Authorization : 'Bearer ' + window.localStorage.getItem('token')
+
+                }
+            })
+            
+            .then(res => {
+                window.location.reload();
+        
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+        }
     }
 
     return(

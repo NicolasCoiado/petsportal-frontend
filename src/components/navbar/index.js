@@ -78,7 +78,7 @@ function NavBar (){
                     <FaHandHoldingHeart className="nav-icon-mobile" />
                     DOAR
                   </NavLink>
-                  <NavLink className="nav-item-mobile"  to='/'>
+                  <NavLink className="nav-item-mobile"  to='/animais/filtrados'>
                     <GiSittingDog className="nav-icon-mobile"/>
                     ADOTAR
                   </NavLink>
@@ -101,7 +101,7 @@ function NavBar (){
                     <FaHandHoldingHeart className="nav-icon-mobile" />
                     DOAR
                   </NavLink>
-                  <NavLink className="nav-item-mobile"  to='/'>
+                  <NavLink className="nav-item-mobile"  to='/animais/filtrados'>
                     <GiSittingDog className="nav-icon-mobile"/>
                     ADOTAR
                   </NavLink>
@@ -130,7 +130,7 @@ function NavBar (){
                 <FaHandHoldingHeart className="nav-icon-mobile" />
                 Doar
               </NavLink>
-              <NavLink className="nav-item-mobile"  to='/'>
+              <NavLink className="nav-item-mobile"  to='/animais/filtrados'>
                 <GiSittingDog className="nav-icon-mobile"/>
                 Adotar
               </NavLink>
@@ -195,7 +195,7 @@ function NavBar (){
           <NavLink className="nav-item" to='/cadastrar-animal'>
             Doar
           </NavLink>
-          <NavLink className="nav-item"  to='/'>
+          <NavLink className="nav-item"  to='/animais/filtrados'>
             Adotar
           </NavLink>
           {(!user.tipo)//Se o usuário não estiver logado...
@@ -239,14 +239,12 @@ function NavBar (){
                 }}
                 trigger={<Link to="#!" className="nav-item-ong">Eventos<RiArrowDropDownLine className="nav-icon-ong"/>{''}</Link>}
               >
-                  <Divider />
                   <Link to="/cadastrar-evento">
                     Criar evento
                   </Link>
                   <Link to="/eventos">
                     Outros eventos
                   </Link>
-                  <Divider />
               </Dropdown>
             )}
             {(user.tipo==='adm')&&(
@@ -275,14 +273,12 @@ function NavBar (){
                 <Link to="/adm/adocoes">
                   Lista de adoções
                 </Link>
-                <Divider />
                 <Link to="/adm/ongs">
                   Validar ONGs
                 </Link>
                 <Link to="/adm/eventos">
                   Validar eventos
                 </Link>
-                <Divider />
                 <Link to="/adm/reports">
                   Ver reports
                 </Link>
@@ -313,7 +309,6 @@ function NavBar (){
               <Link className="item-drop" to={`/perfil/${user.id}`}>
                 Meu perfil
               </Link>
-              <Divider />
               <a onClick={logoff}>
                   Logout
               </a>

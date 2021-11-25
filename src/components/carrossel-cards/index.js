@@ -110,7 +110,7 @@ function CarrosselCards(){
                         //TODO: Msg: Mais animais adicionados ao carrossel acima
                         //TODO: Estilizar botão
                     >
-                        Buscar tipo específico de animal
+                        Ver mais animais
                     </Button>  
                 </Link>
             </div>

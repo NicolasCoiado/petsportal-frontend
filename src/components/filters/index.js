@@ -196,7 +196,6 @@ function Filter (){
         <div className="reqs-component">
             <Collection className="cltn-reqs">
                 {animais &&
-                    /* TODO: Colocar load enquanto os animais não carregarem */
                     animais.map(animal => (
                         <CollectionItem className="cltni-reqs">
                             <Link to={animal}>
@@ -211,21 +210,24 @@ function Filter (){
                                     <h1 className="title-cltn-obs"> Observacao: </h1>
                                     <h1 className="name-cltn-obs">{animal.observacao || 'Nenhuma'}</h1>
                                 </div>
+                                <Link to={'/animal/'+animal._id}>
+                                    <Button className="btn-ver-animal">
+                                        Ver animal
+                                    </Button>
+                                </Link>
                             </div>
-                            <Link to={'/animal/'+animal._id}>
-                                <Button>
-                                    Ver animal
-                                </Button>
-                            </Link>
                         </CollectionItem>
                     ))
                 }
             </Collection>
-            <Button
-                onClick={e => filtrarAnimais(e, animais.length)}
-            >
-                button
-            </Button>
+            <div className="center">
+                <Button
+                    onClick={e => filtrarAnimais(e, animais.length)}
+                    className="btn-mais"
+                >
+                    Ver mais animais
+                </Button>
+            </div>
         </div>
     </>
     );

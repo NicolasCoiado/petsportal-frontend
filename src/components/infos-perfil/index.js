@@ -2,7 +2,7 @@ import ViewerAnimal from '../viewer-animal/'
 import ViewerIMG from '../viewer-img/';
 import EventosONG from '../eventos-ong';
 import { Button, Icon, Modal, TextInput, Textarea } from 'react-materialize';
-import { MdEdit, MdFileDownload } from 'react-icons/md';
+import { MdEdit, MdSend, MdReport } from 'react-icons/md';
 import React, { useState, useEffect} from "react";
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -107,7 +107,7 @@ function InfosPerfil (){
 
         if(texto){
 
-            var r = window.confirm('Tem certeza que deseja fazer logoff')
+            var r = window.confirm('Tem certeza que deseja reportar essa conta?')
 
             if(r == true){
                 API.post("/reports/criar",{
@@ -282,10 +282,8 @@ function InfosPerfil (){
                                         waves="light"
                                         className="submmit-edit"
                                     >
+                                        <MdSend className="send-icon" />
                                         Enviar
-                                        <Icon left>
-                                            send
-                                        </Icon>
                                     </Button>
                                 </div>
                             </form>
@@ -351,9 +349,7 @@ function InfosPerfil (){
                                     waves="light"
                                     className="submmit-edit"
                                 >
-                                    <Icon left>
-                                        send
-                                    </Icon>
+                                    <MdSend className="send-icon" />
                                     Enviar
                                 </Button>
                             </div>
@@ -396,7 +392,7 @@ function InfosPerfil (){
                                 preventScrolling: true,
                                 startingTop: '4%'
                             }}
-                            trigger={<Button className="btn-reportar" node="button"> <Icon left>report</Icon> Reportar</Button>}
+                            trigger={<Button className="btn-reportar" node="button"> <MdReport className="icon-edited"/> Reportar</Button>}
                             >
                             <form className="form-report" onSubmit={Reportar}>
                                 <Textarea
@@ -408,7 +404,7 @@ function InfosPerfil (){
                                         type="submit"
                                         className="btn-mais"
                                     >
-                                        <Icon left>send</Icon>
+                                        <MdSend className="send-icon" />
                                         Enviar reporte
                                     </Button>
                                 </div>
