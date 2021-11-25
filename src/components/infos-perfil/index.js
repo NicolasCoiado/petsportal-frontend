@@ -2,7 +2,7 @@ import ViewerAnimal from '../viewer-animal/'
 import ViewerIMG from '../viewer-img/';
 import EventosONG from '../eventos-ong';
 import { Button, Icon, Modal, TextInput, Textarea } from 'react-materialize';
-import { MdEdit } from 'react-icons/md';
+import { MdEdit, MdFileDownload } from 'react-icons/md';
 import React, { useState, useEffect} from "react";
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -170,7 +170,6 @@ function InfosPerfil (){
                 <div id="upload-image"> {/* DIV QUE ENGLOBA A ATUALIZAÇÃO DE IMAGENS*/}
                     <ViewerIMG uploadUrl={user.imagem}/>
                     <label htmlFor="file-upload" className="custom-file-upload-perfil">
-                        <Icon className="icon-file">download</Icon> 
                             Upload imagem
                     </label>
                     <input onChange={e => handleUpload (e)} id="file-upload" type="file" />  
@@ -430,9 +429,6 @@ function InfosPerfil (){
                         //TODO: COLOQUE UM íCONE AQUI
                     >
                         Propostas de adoções
-                        
-                        <Icon left>
-                        </Icon>
                     </Button>
                 </Link>
                 <Link to='/confirmados'>
@@ -442,9 +438,6 @@ function InfosPerfil (){
                         waves="light"
                     >
                         Propostas de adoções confirmadas
-                        <Icon left>
-                          
-                        </Icon>
                     </Button>
                 </Link>
             </div>

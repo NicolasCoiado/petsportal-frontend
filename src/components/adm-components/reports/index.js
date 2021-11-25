@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Collection, CollectionItem, Modal, Button, TextInput, Icon} from 'react-materialize';
+import { Collection, CollectionItem, Modal, Button, TextInput} from 'react-materialize';
 import { ImCross } from 'react-icons/im';
 import { FaFilter } from 'react-icons/fa';
+import { MdReport } from 'react-icons/md'
 import API from '../../../api';
 
 function Reports (){
@@ -144,9 +145,7 @@ function Reports (){
                                     onClick={e=>banir(e, report.usuario._id)}
                                     className="btn-banir"
                                 >
-                                    <Icon left>
-                                        report
-                                    </Icon>
+                                    <MdReport className="icon-edited"/>
                                     BANIR
                                 </Button>
                             </div>

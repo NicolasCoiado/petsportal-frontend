@@ -49,3 +49,7 @@
 .btn-submit-form:hover{
     background-color: #40965d;
 }
+
+.send-icon{
+    margin-right: 20px;
+}

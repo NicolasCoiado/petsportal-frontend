@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { TextInput, Textarea, Select, Button, Icon } from 'react-materialize';
+import { TextInput, Textarea, Select, Button } from 'react-materialize';
+import { MdSend, MdDone } from 'react-icons/md';
 import { useHistory } from 'react-router-dom';
 import API from '../../api';
 import './style.css'
@@ -120,7 +121,6 @@ function FormEvento (){
                 ?(
                 <div className="upload-area-banner">
                     <label htmlFor="file-upload" className="custom-file-upload-banner">
-                        <Icon className="icon-file">download</Icon> 
                             Banner de divulgação
                     </label>
                     <input id="file-upload" onChange={e => handleUpload(e)} type="file" />    
@@ -129,7 +129,6 @@ function FormEvento (){
                 <>
                     <div className="upload-area-banner">
                         <label htmlFor="file-upload" className="custom-file-upload-banner">
-                            <Icon className="icon-file">download</Icon> 
                                 Banner de divulgação
                         </label>
                         <input id="file-upload" onChange={e => handleUpload(e)} type="file" />    
@@ -138,7 +137,7 @@ function FormEvento (){
                         <Button
                             className="icon-file-upload-evento"
                             floating
-                            icon={<Icon>done</Icon>}
+                            icon={<MdDone />}
                             large
                             node="button"
                         />
@@ -152,10 +151,8 @@ function FormEvento (){
                         type="submit"
                         waves="light"
                     >
+                        <MdSend className="send-icon" />
                         Cadastrar Evento
-                        <Icon left>
-                            send
-                        </Icon>
                     </Button>
                 </div>
             </form>

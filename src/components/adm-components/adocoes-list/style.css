@@ -65,3 +65,9 @@
 .b{
     font-weight: 900;
 }
+
+.icon-edited{
+    padding-top: 10px;
+    font-size: 170%;
+    margin-right: 10px;
+}

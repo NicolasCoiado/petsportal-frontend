@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Collection, CollectionItem, Modal, Button, TextInput } from 'react-materialize';
 import { Link } from 'react-router-dom';
 import ViewerImgPro from '../../viewer-img-pro';
-import { ImCross, ImTable2 } from 'react-icons/im';
+import { ImCross } from 'react-icons/im';
 import { FaFilter } from 'react-icons/fa';
 import API from '../../../api';
 

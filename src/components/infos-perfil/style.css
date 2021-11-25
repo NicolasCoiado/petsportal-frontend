@@ -73,7 +73,7 @@
     .custom-file-upload-perfil{
         color: white;
         border-radius: 2em;
-        padding: 1.2em  2em  1em   1em;
+        padding: 1.2em  2em  1em   2em;
         cursor: pointer;
         background-color: #56ca7d;
     } 
@@ -177,3 +177,4 @@
 .btn-reportar:hover{
     background-color:#311111;
 }
+

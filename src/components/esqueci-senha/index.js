@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { TextInput, Button, Icon } from 'react-materialize';
+import { TextInput, Button } from 'react-materialize';
+import { MdSend } from 'react-icons/md';
 import API from '../../api/';
 import './style.css';
 
@@ -84,9 +85,7 @@ function EsqueciSenha (){
                         type="submit"
                         className="btn-email"
                     >
-                        <Icon left>
-                            send
-                        </Icon>
+                        <MdSend className="send-icon" />
                         Enviar Email
                     </Button>
                 </form>
@@ -104,9 +103,7 @@ function EsqueciSenha (){
                                 type="submit"
                                 className="btn-email"
                             >
-                                <Icon left>
-                                     send
-                                </Icon>
+                                <MdSend className="send-icon" />
                                 Enviar Resposta
                             </Button>
                         </form>
@@ -134,9 +131,7 @@ function EsqueciSenha (){
                                 type="submit"
                                 className="btn-email"
                             >
-                                <Icon left>
-                                     send
-                                </Icon>
+                                <MdSend className="send-icon" />
                                 Enviar nova senha
                             </Button>
                         </form>

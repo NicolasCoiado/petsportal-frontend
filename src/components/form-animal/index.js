@@ -1,5 +1,6 @@
 import 'materialize-css';
-import { TextInput, Textarea, Button, Icon, Select} from 'react-materialize';
+import { TextInput, Textarea, Button, Select} from 'react-materialize';
+import { MdSend, MdDone } from 'react-icons/md';
 import { useHistory } from 'react-router-dom';
 import React, {useState, useEffect} from "react";
 import './style.css';
@@ -263,7 +264,6 @@ function FormPessoa (){
                 ?(
                     <div className="center upload-area-animal">
                         <label htmlFor="file-upload" className="custom-file-upload-animal">
-                            <Icon className="icon-file">download</Icon> 
                                 Foto Animal 
                         </label>
                         <input id="file-upload" type="file" onChange={handleUpload} />    
@@ -272,7 +272,6 @@ function FormPessoa (){
                     <div className="consert-file">
                         <div className="center upload-area-animal">
                             <label htmlFor="file-upload" className="custom-file-upload-animal">
-                                <Icon className="icon-file">download</Icon> 
                                     Foto Animal 
                             </label>
                             <input id="file-upload" type="file" onChange={handleUpload} />    
@@ -281,7 +280,7 @@ function FormPessoa (){
                             <Button
                                 className="icon-file-upload"
                                 floating
-                                icon={<Icon>done</Icon>}
+                                icon={<MdDone />}
                                 large
                                 node="button"
                             />
@@ -297,10 +296,8 @@ function FormPessoa (){
                     type="submit"
                     waves="light"
                 >
+                    <MdSend className="send-icon" />
                     Cadastrar
-                    <Icon left>
-                        send
-                    </Icon>
                 </Button>
             </div>
         </form>

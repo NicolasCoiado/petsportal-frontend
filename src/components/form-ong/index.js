@@ -1,5 +1,6 @@
 import 'materialize-css';
-import { TextInput, Textarea, Button, Icon } from 'react-materialize';
+import { TextInput, Textarea, Button } from 'react-materialize';
+import { MdSend, MdDone } from 'react-icons/md';
 import { useHistory } from 'react-router-dom';
 import React, {useState} from "react";
 import './style.css';
@@ -135,7 +136,6 @@ function FormOng(){
                         <>
                             <h1 className="lbl-upload">Estatuto Social:</h1>
                             <label htmlFor="file-upload" className="custom-file-upload">
-                                <Icon className="icon-file">download</Icon> 
                                     Arquivo
                             </label>
                             <input  onChange={handleUpload}  id="file-upload" type="file" />
@@ -144,14 +144,13 @@ function FormOng(){
                         <>
                             <h1 className="lbl-upload">Estatuto Social:</h1>
                             <label to="file-upload" className="custom-file-upload">
-                                <Icon className="icon-file">download</Icon> 
                                 Arquivo
                             </label>
                             <input  onChange={handleUpload}  id="file-upload" type="file" />
                             <Button
                                 className="icon-remove-file"
                                 floating
-                                icon={<Icon>done</Icon>}
+                                icon={<MdDone />}
                                 large
                                 node="button"
                         
@@ -167,10 +166,8 @@ function FormOng(){
                     type="submit"
                     waves="light"
                 >
+                    <MdSend className="send-icon" />
                     Cadastrar ONG
-                    <Icon left>
-                        send
-                    </Icon>
                 </Button>
             </div>
         </form>

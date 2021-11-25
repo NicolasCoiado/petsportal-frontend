@@ -1,10 +1,10 @@
 import 'materialize-css';
-import { TextInput, Textarea, Button, Icon } from 'react-materialize';
+import { TextInput, Textarea, Button } from 'react-materialize';
 import { useHistory } from 'react-router-dom';
 import { MdSend } from 'react-icons/md';
-import React, {useState} from "react";
+import React, { useState } from "react";
+import API from '../../api/';
 import './style.css';
-import API from '../../api/'
 
 function FormPessoa (){
     
@@ -145,10 +145,8 @@ function FormPessoa (){
                     type="submit"
                     waves="light"
                 >
+                    <MdSend className="send-icon" />
                     Cadastrar
-                    <Icon left>
-                        send
-                    </Icon>
                 </Button>
             </div>
         </form>

@@ -1,10 +1,9 @@
 import 'materialize-css';
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Modal, Button, Select, TextInput, Collection, CollectionItem } from 'react-materialize';
 import { Link } from "react-router-dom";
 import { ImCross } from 'react-icons/im';
 import { GiSittingDog } from 'react-icons/gi'
-import { IoIosPeople } from 'react-icons/io'
 import { FaFilter } from 'react-icons/fa';
 import ViewerImgPro from '../viewer-img-pro/'
 import API from '../../api';

@@ -1,4 +1,4 @@
-import { TextInput, Button} from 'react-materialize';
+import { TextInput, Button } from 'react-materialize';
 import { Link } from 'react-router-dom';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { MdEmail } from 'react-icons/md';

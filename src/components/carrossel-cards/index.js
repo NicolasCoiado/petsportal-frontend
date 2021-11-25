@@ -92,7 +92,6 @@ function CarrosselCards(){
                         </div>
                     ))
                 :
-                  //TODO: ARRUME ISSO AQUI
                     <></>
                 }
             </div> 

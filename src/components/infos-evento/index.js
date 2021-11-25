@@ -146,7 +146,6 @@ function InfosEvento(){
                     <div className="center">
                         <ViewerEvento uploadUrl={evento.banner}/>
                         <label htmlFor="file-upload" className="custom-file-upload-evento">
-                            <Icon className="icon-file">download</Icon> 
                                 Upload imagem
                         </label>
                         <input onChange={e => handleUploadEvento(e)} id="file-upload" type="file" />  

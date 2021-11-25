@@ -155,7 +155,6 @@ function Eventos (){
         <div className="reqs-component">
             <Collection className="cltn-reqs">
                 {eventos &&
-                    /* TODO: Colocar load enquanto os animais não carregarem */
                     eventos.map(evento => (
                         <CollectionItem className="cltni-reqs">
                             <a href={evento.banner}>

@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
 import {useParams, Link, useHistory} from "react-router-dom";
 import ViewerIMG from "../viewer-img";
+import { MdSend, MdDelete, MdReport, MdEdit  } from 'react-icons/md';
 import { ImCross } from 'react-icons/im';
-import { MdEdit } from 'react-icons/md';
-import { Button, Icon, Modal, TextInput, Select, Textarea} from 'react-materialize';
+import { Button, Modal, TextInput, Select, Textarea} from 'react-materialize';
 import API from '../../api/'
 import './style.css'
 
@@ -209,7 +209,6 @@ function InfosAnimal (){
           })
           
         .then(res => {
-            console.log("Deu bom")
             window.location.reload();
     
         })
@@ -226,7 +225,6 @@ function InfosAnimal (){
                     {me &&( 
                         <>
                             <label htmlFor="file-upload" className="custom-file-upload-perfil">
-                            <Icon className="icon-file">download</Icon> 
                                 Upload imagem
                             </label>
                             <input onChange={handleUpload} id="file-upload" type="file" /> 
@@ -276,7 +274,7 @@ function InfosAnimal (){
                                     preventScrolling: true,
                                     startingTop: '4%'
                                 }}
-                                trigger={<Button floating className="btn-edit-animais" node="button"><MdEdit/></Button>}
+                                trigger={<Button floating className="btn-edit-animais" node="button"><MdEdit /></Button>}
                                 >
                                 <form className="form-edit-animal" onSubmit={e=>handleSubmitAnimal(e,'nome')}>
                                     <TextInput            
@@ -291,10 +289,8 @@ function InfosAnimal (){
                                         type="submit"
                                         waves="light"
                                     >
+                                        < MdSend className="send-icon"/>
                                         Enviar
-                                        <Icon left>
-                                            send
-                                        </Icon>
                                     </Button>
                                 </form>
                             </Modal>
@@ -368,10 +364,8 @@ function InfosAnimal (){
                                         type="submit"
                                         waves="light"
                                     >
+                                        < MdSend className="send-icon"/>
                                         Enviar
-                                        <Icon left>
-                                            send
-                                        </Icon>
                                     </Button>
                                 </form>
                             </Modal>
@@ -412,10 +406,8 @@ function InfosAnimal (){
                                         type="submit"
                                         waves="light"
                                     >
+                                        < MdSend className="send-icon"/>
                                         Enviar
-                                        <Icon left>
-                                            send
-                                        </Icon>
                                     </Button>
                                 </form>
                             </Modal>
@@ -498,10 +490,8 @@ function InfosAnimal (){
                                         type="submit"
                                         waves="light"
                                     >
+                                        < MdSend className="send-icon"/>
                                         Enviar
-                                        <Icon left>
-                                            send
-                                        </Icon>
                                     </Button>
                                 </form>
                             </Modal>
@@ -543,10 +533,8 @@ function InfosAnimal (){
                                             type="submit"
                                             waves="light"
                                         >
+                                        < MdSend className="send-icon"/>
                                         Enviar
-                                        <Icon left>
-                                            send
-                                        </Icon>
                                     </Button>
                                 </form>
                             </Modal>
@@ -623,10 +611,8 @@ function InfosAnimal (){
                                             type="submit"
                                             waves="light"
                                         >
+                                        < MdSend className="send-icon"/>
                                         Enviar
-                                        <Icon left>
-                                            send
-                                        </Icon>
                                     </Button>
                                 </form>
                             </Modal>
@@ -668,10 +654,8 @@ function InfosAnimal (){
                                             type="submit"
                                             waves="light"
                                         >
+                                        < MdSend className="send-icon"/>
                                         Enviar
-                                        <Icon left>
-                                            send
-                                        </Icon>
                                     </Button>
                                 </form>
                             </Modal>
@@ -713,10 +697,8 @@ function InfosAnimal (){
                                             type="submit"
                                             waves="light"
                                         >
+                                        < MdSend className="send-icon"/>
                                         Enviar
-                                        <Icon left>
-                                            send
-                                        </Icon>
                                     </Button>
                                 </form>
                             </Modal>
@@ -758,10 +740,8 @@ function InfosAnimal (){
                                             type="submit"
                                             waves="light"
                                         >
+                                        < MdSend className="send-icon"/>
                                         Enviar
-                                        <Icon left>
-                                            send
-                                        </Icon>
                                     </Button>
                                 </form>
                             </Modal>
@@ -803,10 +783,8 @@ function InfosAnimal (){
                                             type="submit"
                                             waves="light"
                                         >
+                                        < MdSend className="send-icon" />
                                         Enviar
-                                        <Icon left>
-                                            send
-                                        </Icon>
                                     </Button>
                                 </form>
                             </Modal>
@@ -820,10 +798,8 @@ function InfosAnimal (){
                                 node="button"
                                 waves="light"
                             >
+                                <MdDelete className="send-icon" />
                                 Excluir
-                                <Icon left>
-                                    delete
-                                </Icon>
                             </Button>
                         }
                     </div>
@@ -882,10 +858,8 @@ function InfosAnimal (){
                                                 type="submit"
                                                 waves="light"
                                             >
+                                                < MdSend className="send-icon"/>
                                                 Enviar
-                                                <Icon left>
-                                                    send
-                                                </Icon>
                                             </Button>
                                         </div>
                                     </form>
@@ -920,7 +894,7 @@ function InfosAnimal (){
                                     preventScrolling: true,
                                     startingTop: '4%'
                                 }}
-                                trigger={<Button className="btn-reportar-animal" node="button"> <Icon left>report</Icon> Reportar</Button>}
+                                trigger={<Button className="btn-reportar-animal" node="button"> < MdReport className="send-icon" /> Reportar</Button>}
                                 >
                                 <form onSubmit={Reportar}>
                                     <Textarea
@@ -932,7 +906,7 @@ function InfosAnimal (){
                                             type="submit"
                                             className="btn-mais"
                                         >
-                                            <Icon left>send</Icon>
+                                            < MdReport className="send-icon" />
                                             Enviar reporte
                                         </Button>
                                     </div>

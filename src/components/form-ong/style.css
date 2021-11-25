@@ -30,7 +30,7 @@ input[type="file"] {
     .custom-file-upload{
         color: white;
         border-radius: 2em;
-        padding: 1.2em  2em  1em   1em;
+        padding: 1em  2em  1em   2em;
         cursor: pointer;
         background-color: #56ca7d;
     }
@@ -71,7 +71,7 @@ input[type="file"] {
         text-align: center;
         color: white;
         border-radius: 2em;
-        padding: 0.5em  1em 1em 1em ;
+        padding: 1em  2em 1em 2em ;
         cursor: pointer;
         background-color: #56ca7d;
     }

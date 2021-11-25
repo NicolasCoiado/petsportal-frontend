@@ -4,8 +4,9 @@ import { FaHandHoldingHeart, FaUserCheck } from 'react-icons/fa'
 import { GiSittingDog } from 'react-icons/gi'
 import { RiLogoutBoxRLine, RiArrowDropDownLine } from 'react-icons/ri'
 import { IoIosPeople } from 'react-icons/io'
-import { HiPlusCircle, HiUserAdd, HiViewList } from 'react-icons/hi'
-import { Navbar, Button, Dropdown, Divider, Icon } from 'react-materialize';
+import { MdArrowDropDown } from 'react-icons/md'
+import { HiPlusCircle, HiViewList } from 'react-icons/hi'
+import { Navbar, Button, Dropdown, Divider } from 'react-materialize';
 import { NavLink, Link, useHistory } from 'react-router-dom';
 import ViewerNavIMG from '../viewer-img-nav/'
 import Logo from '../../images/Logo.svg';
@@ -307,7 +308,7 @@ function NavBar (){
                 onOpenStart: null,
                 outDuration: 250
               }}
-              trigger={<a href="#">{' '}<Icon right>arrow_drop_down</Icon></a>}
+              trigger={<a href="#">{' '}<MdArrowDropDown className="icon-drop"/></a>}
             >
               <Link className="item-drop" to={`/perfil/${user.id}`}>
                 Meu perfil
