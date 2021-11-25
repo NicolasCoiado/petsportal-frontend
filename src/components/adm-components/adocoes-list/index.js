@@ -118,7 +118,9 @@ function AdocoesList (){
                         adocoes.map(adocao => 
                         ( 
                             <CollectionItem key={adocao._id} className="cltni-reqs">
-                                <Link to={'/animal/'+adocao.animal._id}>
+
+                                <p>{JSON.stringify(adocao)}</p>
+                                {/* <Link to={'/animal/'+adocao.animal._id}>
                                     <ViewerImgPro uploadUrl={adocao.animal.foto} />
                                 </Link>
                                 <div className="itens-cltn">
@@ -138,7 +140,7 @@ function AdocoesList (){
                                         <h3 className="title-cltn"> Data da adoção: </h3>
                                         <h1 className="name-cltn">{ moment(adocao.data).format('D/MM/YYYY') }</h1>
                                     </div>
-                                </div>
+                                </div> */}
                             </CollectionItem>
                         ))
                     }
