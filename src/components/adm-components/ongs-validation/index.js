@@ -39,7 +39,7 @@ function OngsValidation (){
         }
 
         var r = window.confirm('Tem certeza que deseja validar esta ong?')
-
+        console.log(id);
         if(r == true){
             (API.post("/admin/validate/ong/validate", {ong : id}, tokens)
             .then(res => {
@@ -167,7 +167,7 @@ function OngsValidation (){
                                         </div>
                                     </Modal>
                                     <Button
-                                        onClick={verificar}
+                                        onClick={e => verificar(e, ong._id)}
                                         className="btn-mais"
                                     >
                                         Validar ONG

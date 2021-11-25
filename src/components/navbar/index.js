@@ -192,28 +192,34 @@ function NavBar (){
         }
       >
         <div className="navbar-edited">
-          <NavLink className="nav-item" to='/cadastrar-animal'>
-            Doar
-          </NavLink>
-          <NavLink className="nav-item"  to='/animais/filtrados'>
-            Adotar
-          </NavLink>
           {(!user.tipo)//Se o usuário não estiver logado...
           ?(
-            <NavLink className="nav-item"  to='/login'>
-            <Button 
-              className="btn-nav"
-              node="button"
-              style={{
-                marginRight: '5px'
-              }}
-            >
-              LOGIN
-            </Button>
-          </NavLink>
+            <><NavLink className="nav-item" to='/login'>
+                Doar
+              </NavLink>
+              <NavLink className="nav-item" to='/animais/filtrados'>
+                Adotar
+              </NavLink>
+              <NavLink className="nav-item" to='/login'>
+                  <Button
+                    className="btn-nav"
+                    node="button"
+                    style={{
+                      marginRight: '5px'
+                    }}
+                  >
+                    LOGIN
+                  </Button>
+                </NavLink></>
           )
           ://Se o usuário ESTIVER logado...
           (<>
+              <NavLink className="nav-item" to='/cadastrar-animal'>
+                Doar
+              </NavLink>
+              <NavLink className="nav-item" to='/animais/filtrados'>
+                Adotar
+              </NavLink>
             {(user.tipo==='nrm')&&(
               <NavLink className="nav-item" to='/eventos'>
                 Eventos

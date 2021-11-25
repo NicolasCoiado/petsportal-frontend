@@ -66,13 +66,8 @@ function FormOng(){
 
     const handleUpload= (e) => {
         e.preventDefault()
-        // this.image = e.target.files[0]
-        //setSocial(JSON.stringify(e.target.files[0]))
         setSocial (e.target.files[0])
         setUpload ('uploded')
-        console.log(e.target.files[0])
-        console.log("e::::::::::::")
-        console.log(social)
     };
 
     return(
