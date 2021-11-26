@@ -1,6 +1,6 @@
 import 'materialize-css';
-import { TextInput, Textarea, Button } from 'react-materialize';
-import { useHistory } from 'react-router-dom';
+import { TextInput, Textarea, Button, Checkbox } from 'react-materialize';
+import { useHistory, Link } from 'react-router-dom';
 import { MdSend } from 'react-icons/md';
 import React, { useState } from "react";
 import API from '../../api/';
@@ -21,6 +21,8 @@ function FormPessoa (){
     const [pergunta, setPergunta] = useState('');
     const [resposta, setResposta] = useState('');
 
+    const [termos, setTermos] = useState(false);
+
     const [btn, setBtn] = useState('');
 
     const history = useHistory();
@@ -28,35 +30,42 @@ function FormPessoa (){
     var data = new Date();
 
     const handleSubmit = (e) =>{
-        setBtn('clickado');
         e.preventDefault();
-
-        let user = {
-            nome,
-            email,
-            senha,
-            senha2,
-            endereco,
-            tel1,
-            tel2,
-            nasc,
-            cpf,
-            desc,
-            pergunta, 
-            resposta
-        }
-
-        if(senha == senha2){
-            API.post("/user/cadastrar/pessoaFisica", user )
-            .then(res => {
-                history.push("/login");
-                window.alert('Usuário cadastrado')
-            })
-            .catch(err =>{
-                window.alert('O formulário possui um erro, ou o usuário já exite!')  
-            })
+        if(!termos){
+            window.alert('Aceite os termos de uso, para poder efetuar o cadastro!')
         }else{
-            window.alert('As senhas não são iguais');
+            if(!nome || !email || !senha || !senha2 || !endereco || !tel1 || !nasc || !cpf || !pergunta || !resposta){
+                window.alert('O formulário possui campo(s) não preenchido')
+            }else{
+                setBtn('clickado');
+                let user = {
+                    nome,
+                    email,
+                    senha,
+                    senha2,
+                    endereco,
+                    tel1,
+                    tel2,
+                    nasc,
+                    cpf,
+                    desc,
+                    pergunta, 
+                    resposta
+                }
+
+                if(senha == senha2){
+                    API.post("/user/cadastrar/pessoaFisica", user )
+                    .then(res => {
+                        history.push("/login");
+                        window.alert('Usuário cadastrado')
+                    })
+                    .catch(err =>{
+                        window.alert('O formulário possui um erro, ou o usuário já exite!')  
+                    })
+                }else{
+                    window.alert('As senhas não são iguais');
+                }
+            }
         }
     }
     return(
@@ -92,7 +101,8 @@ function FormPessoa (){
                 max={data.getFullYear() + '-' + data.getMonth() + '-' + data.getDate()}
             />
             <TextInput             
-                label="Senha * (Deve conter maiúsculas, minúsculas e números)"
+                label="Senha *"
+                placeholder="Maiúsculas, minúsculas e números"
                 password
                 onChange={e => setSenha (e.target.value)}
                 className="campo-form-pessoa"
@@ -138,6 +148,15 @@ function FormPessoa (){
                 onChange={e => setResposta (e.target.value)}
                 className="campo-form-pessoa"
             />
+            <div className="check-area">
+                <Checkbox
+                    value=""
+                    label=""
+                    onClick={()=>setTermos(!termos)}
+                    checked={termos}
+                />
+                <div>Li e aceito os <Link to='/termos-de-uso' target="_blanck">Termos de uso</Link> do site.</div>
+            </div>
             <div className="btn-area-cadPessoa">
                 {btn=='' 
                 ?

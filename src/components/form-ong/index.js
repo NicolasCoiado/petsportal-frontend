@@ -1,7 +1,7 @@
 import 'materialize-css';
-import { TextInput, Textarea, Button } from 'react-materialize';
+import { TextInput, Textarea, Button, Checkbox } from 'react-materialize';
 import { MdSend, MdDone } from 'react-icons/md';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import React, {useState} from "react";
 import './style.css';
 import API from '../../api/'
@@ -21,6 +21,8 @@ function FormOng(){
     const [pergunta, setPergunta] = useState('');
     const [resposta, setResposta] = useState('');
 
+    const [termos, setTermos] = useState(false);
+
     const [btn, setBtn] = useState('');
 
     const [upload, setUpload] = useState('vazio');
@@ -29,37 +31,44 @@ function FormOng(){
 
     const handleSubmit = (e) =>{
         e.preventDefault();
-        setBtn('clickado');
-
-        let user = new FormData();
-        user.append('nome', nome)
-        user.append('email', email)
-        user.append('senha', senha)
-        user.append('senha2', senha2)
-        user.append('endereco', endereco)
-        user.append('tel1', tel1)
-        user.append('tel2', tel2)
-        user.append('desc', desc)
-        user.append('pergunta', pergunta)
-        user.append('resposta', resposta)
-        if(social)
-            user.append('social', social , social.name)
-        
-        API.post("/user/cadastrar/ong", user, {
-            headers: {
-            'accept': 'application/json',
-            'Content-Type': `multipart/form-data; boundary=${user._boundary}`,
+        if(!termos){
+            window.alert('Aceite os termos de uso, para poder efetuar o cadastro!')
+        }else{
+            if(!nome || !email || !senha || !senha2 || !endereco || !tel1 || !social || !pergunta || !resposta){
+                window.alert('O formulário possui campo(s) não preenchido')
+            }else{
+                setBtn('clickado')    
+                let user = new FormData();
+                user.append('nome', nome)
+                user.append('email', email)
+                user.append('senha', senha)
+                user.append('senha2', senha2)
+                user.append('endereco', endereco)
+                user.append('tel1', tel1)
+                user.append('tel2', tel2)
+                user.append('desc', desc)
+                user.append('pergunta', pergunta)
+                user.append('resposta', resposta)
+                if(social)
+                    user.append('social', social , social.name)
+                
+                API.post("/user/cadastrar/ong", user, {
+                    headers: {
+                    'accept': 'application/json',
+                    'Content-Type': `multipart/form-data; boundary=${user._boundary}`,
+                    }
+                })
+                    .then(res => {
+                        history.push("/login");
+                        window.alert('Ong cadastrada!')
+                    })
+                    .catch(err =>{
+                        window.alert('O formulário possui erro(s), ou a ONG já exite!')
+                    
+                    })
             }
-        })
-            .then(res => {
-                history.push("/login");
-                window.alert('Ong cadastrada!')
-            })
-            .catch(err =>{
-                window.alert('O formulário possui erro(s), ou a ONG já exite!')
-            
-            })
         }
+    }
         
 
     const handleUpload= (e) => {
@@ -86,6 +95,7 @@ function FormOng(){
             />
             <TextInput
                 label="Senha *"
+                placeholder="Maiúsculas, minúsculas e números"
                 password
                 onChange={e => setSenha (e.target.value)}
             />
@@ -123,6 +133,15 @@ function FormOng(){
                 onChange={e => setResposta (e.target.value)}
                 className="campo-form-pessoa"
             />
+            <div className="check-area">
+                <Checkbox
+                    value=""
+                    label=""
+                    onClick={()=>setTermos(!termos)}
+                    checked={termos}
+                />
+                <div>Li e aceito os <Link to='/termos-de-uso' target="_blanck">Termos de uso</Link> do site.</div>
+            </div>
             <div className="upload-area">
                 {(upload !== "uploded")
                     ?(

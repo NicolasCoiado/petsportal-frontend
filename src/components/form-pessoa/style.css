@@ -53,3 +53,9 @@
 .send-icon{
     margin-right: 20px;
 }
+
+.check-area{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}

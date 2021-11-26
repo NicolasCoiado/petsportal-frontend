@@ -14,7 +14,7 @@ function Rodape (){
             </div>
             <div className="footer-infos">
                 <Link to="/saiba-mais" className="p-infos">Saiba mais...</Link>
-                <p className="p-infos">Termos de uso</p>
+                <Link to="/termos-de-uso" className="p-infos">Termos de uso</Link>
                 <p className="p-infos">© 2021 Copyright PetsPortal</p>
             </div>
         </div>
