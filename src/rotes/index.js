@@ -12,6 +12,7 @@ import Evento from "../pages/evento/";
 import EventosFiltrados from "../pages/eventos-filtrados/"
 import PropostasAdocao from '../pages/propostas-adocao/';
 import ConfirmadasAdocao from "../pages/confirmadas-adocao/";
+import TermosUso from "../pages/termos-uso/";
 import ValidarEventos from "../pages/ADM/validar-eventos/";
 import ValidarOngs from "../pages/ADM/validar-ongs/";
 import ListarAdocoes  from "../pages/ADM/listar-adocoes/";
@@ -42,6 +43,7 @@ const Rotas = () => (
             <Route path='/adm/reports' component={ Reportes } /> 
             <Route path='/editar' component={ EditarSenha } /> 
             <Route path='/saiba-mais' component={ SaibaMais } /> 
+            <Route path='/termos-de-uso' component={ TermosUso } />
             <Route path='/' component={ UndefinedPage } />
         </Switch>
     </BrowserRouter>

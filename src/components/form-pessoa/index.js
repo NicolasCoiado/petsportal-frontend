@@ -118,6 +118,7 @@ function FormPessoa (){
             <TextInput
                 label="Telefone 2"
                 placeholder="(DDD) xxxxx-xxxx"
+                type="number"
                 onChange={e => setTel2 (e.target.value)}
                 className="campo-form-pessoa"
             />

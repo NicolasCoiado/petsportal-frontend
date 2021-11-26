@@ -84,6 +84,20 @@ function InfosAnimal (){
         }
     }
 
+    const vacinaSwitch = vacina => {
+        switch(vacina){
+            case 'nao_vacinado':
+                return 'Não vacinado'
+            case 'parcial':
+                return 'Parcial'
+            case 'integral':
+                return 'Integral'
+            default:
+                return 'ERRO AO CARREGAR VACINAS'
+
+        }
+    }
+
     useEffect(() => {
         API.post(`/animals/${id}`, {
             id : id
@@ -240,7 +254,7 @@ function InfosAnimal (){
                             <p className="campo-info-animal"> Pelagem: {animal.pelagem}</p>
                             <p className="campo-info-animal"> Porte: {porteSwitch(animal.porte)}</p>
                             <p className="campo-info-animal"> Idade: {animal.idade} ano(s)</p>
-                            <p className="campo-info-animal"> Vacinas: {animal.vacinas}</p>
+                            <p className="campo-info-animal"> Vacinas: {vacinaSwitch(animal.vacinas)}</p>
                             <p className="campo-info-animal"> Doenças: {animal.doencas || 'Nenhuma.'}</p>
                             <p className="campo-info-animal"> Alergias: {animal.alergias || 'Nenhuma.'}</p>
                             <p className="campo-info-animal"> Deficiências: {animal.deficiencias || 'Nenhuma.'}</p>
@@ -807,7 +821,7 @@ function InfosAnimal (){
                         <p className="campo-info"> Porte: {porteSwitch(animal.porte)}</p>
                         <p className="campo-info"> Idade: {animal.idade} ano(s)</p>
                         <p className="campo-info"> Observação: {animal.observacao || 'Nenhuma.'}</p>
-                        <p className="campo-info"> Vacinas: {animal.vacinas}</p>
+                        <p className="campo-info"> Vacinas: {vacinaSwitch(animal.vacinas)}</p>
                         <p className="campo-info"> Doenças: {animal.doencas || 'Nenhuma.'}</p>
                         <p className="campo-info"> Alergias: {animal.alergias || 'Nenhuma.'}</p>
                         <p className="campo-info"> Deficiências: {animal.deficiencias || 'Nenhuma.'}</p>

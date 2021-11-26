@@ -180,15 +180,15 @@ function FormPessoa (){
                 </option>
             </Select>
             <TextInput             
-                label="Idade"
+                label="Idade*"
                 type="number"
-                min="1"
+                min="0"
                 max="30"
                 className="campo-form-pessoa"
                 onChange={e => setIdade (e.target.value)}
             />
             <TextInput             
-                label="Pelagem *"
+                label="Pelagem * (Exemplo: Preta e rala)"
                 type="text"
                 className="campo-form-pessoa"
                 onChange={e => setPelagem (e.target.value)}
@@ -256,7 +256,7 @@ function FormPessoa (){
             />
 
             <Textarea
-                data-length={120}
+                data-length={240}
                 label="Observações"
                 className="campo-form-pessoa"
                 onChange={e => setObservacao (e.target.value)}
