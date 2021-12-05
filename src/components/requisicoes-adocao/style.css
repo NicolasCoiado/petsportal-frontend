@@ -47,6 +47,8 @@
     .btn-modal-motivos{
         background-color: #5684ca;
         border-radius: 2em;
+        font-size: 12px;
+        width: 200px;
         margin-top: 4px;
         margin-left: 50px;
     }

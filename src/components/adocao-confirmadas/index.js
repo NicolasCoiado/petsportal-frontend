@@ -94,7 +94,9 @@ function AdocaoConfirmadas (){
                                         >
                                         <p className="p-obs">
                                            Telefone: ({adocao.doador.ddd1 }) {adocao.doador.tel1 } <br /> <br /> 
-                                           Telefone secundário: ({adocao.doador.ddd2 }) {adocao.doador.tel2 } <br />
+                                            {adocao.doador.dd2 &&
+                                                <> Telefone secundário: ({adocao.doador.ddd2 }) {adocao.doador.tel2 } <br /></>
+                                            }
                                         </p>
                                     </Modal>
                                 </div>

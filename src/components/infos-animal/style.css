@@ -100,6 +100,10 @@
     .btn-adotar:hover{
         background-color: #40965d;
     }
+    .campo-info-obs{
+        font-size: medium;
+        padding: 1em 30% 0em 30%;
+    }
 }
 
 @media (max-width: 1000px){
@@ -110,6 +114,10 @@
     }
     .btn-adotar:hover{
         background-color: #40965d;
+    }
+    .campo-info-obs{
+        font-size: x-small;
+        padding: 1em 10% 0em 10%;
     }
 }
 

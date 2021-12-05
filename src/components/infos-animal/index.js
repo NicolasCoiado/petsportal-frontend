@@ -820,7 +820,7 @@ function InfosAnimal (){
                         <p className="campo-info"> Pelagem: {animal.pelagem}</p>
                         <p className="campo-info"> Porte: {porteSwitch(animal.porte)}</p>
                         <p className="campo-info"> Idade: {animal.idade} ano(s)</p>
-                        <p className="campo-info"> Observação: {animal.observacao || 'Nenhuma.'}</p>
+                        <p className="campo-info-obs"> Observação: {animal.observacao || 'Nenhuma.'}</p>
                         <p className="campo-info"> Vacinas: {vacinaSwitch(animal.vacinas)}</p>
                         <p className="campo-info"> Doenças: {animal.doencas || 'Nenhuma.'}</p>
                         <p className="campo-info"> Alergias: {animal.alergias || 'Nenhuma.'}</p>
