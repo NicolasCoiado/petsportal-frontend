@@ -6,7 +6,7 @@ import './style.css';
 
 function Carrossel (){
 
-    const [imagens, setImagens] = useState(['https://storage.googleapis.com/gcs-pets-portal-bucket/AnuncieAqui.png']);
+    const [imagens, setImagens] = useState(['https://res.cloudinary.com/df6mhojbv/image/upload/v1658197934/Anuncie_aqui_jlmn4u.png']);
 
     useEffect(() => {
         API.post("/home/eventos", { carouselCount : 5 }, {
