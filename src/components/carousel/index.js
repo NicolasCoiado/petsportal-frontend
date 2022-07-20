@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import 'materialize-css';
+import Banner from '../../images/Anuncie aqui.png';
 import { Carousel } from 'react-materialize';
 import API from '../../api/';
 import './style.css';
 
 function Carrossel (){
 
-    const [imagens, setImagens] = useState(['https://res.cloudinary.com/df6mhojbv/image/upload/v1658197934/Anuncie_aqui_jlmn4u.png']);
+    const [imagens, setImagens] = useState([Banner]);
 
     useEffect(() => {
         API.post("/home/eventos", { carouselCount : 5 }, {
